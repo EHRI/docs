@@ -12,7 +12,7 @@ Creating Groups
 Groups can only be created by EHRI super-users (those belonging to the **admin** group.) Super-users will have the
 option to create new groups on the right-hand-size of the groups page:
 
-.. image:: images/create-groups-link.png
+.. image:: images/create-group-link.png
     :alt: Link to create a new group, visible to super users
 
 
