@@ -1,3 +1,5 @@
+.. _groups:
+
 ======
 Groups
 ======
@@ -53,9 +55,7 @@ Then, select the group to which you want to add them from the list.
 Managing Group Permissions
 ==========================
 
-*NB: For background on the EHRI admin permission system, see the permissions_ page.*
-
-.. _permissions:
+**NB**: For background on the EHRI admin permission system, see the :doc:`permissions` page.
 
 There are several classes of permission in the EHRI portal's administration system:
 
