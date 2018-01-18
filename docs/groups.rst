@@ -40,15 +40,38 @@ Group Members
 Additionally, you can choose to add a message to the audit log so people know why you created this group. If you don't
 have anything to add, just leave it blank.
 
-Managing Group Permissions
-==========================
-
-TODO
-
 Adding Users to Groups
 ======================
 
-TODO
+To add a user to a group find their account on the Users page. Then visit "Manage Groups" item from the actions menu:
+
+.. image:: images/manage-groups-link.png
+    :alt: Link to manage groups, visible to super users
+
+Then, select the group to which you want to add them from the list.
+
+Managing Group Permissions
+==========================
+
+*NB: For background on the EHRI admin permission system, see the permissions_ page.*
+
+.. _permissions:
+
+There are several classes of permission in the EHRI portal's administration system:
+
+Global
+  Allows groups (or individual users) to manage entire classes of item, e.g. archival units or repositories.
+
+Item Level
+  Allows groups (or users) to manage individual items, e.g. a single repository.
+
+Scoped
+  Allows groups to manage a class of items within a particular scope, e.g. archival units within a specific repository.
+
+In practice these different types of permissions are often combined. A common case is a group that represents users who
+are associated with a particular repository/institution. In this case the group might typically be given *item level*
+permission to update the repository's description, and *scoped* permissions to create, update, or delete archival
+descriptions owned by that repository.
 
 
 
