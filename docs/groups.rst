@@ -73,7 +73,57 @@ are associated with a particular repository/institution. In this case the group 
 permission to update the repository's description, and *scoped* permissions to create, update, or delete archival
 descriptions owned by that repository.
 
+Item Level Permissions
+**********************
 
+To set item-specific permissions for a group on a particular item, first find the item itself. Then click "Manage
+Permissions" on the actions sidebar:
 
+.. image:: images/manage-permissions-link.png
+    :alt: Link to manage the individual or scoped permissions for a given item
+
+On the next page, click the "Item Level Permissions" link:
+
+.. image:: images/manage-permissions-item.png
+    :scale: 40%
+    :alt: Manage permissions for an individual item
+    :target: _images/manage-permissions-item.png
+
+Then, from the list of groups and users, select the group or user to which these item-level permissions will apply.
+
+.. image:: images/manage-permissions-item-2.png
+    :scale: 40%
+    :alt: Manage permissions for an individual item
+    :target: _images/manage-permissions-item-2.png
+
+Finally, select the actual permissions, for example: `update`, to allow users belonging to the given group to update
+this item:
+
+.. image:: images/manage-permissions-item-3.png
+    :scale: 40%
+    :alt: Manage permissions for an individual item
+    :target: _images/manage-permissions-item-3.png
+
+You can opt to leave a log message explaining what you're doing, or just hit "Update Permissions".
+
+Scoped Permissions
+******************
+
+The process for updating scoped permissions is the same:
+
+1. Find the subject item
+2. Click "Manage Permissions"
+3. Choose "Scoped Permissions"
+4. Select the group (or user) to whom the permissions apply
+5. Check the individual permissions you want to grant
+
+.. image:: images/manage-permissions-scoped.png
+    :scale: 40%
+    :alt: Manage scoped permissions for an item
+    :target: _images/manage-permissions-scoped.png
+
+The final screen, to select the individual permissions looks slightly different because it shows you that the
+permissions in question (create, update, delete etc) apply not to the item you're currently managing, but to items of a
+different type in the subject item's scope.
 
 
