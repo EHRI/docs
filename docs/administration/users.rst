@@ -23,7 +23,7 @@ Finally, in the following screen, check the "staff" box (making sure that the "a
 .. image:: images/make-user-staff.png
     :scale: 40%
     :alt: Make a user staff
-    :target: _images/make-user-staff.png
+    :target: ../_images/make-user-staff.png
 
 **Note**: if the user has not yet verified their email address but you know it's valid, there's an additional
 option to verify them manually.
