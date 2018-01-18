@@ -43,7 +43,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'EHRI Portal Documentation'
+project = u'EHRI Documentation'
 copyright = u'2018, The EHRI Consortium'
 
 # The version info for the project you're documenting, acts as replacement for
