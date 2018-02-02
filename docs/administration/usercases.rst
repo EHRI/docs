@@ -4,8 +4,8 @@ Use-Cases
 
 Below are some typical use-cases for administration tasks:
 
-Allow a user to manage a repository and its data
-================================================
+Allow a user to manage a single repository and its data
+=======================================================
 
 In this case you want to allow a particular person to manage both the description of a repository and archival
 descriptions which it holds. For safely, we don't want to let the user delete the repository, or inadvertently create
