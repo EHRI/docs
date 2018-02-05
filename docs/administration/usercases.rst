@@ -14,16 +14,16 @@ archival descriptions elsewhere.
 The steps are as follows:
 
 1. Get the user access to the `admin pages
-   <http://documentation.ehri-project.eu/en/latest/administration/access.html#accessing-the-portal-administration-pages>`_.
-2. Create a `new group <http://documentation.ehri-project.eu/en/latest/administration/groups.html#creating-groups>`_ for
+   <access.html#accessing-the-portal-administration-pages>`_.
+2. Create a `new group <groups.html#creating-groups>`_ for
    users who manage the given repository.
 3. Add the user `to the new group
-   <http://documentation.ehri-project.eu/en/latest/administration/groups.html#adding-users-to-groups>`_.
+   <groups.html#adding-users-to-groups>`_.
 4. Set `item-level permissions
-   <http://documentation.ehri-project.eu/en/latest/administration/groups.html#item-level-permissions>`_ on the given
+   <groups.html#item-level-permissions>`_ on the given
    repository so that the new group can update it, **but not delete it**.
 5. Set `scoped permissions
-   <http://documentation.ehri-project.eu/en/latest/administration/groups.html#scoped-permissions>`_ on the repository so
+   <groups.html#scoped-permissions>`_ on the repository so
    that the new group can create, update, and delete Documentary Unit items within it.
 
 **Note:** in this case it's perfectly possible to assign the item-level and scoped permissions directly to the user

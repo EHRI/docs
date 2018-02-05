@@ -24,6 +24,8 @@ valid, ID generation would then fail.
 ID generation
 -------------
 
+(See the `identifiers <identifiers.html>`_ page for more on the rationale.)
+
 Graph IDs are generated in differently depending on the type of item.
 There are currently two types of ID generators:
 
