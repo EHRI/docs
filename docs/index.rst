@@ -26,6 +26,12 @@ For developers:
 
    technical/frontend/index
 
+See also
+--------
+
+- `Metadata Publishing Tool (MPT) manual <https://github.com/EHRI/manuals/tree/master/MPT>`_
+- `EAD Conversion Tool (ECT) manual <https://github.com/EHRI/manuals/tree/master/ECT>`_
+
 
 Miscellaneous:
 --------------
