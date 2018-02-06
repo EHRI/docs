@@ -1,6 +1,13 @@
 Welcome to the EHRI documentation
 =================================
 
+Welcome to the EHRI documentation pages. This documentation is intended for people working on the EHRI project or
+affiliated with the EHRI consortium. For general information about the EHRI project please go to:
+
+ - The `EHRI Project Homepage <https://ehri-project.eu>`_
+ - The `EHRI Portal <https://portal.ehri-project.eu>`_
+ - The `EHRI Document Blog <https://blog.ehri-project.eu>`_
+
 For EHRI staff and administrators:
 ----------------------------------
 
