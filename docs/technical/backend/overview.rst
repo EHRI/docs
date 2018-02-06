@@ -58,5 +58,27 @@ In the intervening years the Tinkerpop stack has become an `Apache project <http
 on to version 3.0, which is massively incompatible with version 2.0. EHRI remains using 2.0, which while unmaintained, is very stable and unlikely to disappear from the internet. However it is still a bit ironic that the abstraction layer we used to
 ensure database independence has itself been mothballed and become probably the main tech risk in our software stack.
 
+Neo4j Extension Endpoints
+=========================
+
+The Neo4j extension provides 3 endpoints under the `/ehri` path (e.g. when installed in Neo4j it is accessed via the Neo4j
+server address and port, plus `/ehri`. These are:
+
+1. The "ReSTful" interface
+  A web service interface in the ReST style that can be used for general CRUD operations, along with a more RCP-like
+  functions for operating on data and performing administrative functions.
+
+2. OAI-PMH
+  An `OAI-PMH 2.0 <https://www.openarchives.org/pmh/>`_ server implementation at ``/ehri/oaipmh``.
+
+3. GraphQL
+  A `GraphQL <http://graphql.org>`_ interface at ``/ehri/graphql`` for ad-hoc data exploration.
+
+**None of these are exposed directly to the outside world**: the ReSTful interface is access via the EHRI portal HTML
+interface, whereas the OAI-PMH and GraphQL endpoints are proxied by the portal more or less directly, the latter with
+the addition of user authentication.
+
+For more info about the CRUD and RCP interface, see the `API docs <http://ehri.github.io/docs/api/ehri-rest/ehri-ws/wsdocs/index.html>`_ and the `walk-through <web-service.html>`_. For more info about OAI-PMH, see the `official spec <http://www.openarchives.org/OAI/openarchivesprotocol.html>`_. For more info about GraphQL, see the `official spec <http://graphql.org>`_ and the `portal API documentation <https://portal.ehri-project.eu/api/graphql>`_. 
+
 
 
