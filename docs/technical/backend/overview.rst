@@ -30,7 +30,9 @@ Architecture
 
 Since two different workpackages were responsible for data integration and the portal interface (the former based in the
 Hague and the latter in London) it was decided to make a clean distinction between the frontend and the backend,
-talking to each other via a web service interface.
+talking to each other via a web service interface. The downside of this is that there is a fair bit of duplication in
+the definitions and behaviour of backend and frontend, notwithstanding them both being JVM projects. Since the team in
+the Hague mostly used Java at that time it made sense to use that language.
 
 Neo4j was selected as the underlying database. Experience with ICA-AtoM had highlighted some of the drawbacks to a
 standard SQL RMDBS system for managing archival data, most notably complications to the schema necessary to handle
