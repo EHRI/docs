@@ -1,8 +1,23 @@
-@import url("default.css");
+@import url("css/theme.css");
 
 .wy-side-nav-search, .wy-nav-top {
     background-color: #36104f !important;
 }
 
+a {
+    color: #6c003b;
+    text-decoration: none;
+}
 
+a:hover {
+    color: #780042;
+}
+
+.wy-side-nav-search input[type=text] {
+    border-color: #8f004f;
+}
+
+.wy-menu-vertical a {
+    color: #b3b3b3;
+}
 
