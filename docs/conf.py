@@ -260,8 +260,5 @@ texinfo_documents = [
 #texinfo_no_detailmenu = False
 
 # Override certain RTD theme elements
-html_context = {
-    'css_files': [
-        '_static/ehri-theme.css',  # overrides for wide tables in RTD theme
-    ],
-}
+def setup(app):
+   app.add_stylesheet("ehri-theme.css")
