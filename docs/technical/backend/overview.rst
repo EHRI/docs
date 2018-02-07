@@ -61,7 +61,7 @@ on to version 3.0, which is massively incompatible with version 2.0. EHRI remain
 ensure database independence has itself been mothballed and become probably the main tech risk in our software stack.
 
 Neo4j Extension Endpoints
-=========================
+-------------------------
 
 The Neo4j extension provides 3 endpoints under the `/ehri` path (e.g. when installed in Neo4j it is accessed via the Neo4j
 server address and port, plus `/ehri`. These are:
@@ -82,5 +82,33 @@ the addition of user authentication.
 
 For more info about the CRUD and RCP interface, see the `API docs <http://ehri.github.io/docs/api/ehri-rest/ehri-ws/wsdocs/index.html>`_ and the `walk-through <web-service.html>`_. For more info about OAI-PMH, see the `official spec <http://www.openarchives.org/OAI/openarchivesprotocol.html>`_. For more info about GraphQL, see the `official spec <http://graphql.org>`_ and the `portal API documentation <https://portal.ehri-project.eu/api/graphql>`_. 
 
+Project Structure
+-----------------
 
+The backend is a multi-module Maven project consisting of:
+
+**ehri-definitions**
+  Contains the "ontology" (a set of property and relationship name labels) and Entity name definitions.
+
+**ehri-core**
+  Models, access control, permissions and persistence. There is also an `Api` interface which attempts to make a
+  coherent facade atop various data management operations.
+
+**ehri-io**
+  Import and export code, including EAD ingest and serialisation.
+
+**ehri-cli**
+  Command-line tools for interacting with the graph.
+
+**ehri-ws**
+  The JAX-RS classes that provide the web service interface.
+
+**ehri-ws-graphql**
+  The GraphQL implementation and a corresponding JAX-RS class for its endpoint.
+
+**ehri-ws-oaipmh**
+  The OAI-PMH 2.0 server implementation and a corresponding JAX-RS class for the endpoint.
+
+**build**
+  Maven packaging, which depends on all the other modules.
 
