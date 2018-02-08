@@ -1,10 +1,7 @@
-REST Serialization
-==================
+Serialization
+=============
 
-Introduction
-------------
-
-Since individual REST resources (documentary units, repositories, etc)
+Since individual web service resources (documentary units, repositories, etc)
 are comprised of many individual graph nodes, when resources are
 serialized we serialize their entire "subtree", rather than force the
 client to fetch each object in parts on a node by node basis. We also
