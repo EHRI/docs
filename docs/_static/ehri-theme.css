@@ -13,6 +13,10 @@ a:hover {
     color: #780042;
 }
 
+.wy-side-nav-search > a:hover {
+    color: #fcfcfc;
+}
+
 .wy-side-nav-search input[type=text] {
     border-color: #8f004f;
 }

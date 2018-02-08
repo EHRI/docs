@@ -7,7 +7,7 @@ the first thing that came to mind at the very beginning of its development.
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    overview

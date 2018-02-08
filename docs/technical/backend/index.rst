@@ -4,7 +4,7 @@ EHRI Portal Back-end Technical Documentation
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
    
    overview
