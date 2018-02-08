@@ -1,3 +1,7 @@
+.. meta::
+    :google-site-verification: 6hC5eloCngTobnQwOacSGFWR3tXeLlMq0A3kCd33UTc
+
+
 Welcome to the EHRI documentation
 =================================
 

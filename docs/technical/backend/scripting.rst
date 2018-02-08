@@ -1,6 +1,10 @@
 Scripting the EHRI environment
 ==============================
 
+**Note: scripting hasn't been used in a while but came in handy when doing
+some complicated ingests of material that was one-off, complicated, or 
+unusually structured. These docs will remain here just in case...**
+
 Introduction
 ------------
 
@@ -77,7 +81,7 @@ https://github.com/jruby/jruby/wiki/CallingJavaFromJRuby
 
 The TL;DR is basically:
 
-.. code:: ruby
+.. code-block:: ruby
 
     # The magic require Java line
     require 'java'
@@ -93,7 +97,7 @@ The TL;DR is basically:
 To import stuff in a manner similar to how you would in Java, you can
 use the ``java_import`` statement:
 
-.. code:: ruby
+.. code-block:: ruby
 
     java_import "eu.ehri.project.models.UserProfile"
 
@@ -104,7 +108,7 @@ Integration with the EHRI environment
 -------------------------------------
 
 Prerequisites
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 As well as having JRuby installed, for the EHRI/Ruby environment to work
 you need a couple of env vars set:
@@ -115,21 +119,21 @@ you need a couple of env vars set:
 As usual, ``$NEO4J_HOME`` should point to a version of Neo4j with the
 EHRI plugin installed. The ``$CLASSPATH`` var can be exported like so:
 
-.. code:: bash
+.. code-block:: bash
 
     source ./scripts/lib.sh      # Source the EHRI bash tools
     buildclasspath               # This function builds a Java-ish string of dependencies from the $NEO4J_HOME
     export CLASSPATH=$CLASSPATH  # Exports the CLASSPATH var created by buildclasspath
 
 Using the 'Ehri' module
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Much of the heavy lifting of setting up the EHRI environment has been
 placed in a module called ``Ehri`` inside the ``scripts/ruby/lib``
 directory of the EHRI Neo4j server code root. You can pull this into
 your Ruby script environment like so:
 
-.. code:: ruby
+.. code-block:: ruby
 
     require "scripts/lib/ehri"
     include Ehri
@@ -155,7 +159,7 @@ The shortcut modules within ``Ehri`` are:
 Putting all this together, you can then do stuff like this from the
 REPL:
 
-.. code:: bash
+.. code-block:: bash
 
     03:24 PM > jirb
     irb(main):001:0> require "scripts/ruby/lib/ehri"
@@ -171,7 +175,7 @@ REPL:
 For example, a script to list the names of all repositories in the
 United Kingdom:
 
-.. code:: ruby
+.. code-block:: ruby
 
     require "scripts/ruby/lib/ehri"
 
@@ -207,7 +211,7 @@ Lots of other useful things are possible. For more examples, look at
 some of the import tools in ``scripts/ruby/lib``. These are themselves
 modules that extent the ``Ehri`` module, for example:
 
-.. code:: ruby
+.. code-block:: ruby
 
     # Require the Ehri module, which we know is alongside our current one in the lib dir
     require "#{File.dirname(__FILE__)}/ehri"
@@ -234,7 +238,7 @@ modules that extent the ``Ehri`` module, for example:
 
 From another script, this can then be launched like so:
 
-.. code:: ruby
+.. code-block:: ruby
 
     require "scripts/ruby/lib/myimporter"
 
@@ -246,7 +250,7 @@ commands, for doing things like initialising the graph and importing
 files. There can be run directly (although perhaps not in the nicest
 manner) like so:
 
-.. code:: ruby
+.. code-block:: ruby
 
     # Runs the 'Initialize' command, with an empty set of arguments
     # as if they were provided via the command-line...
@@ -263,7 +267,7 @@ argument.
 Another, more complex example, is running the LoadFixtures command, with
 an argument that gives the YAML fixture file to load:
 
-.. code:: ruby
+.. code-block:: ruby
 
     Commands::LoadFixtures.new.exec(Graph, ["#{ENV["HOME"]}/Dropbox/EHRI/users.yaml"].to_java(:string))
 
@@ -273,7 +277,7 @@ Gotchas:
 For the (rare) Java method that requires passing a ``char``, I cannot
 find a less ugly way to do this than:
 
-.. code:: ruby
+.. code-block:: ruby
 
     # Take a Ruby string, slice the first item, convert it to an Ord, and then a java char...
     csv = CSVReader.new(fio, ";"[0].ord.to_java(:char)) # Yuck!
