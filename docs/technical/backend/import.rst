@@ -81,7 +81,3 @@ repository scope, like so:
     export REPO=gb-wiener-library
     ./scripts/cmd ead-import -user $USER --scope $REPO --log "Importing EAD for repository '$REPO'" --tolerant PATH-TO-EAD-FILE.xml
 
-TODO
-----
-
-Importing EAC/EAG

@@ -1,6 +1,9 @@
 Overview of the EHRI Portal and Admin front-end
 ===============================================
 
+.. role:: scala(code)
+    :language: scala
+
 Frameworks and technologies
 ---------------------------
 
@@ -52,7 +55,7 @@ The application consists of a number of modules, in a somewhat layered manner:
 Generic Controller Interfaces
 -----------------------------
 
-TODO
+See the `controllers <controllers.html>`_ page.
 
 Model Layer
 -----------
