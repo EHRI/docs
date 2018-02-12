@@ -13,7 +13,8 @@ a:hover {
     color: #780042;
 }
 
-.wy-side-nav-search > a:hover {
+
+.wy-side-nav-search > a:hover, .wy-side-nav-search > a:visited {
     color: #fcfcfc;
 }
 
@@ -25,3 +26,6 @@ a:hover {
     color: #b3b3b3;
 }
 
+.wy-menu-vertical a:active {
+    background-color: #9B59B6;
+}

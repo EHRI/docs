@@ -20,7 +20,7 @@ For EHRI staff and administrators:
 
    administration/index
 
-For developers:
+For developers and system administrators:
 ---------------
 
 **Backend Web Service**
@@ -36,6 +36,13 @@ For developers:
    :maxdepth: 2
 
    technical/frontend/index
+
+**System Administration**
+
+.. toctree::
+   :maxdepth: 2
+
+   technical/sysadmin/index
 
 See also
 --------
