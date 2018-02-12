@@ -84,4 +84,10 @@ Notable bits of technical debt include:
 
 - Features relating to the Research Guides are no longer developed and essentially deprecated
 - Features related to virtual collections was not finished in the scope of EHRI 1 and not funded in EHRI 2
-- TODO
+- The action composition mechanism is based around extending traits rather than injected components, which is the newer
+  Play Framework style
+- Some of the code related to integrating with Solr, parsing responses/facets etc, could really do with a clean up
+- The handling for assets like LESS files or javascripts could be streamlined, preferably figuring out a way to have all
+  the admin style assets in the portal module, which otherwise doesn't know anything about the admin module
+- The LESS itself could do with streamlining and a careful refactoring (and preferably converting to SASS)
+- Probably a lot else!
