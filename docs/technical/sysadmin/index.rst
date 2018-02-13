@@ -23,4 +23,3 @@ EHRI currently uses AWS S3 for hosting certain data:
 We principally use the eu-west-1 region to keep data on European servers.
 
 Ask a member of the EHRI team for access.
-- 
