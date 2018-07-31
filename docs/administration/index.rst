@@ -11,6 +11,8 @@ Contents:
    users
    groups
    permissions
+   ingest
+   skos-ingest
 
    *
 
