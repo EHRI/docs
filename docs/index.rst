@@ -21,7 +21,7 @@ For EHRI staff and administrators:
    administration/index
 
 For developers and system administrators:
----------------
+-----------------------------------------
 
 **Backend Web Service**
 

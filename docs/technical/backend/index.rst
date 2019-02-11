@@ -18,6 +18,7 @@ Contents:
    deployment
    loaddump
 
-
    *
+
+   WS API Docs <web-service-api>
 

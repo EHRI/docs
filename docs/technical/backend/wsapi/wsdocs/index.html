@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>EHRI Web Service API</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/enunciate.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">EHRI Web Service API</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li><a href="#resources"><abbr title="Resources"><span class="sideoverflow">Resources</span></abbr></a></li>
+          <li class="divider"></li>
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="dropdown"><a href="index.html">Home</a></li>
+        </ol>
+
+  <div class="page-header">
+    <h1>Web Service</h1><p>Web service layer exposed via a Neo4j extension at path: /ehri</p>
+  </div>
+
+  <h1 class="page-header" id="resources">Resources</h1>
+
+  <table class="table table-hover resources">
+    <thead>
+    <tr>
+      <th align="center">name</th>
+      <th align="center">path</th>
+      <th align="center">methods</th>
+      <th align="center">description</th>
+    </tr>
+    </thead>
+    <tbody data-link="row" class="rowlink">
+    <tr class="clickable-row" data-href="resource_AdminResource.html">
+      <td>  <span class="resource-name">AdminResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/admin/create-default-user-profile</span>
+</samp></li><li><samp>  <span class="resource-path">/admin/export-graphson</span>
+</samp></li><li><samp>  <span class="resource-path">/admin/export-json</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides additional Admin methods needed by client systems
+and general graph-maintenance functionality.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_AnnotationResource.html">
+      <td>  <span class="resource-name">AnnotationResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/Annotation</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Annotation/{id}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Web service interface for creating annotations.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_AuthoritativeSetResource.html">
+      <td>  <span class="resource-name">AuthoritativeSetResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/AuthoritativeSet</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/AuthoritativeSet/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/AuthoritativeSet/{id}/all</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/AuthoritativeSet/{id}/eac</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/AuthoritativeSet/{id}/list</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a web service interface for the AuthoritativeSet items. model.
+Authoritative Sets are containers for Historical Agents
+(authority files.)</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_BatchResource.html">
+      <td>  <span class="resource-name">BatchResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/batch/delete</span>
+</samp></li><li><samp>  <span class="resource-path">/batch/update</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource class for import endpoints.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_ContentTypeResource.html">
+      <td>  <span class="resource-name">ContentTypeResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/ContentType</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/ContentType/{id}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a web service interface for the ContentType model. Note: ContentType instances
+are created by the system, so we do not have create/update/delete methods
+here.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_CountryResource.html">
+      <td>  <span class="resource-name">CountryResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/Country</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Country/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Country/{id}/eag</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Country/{id}/list</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a web service interface for managing countries
+and creating repositories within them.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_CvocConceptResource.html">
+      <td>  <span class="resource-name">CvocConceptResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/CvocConcept</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/CvocConcept/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/CvocConcept/{id}/broader</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/CvocConcept/{id}/list</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/CvocConcept/{id}/narrower</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/CvocConcept/{id}/related</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/CvocConcept/{id}/relatedBy</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a web service interface for the Concept model. Note that the concept
+creation endpoint is part of the VocabularyResource and creation without a
+Vocabulary is not possible via this API.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_DocumentaryUnitResource.html">
+      <td>  <span class="resource-name">DocumentaryUnitResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/DocumentaryUnit</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/DocumentaryUnit/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/DocumentaryUnit/{id}/ead</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/DocumentaryUnit/{id}/list</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a web service interface for the DocumentaryUnit model.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_GenericResource.html">
+      <td>  <span class="resource-name">GenericResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/entities</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}/access</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}/annotations</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}/dc</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}/demote</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}/descriptions</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}/events</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}/links</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}/permission-grants</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}/promote</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}/scope-permission-grants</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}/versions</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}/descriptions/{did}</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}/descriptions/{did}/access-points</span>
+</samp></li><li><samp>  <span class="resource-path">/entities/{id}/descriptions/{did}/access-points/{apid}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a means of fetching items and lists of items
+regardless of their specific type.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_GroupResource.html">
+      <td>  <span class="resource-name">GroupResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/Group</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Group/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Group/{id}/actions</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Group/{id}/list</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Group/{id}/{aid}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">POST</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a web service interface for the Group model.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_HistoricalAgentResource.html">
+      <td>  <span class="resource-name">HistoricalAgentResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/HistoricalAgent</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/HistoricalAgent/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/HistoricalAgent/{id}/eac</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a web service interface for the HistoricalAgent model.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_ImportResource.html">
+      <td>  <span class="resource-name">ImportResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/import/csv</span>
+</samp></li><li><samp>  <span class="resource-path">/import/eac</span>
+</samp></li><li><samp>  <span class="resource-path">/import/ead</span>
+</samp></li><li><samp>  <span class="resource-path">/import/ead-sync</span>
+</samp></li><li><samp>  <span class="resource-path">/import/eag</span>
+</samp></li><li><samp>  <span class="resource-path">/import/links</span>
+</samp></li><li><samp>  <span class="resource-path">/import/skos</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Resource class for import endpoints.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_LinkResource.html">
+      <td>  <span class="resource-name">LinkResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/Link</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Link/{id}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a web service interface for creating/reading item links.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_PermissionGrantResource.html">
+      <td>  <span class="resource-name">PermissionGrantResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/PermissionGrant/{id}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a web service interface for the PermissionGrant model.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_PermissionsResource.html">
+      <td>  <span class="resource-name">PermissionsResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/permissions</span>
+</samp></li><li><samp>  <span class="resource-path">/permissions/{userOrGroup}</span>
+</samp></li><li><samp>  <span class="resource-path">/permissions/{userOrGroup}/permission-grants</span>
+</samp></li><li><samp>  <span class="resource-path">/permissions/{userOrGroup}/item/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/permissions/{userOrGroup}/scope/{id}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Web service resource for setting and reading permissions.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_RepositoryResource.html">
+      <td>  <span class="resource-name">RepositoryResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/Repository</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Repository/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Repository/{id}/all</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Repository/{id}/ead</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Repository/{id}/eag</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Repository/{id}/list</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a web service interface for the Repository.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_SystemEventResource.html">
+      <td>  <span class="resource-name">SystemEventResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/SystemEvent</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/SystemEvent/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/SystemEvent/{id}/subjects</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a web service interface for the Event model. Note: Event instances
+are created by the system, so we do not have create/update/delete methods
+here.
+<p>
+The following query parameters apply to all actions in this
+resource to apply filtering to the event streams.
+<p>
+<dl>
+<dt>eventTypes</dt><dd>Filter events by type</dd>
+<dt>itemTypes</dt><dd>Filter events based on the item type of their subjects</dd>
+<dt>itemIds</dt><dd>Filter events pertaining to specific item IDs</dd>
+<dt>users</dt><dd>Filter events based on the user IDs they involve</dd>
+<dt>from</dt><dd>Exclude events prior to this date (ISO 8601 format)</dd>
+<dt>to</dt><dd>Exclude events after this date (ISO 8601 format)</dd>
+</dl>
+<p>
+Additionally the aggregate* end-points accept an <code>aggregation</code>
+parameter that groups sequential events according to one of two different
+strategies:
+<dl>
+<dt>user</dt>
+<dd>Groups sequential events of all types that are initiated by the same actioner</dd>
+<dt>strict</dt>
+<dd>
+Groups sequential events that:
+<ul>
+<li>have the same type</li>
+<li>have the same actioner</li>
+<li>have the same subjects</li>
+<li>have the same scope</li>
+<li>have the same log message</li>
+</ul>
+</dd>
+</dl>
+<p>
+Additionally, aggregation can be disabled by using <code>aggregation=off</code>.
+<p>
+Standard paging parameters apply to all end-points.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_ToolsResource.html">
+      <td>  <span class="resource-name">ToolsResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/tools/__INITIALISE</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/find-replace</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/full-upgrade-1to2</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/regenerate-description-ids</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/regenerate-ids</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/relink-targets</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/rename</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/reparent</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/schema</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/set-constraints</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/set-labels</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/upgrade-1to2</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/version</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/regenerate-ids-for-scope/{scope}</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/regenerate-ids-for-type/{type}</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/generate-concepts/{repositoryId}/{vocabularyId}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Miscellaneous additional functionality that doesn't
+fit anywhere else.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_UserProfileResource.html">
+      <td>  <span class="resource-name">UserProfileResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/UserProfile</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/UserProfile/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/UserProfile/{id}/actions</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/UserProfile/{id}/annotations</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/UserProfile/{id}/blocked</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/UserProfile/{id}/events</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/UserProfile/{id}/followers</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/UserProfile/{id}/following</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/UserProfile/{id}/links</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/UserProfile/{id}/virtual-units</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/UserProfile/{id}/watching</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/UserProfile/{id}/is-blocking/{otherId}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/UserProfile/{id}/is-follower/{otherId}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/UserProfile/{id}/is-following/{otherId}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/UserProfile/{id}/is-watching/{otherId}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a web service interface for the UserProfile.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_VersionResource.html">
+      <td>  <span class="resource-name">VersionResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/Version/{id}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Web-service interface for accessing item versions.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_VirtualUnitResource.html">
+      <td>  <span class="resource-name">VirtualUnitResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/VirtualUnit</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/VirtualUnit/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/VirtualUnit/{id}/includes</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/VirtualUnit/{id}/list</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/VirtualUnit/{from}/includes/{to}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a web service interface for the VirtualUnit type</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_VocabularyResource.html">
+      <td>  <span class="resource-name">VocabularyResource</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/CvocVocabulary</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/CvocVocabulary/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/CvocVocabulary/{id}/all</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/CvocVocabulary/{id}/export</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/CvocVocabulary/{id}/list</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">Provides a web service interface for the Vocabulary model. Vocabularies are
+containers for Concepts.</span>
+</td>
+    </tr>
+    </tbody>
+  </table>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Copyright &copy; <script type="text/javascript" language="javascript">d = new Date;document.write(d.getFullYear());</script> <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">The EHRI Project</span>. Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>
