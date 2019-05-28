@@ -14,6 +14,8 @@ configuration
  * property files
  * records location
 
+During ingest the fields in the EAD files are mapped to the corresponding properties in the graph database. Property files are used for this, they can be tweaked for each source CHI. By default the `generic.properties` are used.
+
  
 run script
 ----------
