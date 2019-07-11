@@ -24,7 +24,7 @@ like this from within the ``docs`` directory:
 
 .. code-block:: bash
 
-    while inotifywait -r --exclude _build `*`; do 
+    while inotifywait -r --exclude _build *; do 
         make html
     done
 
