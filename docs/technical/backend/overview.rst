@@ -69,10 +69,8 @@ server address and port, plus `/ehri`. These are:
 1. The "ReSTful" interface
   A web service interface in the ReST style that can be used for general CRUD operations, along with a more RCP-like
   functions for operating on data and performing administrative functions.
-
 2. OAI-PMH
   An `OAI-PMH 2.0 <https://www.openarchives.org/pmh/>`_ server implementation at ``/ehri/oaipmh``.
-
 3. GraphQL
   A `GraphQL <http://graphql.org>`_ interface at ``/ehri/graphql`` for ad-hoc data exploration.
 
