@@ -1,16 +1,19 @@
 Harvesters
 ==========
+
 For the data integration we first need to get the data on the server. We use two kind of harvesters: an open source harvester that follows the OAI-PMH protocol, [shell-oaiharvester](https://github.com/wimmuskee/shell-oaiharvester). Within the project some institution did not provide a PMH endpoint. We developed a harvester for the [ResourceSync Framework](http://www.openarchives.org/rs/toc), which can be found at the EHRI github [resydes repository](https://github.com/EHRI/resydes). 
 
 OAI-PMH
 -------
 
-| |location|
-|----|-----------------|
-|download| https://github.com/wimmuskee/shell-oaiharvester
-|installation | /opt/shell-oaiharvester/|
-|config file | /opt/shell-oaiharvester/config.xml|
-|records |/var/opt/oai-pmh-harvester/|
+Download
+  ``https://github.com/wimmuskee/shell-oaiharvester``
+Installation:
+  ``/opt/shell-oaiharvester/``
+Config file:
+  ``/opt/shell-oaiharvester/config.xml``
+Records:
+  ``/var/opt/oai-pmh-harvester/``
 
 in the config.xml the harvester needs to be configured, for every endpoint at least the following properties can be set:
 
@@ -25,13 +28,15 @@ in the config.xml the harvester needs to be configured, for every endpoint at le
 this will run the harvester and retrieve all new and updated records from `<repository-id>` and store them at the `recordspath`. There they will be picked up by the ingest-process.
 
 ResourceSync
-------------
-| |location|
-|----|-----------------|
-|download| https://github.com/EHRI/resydes
-|installation | /opt/oai-resourcesync/|
-|config files | /opt/oai-resourcesync/cfg/|
-|records |/var/opt/oai-rs-harvester/|
+
+Download:
+  https://github.com/EHRI/resydes
+Installation:
+  ``/opt/oai-resourcesync/``
+Config files:
+  ``/opt/oai-resourcesync/cfg/``
+Records:
+  ``/var/opt/oai-rs-harvester/``
 
 The ResourceSync Framework describes a protocol to a destination (EHRI) in sync with a source (the CHI). It uses sitemaps to do so. In the config file `uri-list.txt` every sitemap is listed that needs to be synced. The `syncapp-context.xml` configures the harvester, for instance the `baseDirectory` to store the retrieved files can be set here.
 
