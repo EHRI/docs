@@ -9,5 +9,6 @@ Contents:
 
    frontend/index
    backend/index
+   ingestion/ingest
    *
 
