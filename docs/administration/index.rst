@@ -13,6 +13,7 @@ Contents:
    permissions
    ingest
    skos-ingest
+   institution-data
 
    *
 
