@@ -124,6 +124,58 @@ Bottom right pane
 
 Once a transformation has been edited to your satisfaction the Save button will update it.
 
+XSLT
+....
+
+XSLT transformations must be complete XSLT 2.0 stylesheets, and are best suited to making small changes to
+documents. A minimal example that adds the EAD namespace attribute value ``urn:isbn:1=931666`` would be::
+
+    <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+        <xsl:output indent="yes"/>
+
+        <xsl:template match="@*|node()">
+            <xsl:copy>
+                <xsl:apply-templates select="@*|node()"/>
+            </xsl:copy>
+        </xsl:template>
+
+        <xsl:template match="*" priority="1">
+            <xsl:element name="{local-name()}" namespace="urn:isbn:1-931666-22-9">
+                <xsl:namespace name="xlink" select="'http://www.w3.org/1999/xlink'"/>
+                <xsl:apply-templates select="@*|node()"/>
+            </xsl:element>
+        </xsl:template>
+
+    </xsl:stylesheet>
+
+XQuery Mappings
+...............
+
+XQuery transformations consist of a list of mappings from the source document to the transformed output. They are best
+suited to building completely new EAD documents from arbitrary input XML. Each mapping consists of four fields:
+
+target-path
+  an XPath specifying where to create a node
+
+target-node
+  the local name or, when prefixed by the ``@`` symbol, attribute name to create within the target-path
+
+source-node
+  an XPath expression pointing to a node within the source document
+
+value
+  an XPath expression giving the value of the target node, given the source node as context. For example,
+  the expression ``text()`` would return the text value of the source node, whereas a quoted string such
+  as ``"Some text"`` would give a literal value.
+
+Documents should be built by adding mappings in hierarchical order.
+
+**TIPS:**
+
+To paste a complete set of XQuery mappings from tab-separated values, switch the editor to XSLT mode, paste
+the TSV (including headers) and then switch back to XQuery mode. If the TSV was well formed things should look
+as expected.
+
 Ingest
 ======
 
