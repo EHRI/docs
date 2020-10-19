@@ -4,7 +4,7 @@ Institution File Data
 =====================
 
 Important Note: This documentation refers to functionality in a very early stage of development and is likely to be outdated or inaccurate!
-#######################################################################################################################################
+###########################################################################################################################################
 
 Introduction
 ============
@@ -12,8 +12,8 @@ Introduction
 This documentation describes EHRI's tools for managing, transforming and ingesting XML collection descriptions. In a
 nutshell, it allows administrators to:
 
-* configure harvesting of files from OAI-PMH endpoints
 * manually upload XML files
+* configure harvesting of files from OAI-PMH endpoints
 * validate XML against EHRI's EAD schema
 * transform arbitrary XML to EAD using either XSLT or tabular XQuery mappings
 * ingest the resulting EAD into the EHRI portal
@@ -22,39 +22,44 @@ nutshell, it allows administrators to:
 Overview of the Data Management UI
 ==================================
 
+.. image:: images/data-management-new-dataset.png
+    :alt: The data management default screen with new dataset form
+
+The first thing to do when visiting the Institution Data Management page is to create a new dataset. A dataset is a *set
+of XML files that come from the same place and are processed in the same way*. Although an institution could just have
+one dataset representing its files, there are several reasons why multiple datasets might be more appropriate:
+
+* there are a large number of files, for example, over 1,000. Large batches can take a long time to process or to ingest
+  into the portal so it is good practice to split them up info more managable chunks numbering, say, at most a few
+  hundred files apiece (or fewer if the files themselves are very large.)
+* the files arrive in different batches at different times.
+* the files represent distinct parts of an institutions holdings.
+* the files require processing in a different way.
+* the files come from a different source, e.g. one set is harvested via OAI-PMH and another uploaded manually.
+
+A new dataset requires an identifier that can only consist of lower-case characters, numbers and underscores. Except for
+these restrictions it is arbitrary, but **cannot be changed later.**
+
+The dataset name is also arbirary but can be changed later, as can the type. Notes can be used to detail the source of
+the files for future reference.
+
+Once a new dataset has been created the dataset UI is shown.
+
+
+
 .. image:: images/data-management-overview.png
-    :alt: The data management UI
+    :alt: The dataset UI
 
-The data management UI has four tabs:
+The dataset UI has three tabs:
 
-Harvesting
-  For harvesting and listing files sourced from OAI-PMH endpoints. In the future, ResourceSync may also be supported.
+Tab 1: Harvested Data or Uploads (depending on the dataset type)
+  The first tab shows an (initially empty) list of input files, either harvested or uploaded manually.
 
-Uploaded Files
-  Where metadata files not obtained via harvesting can be uploaded, viewed and validated.
-
-Transformation
+Tab 2: Transformation
   Where XSLT or XPath transformations can be managed, created and applied to either harvested or uploaded files.
 
-Ingest
+Tab 3: Ingest
   Where the results of transformations can be ingested into the portal.
-
-A note about file "stages"
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-There are *three* types of file in the management UI:
-
-Harvested
-  Files harvested from a third-party
-
-Uploaded
-  Files uploaded manually by EHRI admins
-
-Ingest
-  Files prepared for ingest
-
-To get files into this last stage they are transformed from either the harvest or upload stages. If no changed are
-required the files will simply be copied.
 
 
 Harvesting
@@ -63,8 +68,7 @@ Harvesting
 .. image:: images/data-management-harvesting.png
     :alt: The data management harvesting tab
 
-At present the harvesting tab only supports harvesting files via the OAI-PMH protocol. To do so, click on the
-"Harvest Files..." button and fill in the three fields required to describe the endpoint. These are:
+At present the source tab, for harvesting datasets, only supports harvesting files via the OAI-PMH protocol. To do so, click on the "Harvest Files..." button and fill in the three fields required to describe the endpoint. These are:
 
 OAI-PMH endpoint URL
   The address of the OAI-PMH server, without any parameters.
@@ -87,8 +91,18 @@ Uploading
 .. image:: images/data-management-upload.png
     :alt: The data management upload tab
 
-The Uploaded Files tab shows files manually uploaded to the system and can be previewed, validated, deleted or
-downloaded.
+For upload datasets the source tab shows an "Upload Files..." button. You can also drag-and-drop files onto the list
+pane to upload them to the system.
+
+Previewing Files
+================
+
+.. image:: images/data-management-preview.png
+    :alt: Previewing a source file
+
+When clicking on an item in the file list the contents will be shown in the preview pane. Note: large files will be
+truncated. The preview will automatically validate the file's contents against EHRI's EAD schema and errors will be
+shown along with the contents.
 
 Transformation
 ==============
@@ -104,6 +118,9 @@ selected file unchanged.
 
 Once a set of transformations has been enabled it can be run on the contents of either the Harvest or Upload stages by
 clicking the "Convert Files..." button and selecting one or both stages as an input.
+
+Note: if the source files do not require any transformation the convert button will simply copy them to the ingest
+workspace unchanged.
 
 Editing transformations or creating new ones
 ============================================

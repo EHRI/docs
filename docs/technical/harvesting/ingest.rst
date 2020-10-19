@@ -1,5 +1,5 @@
-Harvesting
-==========
+Ingesting Harvested Metadata
+============================
 
 To ingest the harvested metadata into the portal, 
 

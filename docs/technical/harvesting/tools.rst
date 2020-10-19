@@ -1,5 +1,5 @@
-Harvesters
-==========
+Harvesting Tools
+================
 
 For the data integration we first need to get the data on the server. We use two kind of harvesters: an open source harvester that follows the OAI-PMH protocol, `shell-oaiharvester <https://github.com/wimmuskee/shell-oaiharvester>`_. Within the project some institution did not provide a PMH endpoint. We developed a harvester for the `ResourceSync Framework <http://www.openarchives.org/rs/toc>`_, which can be found at the EHRI github `resydes repository <https://github.com/EHRI/resydes>`_. 
 
