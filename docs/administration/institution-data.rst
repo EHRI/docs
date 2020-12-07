@@ -1,10 +1,10 @@
 
-=====================
-Institution File Data
-=====================
+===================
+Importing EAD Files
+===================
 
-Important Note: This documentation refers to functionality in a very early stage of development and is likely to be outdated or inaccurate!
-###########################################################################################################################################
+.. role:: alert-danger
+:alert-danger:`Important Note: This documentation refers to functionality at an early stage of development and may be outdated or inaccurate!`
 
 Introduction
 ============
@@ -18,14 +18,20 @@ nutshell, it allows administrators to:
 * transform arbitrary XML to EAD using either XSLT or tabular XQuery mappings
 * ingest the resulting EAD into the EHRI portal
 
+Accessing the EAD Manager
+=========================
 
-Overview of the Data Management UI
-==================================
+The EAD Manager can be accessed via the "Ingest" section on the institutions admin page. 
+
+
+
+Overview of the EAD Manager
+===========================
 
 .. image:: images/data-management-new-dataset.png
     :alt: The data management default screen with new dataset form
 
-The first thing to do when visiting the Institution Data Management page is to create a new dataset. A dataset is a *set
+The first thing to do when visiting the EAD Manager is to create a new dataset. A dataset is a *set
 of XML files that come from the same place and are processed in the same way*. Although an institution could just have
 one dataset representing its files, there are several reasons why multiple datasets might be more appropriate:
 
@@ -209,5 +215,7 @@ These parameters currently consist of:
 * Tolerant: allows individual files in a batch to have validation errors without the whole batch failing.
 * Commit: actually commits the changes to the database. If left unchecked (the default) the ingest is effectively a
   dry-run.
+* Properties File: this allows uploading a properties file which can control how EAD fields map to portal internal
+  database fields. **This should only be used for compatibility with legacy data.**
 * Log message: a log message to be associated with the ingest operation.
 

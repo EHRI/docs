@@ -1,6 +1,10 @@
 EAD Ingest
 ==========
 
+.. role:: alert-danger
+:alert-danger:`Note: this method of importing EAD is deprecated in favour of using the` `EAD Manager <institution-data.html>`__.
+
+
 EHRI administrators can ingest EAD into the portal via a web interface. Behind the scenes the process is the same as
 that documented in the `backend ingest section <../technical/backend/ingest.html>`_ but using the web interface does
 more, as described below.

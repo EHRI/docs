@@ -29,3 +29,7 @@ a:hover {
 .wy-menu-vertical a:active {
     background-color: #9B59B6;
 }
+
+.alert-danger {
+    color: #f00;
+}
