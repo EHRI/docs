@@ -13,7 +13,7 @@ This documentation describes EHRI's tools for managing, transforming and ingesti
 nutshell, it allows administrators to:
 
 * manually upload XML files
-* configure harvesting of files from OAI-PMH endpoints
+* configure harvesting of files from OAI-PMH or ResourceSync endpoints
 * validate XML against EHRI's EAD schema
 * transform arbitrary XML to EAD using either XSLT or tabular XQuery mappings
 * ingest the resulting EAD into the EHRI portal
@@ -49,6 +49,18 @@ these restrictions it is arbitrary, but **cannot be changed later.**
 The dataset name is also arbitrary but can be changed later, as can the type. Notes can be used to detail the source of
 the files for future reference.
 
+The dataset type sets where the input files come from:
+
+Uploads
+    The files will be uploaded by the user from their local computer
+
+OAI-PMH
+    The files will be harvested from an `OAI-PMH <https://www.openarchives.org/pmh/>`__ endpoint
+
+ResourceSync
+    The files will be downloaded via an `OAI ResourceSync <http://www.openarchives.org/rs/toc>`__ capability list URL
+
+
 Once a new dataset has been created the dataset UI is shown.
 
 
@@ -58,7 +70,7 @@ Once a new dataset has been created the dataset UI is shown.
 
 The dataset UI has three tabs:
 
-Tab 1: Harvested Data or Uploads (depending on the dataset type)
+Tab 1: Inputs: Harvested Data or Uploads (depending on the dataset type)
   The first tab shows an (initially empty) list of input files, either harvested or uploaded manually.
 
 Tab 2: Transformation
@@ -69,13 +81,36 @@ Tab 3: Ingest
   be valid EHRI-profile EAD XML which can be ingested into the portal database.
 
 
-Harvesting
+The Inputs
 ==========
 
-.. image:: images/data-management-harvesting.png
-    :alt: The data management harvesting tab
+The input tab shows a list of "raw", untransformed input files.
 
-At present the source tab, for harvesting datasets, only supports harvesting files via the OAI-PMH protocol. To do so, click on the "Harvest Files..." button and fill in the three fields required to describe the endpoint. These are:
+.. image:: images/data-management-preview.png
+    :alt: Previewing a source file
+
+When clicking on an item in the file list the contents will be shown in the preview pane. Note: large files will be
+truncated. The preview will automatically validate the file's contents against EHRI's EAD schema and errors will be
+shown along with the contents.
+
+How files get into the inputs tab depends on the type of dataset you selected:
+
+Uploading Files
+---------------
+
+.. image:: images/data-management-upload.png
+    :alt: The data management upload tab
+
+For upload datasets the source tab shows an "Upload Files..." button. You can also drag-and-drop files onto the list
+pane to upload them to the system.
+
+OAI-PMH Harvesting
+------------------
+
+.. image:: images/data-management-harvesting.png
+    :alt: The data management input tab for an OAI-PMH dataset
+
+To harvest files via OAI-PMH click on the "Harvest Files..." button and fill in the three fields required to describe the endpoint. These are:
 
 OAI-PMH endpoint URL
   The address of the OAI-PMH server, without any parameters.
@@ -91,28 +126,25 @@ the right data formats etc. Then, clicking the "Harvest Endpoint" button will at
 
 Fetched files are displayed in a table and can be previewed, validated, deleted or downloaded.
 
+ResourceSync
+------------
 
-Uploading
-=========
+.. image:: images/data-management-resourcesync.png
+    :alt: The data management input tab for a ResourceSync dataset
 
-.. image:: images/data-management-upload.png
-    :alt: The data management upload tab
+At present, fetching files via ResourceSync requires knowing the URL of the *capabilitylist.xml* document that, in turn, contains links to the actual file URLs. It is not sufficient to put the URL of the general ResourceSync directory containing the root sitemap (this might be changed in future.) 
 
-For upload datasets the source tab shows an "Upload Files..." button. You can also drag-and-drop files onto the list
-pane to upload them to the system.
+To obtain files via ResourceSync click on the "Sync Files..." button and put in the URL of the *capabilitylist.xml*. To
+perform selective syncing via the files' paths you can also add a regular expression filter. If the filter is present
+it's URL must match to be included in the sync.
 
-Previewing Files
-================
+Clicking the "Test Endpoint" button with the parameters provided will check the endpoint exists and supports
+the right data formats etc. Then, clicking the "Sync Endpoint" button will attempt to fetch the files.
 
-.. image:: images/data-management-preview.png
-    :alt: Previewing a source file
 
-When clicking on an item in the file list the contents will be shown in the preview pane. Note: large files will be
-truncated. The preview will automatically validate the file's contents against EHRI's EAD schema and errors will be
-shown along with the contents.
 
-Transformation
-==============
+Data Transformation or Enhancement
+==================================
 
 .. image:: images/data-management-transformations.png
     :alt: The data management transformation tab
