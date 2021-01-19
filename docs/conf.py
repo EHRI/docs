@@ -44,7 +44,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'EHRI Documentation'
-copyright = u'2018, The EHRI Consortium'
+copyright = u'2021, The EHRI Consortium'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
