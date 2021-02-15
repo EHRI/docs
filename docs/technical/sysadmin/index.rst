@@ -20,6 +20,8 @@ EHRI currently uses AWS S3 for hosting certain data:
 - Omeka media, via the `S3 FileStorage Adapter plugin <https://github.com/EHRI/omeka-amazon-s3-storage-adapter>`_
 - Database backups
 
-We principally use the eu-west-1 region to keep data on European servers.
+We principally use the eu-central-1 region to keep data on European servers.
 
-Ask a member of the EHRI team for access.
+As of 2021 we also use Digital Ocean's Spaces storage service, via its S3-compatible API, for storing file-based metadata for ingest into the portal. These spaces are based in the AMS3 (Amsterdam) data centre.
+
+Ask a member of the EHRI team for access to AWS or DO resources.
