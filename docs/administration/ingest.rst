@@ -2,6 +2,7 @@ EAD Ingest
 ==========
 
 .. role:: alert-danger
+
 :alert-danger:`Note: this method of importing EAD is deprecated in favour of using the` `EAD Manager <institution-data.html>`__.
 
 

@@ -1,5 +1,5 @@
 SKOS Ingest
-==========
+===========
 
 Users with the administrator permissions can update a vocabulary by importing a RDF-XML SKOS file. On the right
 hand side of the vocabulary page you'll see this section of the sidebar:

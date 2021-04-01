@@ -1,10 +1,11 @@
-
-===================
-Importing EAD Files
-===================
+*********************************
+Managing XML Datasets for Ingest
+*********************************
 
 .. role:: alert-danger
+
 :alert-danger:`Important Note: This documentation refers to functionality at an early stage of development and may be outdated or inaccurate!`
+
 
 Introduction
 ============
@@ -181,7 +182,7 @@ Bottom right pane
 Once a transformation has been edited to your satisfaction the Save button will update it.
 
 XSLT
-....
+----
 
 XSLT transformations must be complete XSLT 2.0 stylesheets, and are best suited to making small changes to
 documents. A minimal example that adds the EAD namespace attribute value ``urn:isbn:1=931666`` would be::
@@ -205,7 +206,7 @@ documents. A minimal example that adds the EAD namespace attribute value ``urn:i
     </xsl:stylesheet>
 
 XQuery Mappings
-...............
+---------------
 
 XQuery transformations consist of a list of mappings from the source document to the transformed output. They are best
 suited to building completely new EAD documents from arbitrary input XML. Each mapping consists of four fields:
