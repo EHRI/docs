@@ -5,8 +5,10 @@
 Welcome to the EHRI documentation
 =================================
 
-Welcome to the EHRI documentation pages. This documentation is intended for people working on the EHRI project or
-affiliated with the EHRI consortium. For general information about the EHRI project please go to:
+Welcome to the EHRI documentation pages. This documentation is intended for people working on the EHRI project
+or using using related tools.
+
+For general information about the EHRI project please go to:
 
  - The `EHRI Project Homepage <https://ehri-project.eu>`_
  - The `EHRI Portal <https://portal.ehri-project.eu>`_
@@ -19,6 +21,14 @@ For EHRI staff and administrators:
    :maxdepth: 2
 
    administration/index
+
+For users of the Omeka-based TEI digital edition platform
+---------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   editions/index
 
 For developers and system administrators:
 -----------------------------------------
