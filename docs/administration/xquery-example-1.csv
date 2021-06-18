@@ -1,0 +1,21 @@
+target-path,target-node,source-node,value
+/,ead,.,
+/ead/,eadheader,.,
+/ead/eadheader/,eadid,.,“example-1”
+/ead/eadheader/eadid/,@countrycode,.,“GB”
+/ead/eadheader/,filedesc,.,
+/ead/eadheader/filedesc/,titlestmt,.,
+/ead/eadheader/filedesc/titlestmt/,titleproper,.,“Example EAD”
+/ead/,archdesc,.,
+/ead/archdesc/,@level,.,“fonds”
+/ead/archdesc/,did,.,
+/ead/archdesc/did/,unitid,.,“example-1”
+/ead/archdesc/did/,unitdate,.,“2021-06-01”
+/ead/archdesc/did/,unittitle,.,“Example EAD”
+/ead/archdesc/did/,physdesc,.,
+/ead/archdesc/did/physdesc/,@label,.,“Extent”
+/ead/archdesc/did/physdesc/,extent,.,“1 scrap of paper”
+/ead/archdesc/,scopecontent,.,
+/ead/archdesc/scopecontent/,p,.,“Merely an example”
+/ead/archdesc/,accessrestrict,.,
+/ead/archdesc/accessrestrict/,p,.,“None”
