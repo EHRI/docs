@@ -221,6 +221,32 @@ To paste a complete set of XQuery mappings from tab-separated values, switch the
 the TSV (including headers) and then switch back to XQuery mode. If the TSV was well formed things should look
 as expected.
 
+Transformation Parameters
+-------------------------
+
+If a transformation has the ``parameters`` field checked it means that a set of values will be provided to the
+transformer at conversion time. For example, if an XSLT script includes the following parameter:
+
+.. code-block:: xml
+
+    <xsl:param name="some-param" select="'some-value'" />
+
+This parameter can be set for a given dataset by providing a JSON dictionary that includes a field named ``some-param``
+with a string value (though values don't have to be strings: ``xsd:number`` and ``xsd:boolean`` are also supported.) For
+example, to set the value to "``another-value``" provide the following JSON:
+
+.. code-block:: json
+    {
+        "some-param": "another-value"
+    }
+
+**Why JSON?** The conversion API uses JSON so sending parameters as JSON provides a
+way to ensure their format is valid. JSON also provides a succinct way of typing scalar values like strings, number and
+booleans.
+
+Transformation parameters work differently for XQuery mappings where they instead provide the ability to let the
+interpreter know about additional XML namespace prefixes that are in use in the source document.
+
 Ingest
 ======
 

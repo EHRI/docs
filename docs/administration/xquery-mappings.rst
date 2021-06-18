@@ -7,6 +7,9 @@ and tabular XQuery mappings. XSLT is more suitable for making small changes to d
 can use the more expressive programmatic syntax to perform more complex tasks in a slightly easier way (your mileage
 may vary though.) This documentation describes how tabular XQuery transformations are specified.
 
+.. image:: images/data-management-edit-transformation.png
+    :alt: The data management transformation editor with an XQuery mapping
+
 
 Each mapping consists of four fields:
 
@@ -44,7 +47,7 @@ That should generate output that looks like the following:
 
     <ead xmlns="urn:isbn:1-931666-22-9">
       <eadheader>
-        <eadid countrycode="US">example-1</eadid>
+        <eadid countrycode="GB">example-1</eadid>
         <filedesc>
           <titlestmt>
             <titleproper>Example EAD</titleproper>
@@ -82,3 +85,18 @@ Now, put actual values in the third ``source-node`` column to reference the sour
 column (in this case just ``text()``) to say what we want to do with the node.
 
 Although this example is simple, these columns accept any XQuery expressions so can be as complicated as you need.
+
+XQuery transformation parameters
+================================
+
+Unlike XSLT transformations, the JSON-format parameter map can be given for specific dataset transformations doesn't
+provide values that are readable by XQuery expressions. It _can_ however be used to provide additional namespace
+prefixes that can be referenced in the ``source-node`` expressions. For example, the given JSON parameter map:
+
+.. code-block:: json
+
+    {
+        "xlink": "http://www.w3.org/1999/xlink"
+    }
+
+would enable yuo to use expressions like ``//xlink:href`` in the ``source-node`` field.
