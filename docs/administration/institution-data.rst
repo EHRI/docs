@@ -259,17 +259,23 @@ file stages. Here, once again, files can be previewed, validated, deleted or dow
 Clicking the "Ingest Files..." button will open the ingest parameters window to import data into the portal.
 These parameters currently consist of:
 
-* Allow updates: check this option if you expect the ingested EAD to modify existing database items. If left unchecked
+Allow updates
+  check this option if you expect the ingested EAD to modify existing database items. If left unchecked
   the import will report an error if an item is updated.
-* Tolerant: allows individual files in a batch to have validation errors without the whole batch failing.
-* Use source file ID as well as language code to identify descriptions: if checked an EAD will only update an existing
+Tolerant
+  allows individual files in a batch to have validation errors without the whole batch failing.
+Use source file ID
+  if checked an EAD will only update an existing
   description if *both* the language and source file ID (derived from the EAD ID) match. This
   provides the ability to import multiple descriptions in the same language, providing the source file ID differs. The
   default behaviour is to update existing descriptions that match the language of the files being ingested and ignore the
   source file ID.
-* Properties File: this allows uploading a properties file which can control how EAD fields map to portal internal
+Properties File
+  this allows uploading a properties file which can control how EAD fields map to portal internal
   database fields. **This should only be used for compatibility with legacy data.**
-* Log message: a log message to be associated with the ingest operation.
-* Commit: actually commits the changes to the database. If left unchecked (the default) the ingest is effectively a
+Log message
+  a log message to be associated with the ingest operation.
+Commit
+  actually commits the changes to the database. If left unchecked (the default) the ingest is effectively a
   dry-run.
 
