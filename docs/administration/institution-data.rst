@@ -29,9 +29,6 @@ The EAD Manager can be accessed via the "Ingest" section on the institutions adm
 Overview of the EAD Manager
 ===========================
 
-.. image:: images/data-management-new-dataset.png
-    :alt: The data management default screen with new dataset form
-
 The first thing to do when visiting the EAD Manager is to create a new dataset. A dataset is a *set
 of XML files that come from the same place and are processed in the same way*. Although an institution could just have
 one dataset representing its files, there are several reasons why multiple datasets might be more appropriate:
@@ -43,6 +40,9 @@ one dataset representing its files, there are several reasons why multiple datas
 * the files represent distinct parts of an institutions holdings.
 * the files require processing in a different way.
 * the files come from a different source, e.g. one set is harvested via OAI-PMH and another uploaded manually.
+
+.. image:: images/data-management-new-dataset.png
+    :alt: The data management default screen with new dataset form
 
 A new dataset requires an identifier that can only consist of lower-case characters, numbers and underscores. Except for
 these restrictions it is arbitrary, but **cannot be changed later.**
@@ -61,10 +61,30 @@ OAI-PMH
 ResourceSync
     The files will be downloaded via an `OAI ResourceSync <http://www.openarchives.org/rs/toc>`__ capability list URL
 
+There are some other parameters on the dataset form that can normally be left alone:
+
+Fonds ID
+  This tells the importer that the dataset should be imported into one specific top-level documentary unit
+  rather than the institution. Typically this would be used with datasets consisting of a single EAD.
+
+Synchronise fonds with dataset
+  In conjunction with the fonds ID, this tells the importer to remove any documentary units not represented
+  in the import set and attempt to synchronise any user-generated data. This would typically be used when a
+  fonds has undergone a large reorganisation necessitating the removal of many units. Synchronisation only
+  works when an institution has unique identifiers that are consistent before and after import.
+
+Content-Type Override
+  By default it is assumed that datasets are XML data with a UTF-8 character set, or "text/xml; charset=utf-8"
+  in internet media-type parlance.
+  When dealing with a dataset that is not encoded as UTF-8 however a valid internet media type value can be
+  used instead, e.g. "text/xml; charset=iso-8859-1". UTF-8 is preferred since it handles a much wider range of
+  characters. Encoding issues usually reveal themselves as non-ASCII characters with diacritics such as umlauts
+  being garbled.
+
+The dataset view
+~~~~~~~~~~~~~~~~
 
 Once a new dataset has been created the dataset UI is shown.
-
-
 
 .. image:: images/data-management-overview.png
     :alt: The dataset UI
