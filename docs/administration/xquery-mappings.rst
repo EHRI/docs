@@ -100,3 +100,66 @@ prefixes that can be referenced in the ``source-node`` expressions. For example,
     }
 
 would enable yuo to use expressions like ``//xlink:href`` in the ``source-node`` field.
+
+Tips and tricks
+===============
+
+Split a string containing multiple values into a set of separate nodes:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this case we have a node containing several values separated by a semi-colon:
+
+.. code-block:: xml
+
+    <indexentry>
+        <geogname>Deutschland; Großbritannien; Kanada; Frankfurt am Main; Mannheim</geogname>
+    </indexentry>
+
+We want to break this into several individual nodes:
+
+.. code-block:: xml
+
+    <controlaccess>
+        <geogname>Deutschland</geogname>
+        <geogname>Großbritannien</geogname>
+        <geogname>Kanada</geogname>
+        <geogname>Frankfurt am Main</geogname>
+        <geogname>Mannheim</geogname>
+    </controlaccess>
+
+For these two nodes we could use the following mappings:
+
+.. csv-table:: XQuery tokenization example
+   :file: xquery-tokenize-example.csv
+   :header-rows: 1
+   :class: longtable
+   :widths: 1 1 1 1
+
+That is:
+
+ - create a node for the `controlaccess` (no value is needed here since it's a parent node)
+ - create a node for the `geogname` values
+ - for the geogname path, split the text value using `fn:tokenize(/path/to/node, delimiter)`, where the path points to the source path
+   and the delimiter is a ";"
+ - use "." for the value since we're already dealing with strings and not nodes
+
+Gotchas
+=======
+
+Unfortunately there are quite a lot of ways to get difficult-to-understand errors from the mapping process due to the
+way the table is evaluated against the source document. Some example and possible fixes follow:
+
+Error: mapping-error at /ead: mapping-error at /ead/eadheader: err:XPST0003 at /ead/eadheader/eadid: Unknown function or expression.
+  this error resulting from the use of unicode quotes, specifically the unicode “right double quotation mark“ symbol
+  instead of "normal ascii double quotes", that in turn resulted from copying and pasting to and from a text editor
+  that sneakily replaced them. This was hard to spot. More generally, and XPST0003 error is likely to be the result
+  of the fourth column - the output value - being a malformed XQuery expression or mistyped function.
+
+  **FIX**: be careful that quotes are ascii quotes and no other typos exist in the 4th column
+
+Cannot get the value of an attribute with a path like `/oai/description/@type`.
+  Use a "`.`" instead of "`text()`" as the value expression since we want the verbatim value, which is already
+  a string and not a node.
+
+Target paths are missing from output.
+  Make sure that the target path (first column) value ends with a forward-slash: "/".

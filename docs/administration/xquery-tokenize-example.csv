@@ -1,0 +1,3 @@
+target-path,target-node,source-node,value
+/ead/archdesc/,controlaccess,.,
+/ead/archdesc/controlaccess/,geogname,"fn:tokenize(//indexentry/geogname/text(), ""; "")",.

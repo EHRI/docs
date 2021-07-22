@@ -262,3 +262,6 @@ texinfo_documents = [
 # Override certain RTD theme elements
 def setup(app):
    app.add_stylesheet("ehri-theme.css")
+
+# Disable smartquotes since this hinders copy-and-paste:
+smartquotes = False
