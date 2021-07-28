@@ -256,6 +256,7 @@ with a string value (though values don't have to be strings: ``xsd:number`` and 
 example, to set the value to "``another-value``" provide the following JSON:
 
 .. code-block:: json
+
     {
         "some-param": "another-value"
     }
