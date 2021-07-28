@@ -74,14 +74,14 @@ REST service within the standalone Neo4j server.
 
 ::
 
-    curl -L -0 http://neo4j.com/artifact.php?name=neo4j-community-3.2.3-unix.tar.gz | tar zx
+    curl -L -0 http://neo4j.com/artifact.php?name=neo4j-community-3.5.21-unix.tar.gz | tar zx
 
 We'll need to refer to the installation location a lot so save it as an
 environment variable:
 
 ::
 
-    export NEO4J_HOME=neo4j-community-3.2.3
+    export NEO4J_HOME=neo4j-community-3.5.21
 
 Once both the EHRI server code has been compiled and Neo4j standalone
 has been downloaded and extracted, we can install the former into the
