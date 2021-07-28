@@ -1,9 +1,19 @@
-TEI Digital Editions Plugin
-===========================
+EHRI Digital Editions - Documentation
+=====================================
 
-The TEI Digital Editions platform is a plugin for `Omeka Classic <https://omeka.org/classic/>`_ that facilitates the import
-of data using `Text Encoding Initiative (TEI) <https://tei-c.org/>`_ format XML documents. The plugin also integrates with
-the popular `Neatline <https://neatline.org/>`_ plugin to provide certain map visualisations.
+A key goal of the EHRI online editions platform is to develop annotated
+online editions of documents as a new way of presenting digital archival
+content. The editions are facilitated by new EHRI tools for digital
+editing and use and improve upon the EHRI vocabularies and descriptions
+to generate contextual information displayed to users.
+
+Compared to analogue editions, the freely accessible online editions
+enable new research approaches and a different reading of the documents.
+Through metadata-tagging and geo-referencing, the editions do not
+exclusively follow thematic or chronological patterns; they are
+searchable and filtered for specific thematic or spatial interests at
+any time and are contextualised through interactive maps. EHRI platform
+hopes to support and possibly host third party projects.
 
 Contents:
 
@@ -11,10 +21,10 @@ Contents:
    :maxdepth: 1
    :glob:
 
-   install/index
-   structure/index
-   functionality/index
-   configuration/index
+   editorial-process
+   tei
+   tools
+   installation
 
    *
 

@@ -33,3 +33,12 @@ a:hover {
 .alert-danger {
     color: #f00;
 }
+
+/** Figures and captions **/
+.figure img {
+    margin-bottom: 1rem;
+}
+
+.figure .caption .caption-text {
+    font-size: .8rem;
+}
