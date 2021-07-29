@@ -11,9 +11,10 @@ Contents:
    users
    groups
    permissions
-   ingest
-   skos-ingest
    institution-data
+   xquery-mappings
+   skos-ingest
+   ingest
 
    *
 
