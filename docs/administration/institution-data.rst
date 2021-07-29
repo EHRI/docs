@@ -2,11 +2,6 @@
 Managing XML Datasets for Ingest
 *********************************
 
-.. role:: alert-danger
-
-:alert-danger:`Important Note: This documentation refers to functionality at an early stage of development and may be outdated or inaccurate!`
-
-
 Introduction
 ============
 
