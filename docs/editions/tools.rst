@@ -101,15 +101,11 @@ To display recent items formatted according to the editions layout:
     Fig. 2 Display of recently added items
 
 To include an index based on the metadata ingested from the TEI
-documents and used for faceted browse:
-
-.. code-block::
+documents and used for faceted browse::
 
     [editions_index element=[Metadata element]]
 
-For instance:
-
-.. code-block::
+For instance::
 
     [editions_index element=Subject]
 
@@ -128,9 +124,7 @@ The separate `EHRI Omeka plugin <https://github.com/EHRI/ehri-omeka-plugin>`_
 integrates EHRI data into Omeka by adding
 a shortcode to display short information about EHRI items such as
 collection holding institutions or collection descriptions. For
-instance:
-
-.. code-block::
+instance::
 
     [ehri_item_data id="us-005578"]
 

@@ -34,6 +34,21 @@ encoded in two forms in the TEI Header
    **<repository>** and **<collection>**, among other structured
    information, for example:
 
+.. code-block:: xml
+
+    <msDesc>
+        <msIdentifier>
+            <country ref="https://portal.ehri- project.eu/countries/cz">
+                Tschechische Republik</country>
+            <repository ref="https://portal.ehri- project.eu/institutions/cz-002286">
+                Nationalarchiv Prag</repository>
+            <collection ref="https://portal.ehri-project.eu/units/cz- 002286-1075">
+                Innenministerium (225)</collection>
+            <idno>1936-1940, Sign. X/R/3/2, K. 1186-16, Nr. 11651</idno>
+        </msIdentifier>
+        <physDesc/>
+    </msDesc>
+
 Referencing vocabularies, main elements
 =======================================
 
