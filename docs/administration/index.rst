@@ -1,13 +1,17 @@
 Portal Administrator documentation
 ==================================
 
-Contents:
+Documentation for users of the EHRI Portal:
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
+   create-profile
+   first-look
    access
+   create-institution
+   create-description
    users
    groups
    permissions

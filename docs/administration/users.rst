@@ -1,6 +1,6 @@
-=====
-Users
-=====
+**************
+Managing Users
+**************
 
 Users are managed by from `users page <https://portal.ehri-project.eu/admin/users>`_ on the admin
 site.

@@ -1,8 +1,8 @@
 .. _permissions:
 
-===========
-Permissions
-===========
+*************************
+Understanding Permissions
+*************************
 
 A large amount of the functionality of the EHRI backend concerns setting, enforcing, and validating permissions for what a given user or group of users are allowed to do to certain items in the database. Due to certain inescapable requirements, these functionalities ended up being quite complex. This document is intended to explain how and why the permission system works the way it does. First, some terminology:
 

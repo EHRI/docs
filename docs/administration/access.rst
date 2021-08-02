@@ -1,3 +1,5 @@
+.. _access:
+
 Accessing the Portal Administration pages
 =========================================
 
