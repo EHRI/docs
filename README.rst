@@ -6,9 +6,9 @@ technical docs relating to tool development and maintenance.
 
 To update these docs you can either:
 
- * make changes directly on Github (ask for the repo rights first)
- * or, for more significant changes, checkout the code and build the site locally,
-   then create a pull request
+* make changes directly on Github (ask for the repo rights first)
+* or, for more significant changes, checkout the code and build the site locally,
+  then create a pull request
 
 To do this you need to install the Python dependencies:
 
