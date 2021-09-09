@@ -55,7 +55,9 @@
           <li><a href="#resource_DocumentaryUnitResource_createChild_POST"><abbr title="POST /classes/DocumentaryUnit/{id}"><span class="sideoverflow">POST /classes/DocumentaryUnit/{id}</span></abbr></a></li>
           <li><a href="#resource_DocumentaryUnitResource_update_PUT"><abbr title="PUT /classes/DocumentaryUnit/{id}"><span class="sideoverflow">PUT /classes/DocumentaryUnit/{id}</span></abbr></a></li>
           <li><a href="#resource_DocumentaryUnitResource_exportEad_GET"><abbr title="GET /classes/DocumentaryUnit/{id}/ead"><span class="sideoverflow">GET /classes/DocumentaryUnit/{id}/ead</span></abbr></a></li>
+          <li><a href="#resource_DocumentaryUnitResource_deleteChildren_DELETE"><abbr title="DELETE /classes/DocumentaryUnit/{id}/list"><span class="sideoverflow">DELETE /classes/DocumentaryUnit/{id}/list</span></abbr></a></li>
           <li><a href="#resource_DocumentaryUnitResource_listChildren_GET"><abbr title="GET /classes/DocumentaryUnit/{id}/list"><span class="sideoverflow">GET /classes/DocumentaryUnit/{id}/list</span></abbr></a></li>
+          <li><a href="#resource_DocumentaryUnitResource_rename_POST"><abbr title="POST /classes/DocumentaryUnit/{id}/rename"><span class="sideoverflow">POST /classes/DocumentaryUnit/{id}/rename</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -85,7 +87,6 @@ Item lists are paginated using the <code>page</code> parameter.
 <p>
 The page, limit, and total number of items is returned in the Content-Range response
 header in the form:
-<p>
 <pre><code>page=1; count=20; total=50</code></pre>
 
 If the header <code>X-Stream</code> is set to <code>true</code>
@@ -292,14 +293,14 @@ Content-Type: application/json
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td><span class="parameter-description">The parent resource ID.</span></td>
+            <td><span class="parameter-description">the parent resource ID.</span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
             <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">accessibleTo</span></td>
             <td>query</td>
-            <td><span class="parameter-description">The users/groups who can access this item.</span></td>
+            <td><span class="parameter-description">the users/groups who can access this item.</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
             <td><span class="parameter-multivalued">yes</span></td>
           </tr>
@@ -320,7 +321,7 @@ Content-Type: application/json
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="request-description">A resource bundle.</span></td>
+            <td><span class="request-description">a resource bundle.</span></td>
           </tr>
           </tbody>
         </table>
@@ -550,6 +551,102 @@ Content-Type: text/xml
         </div>
       </div>
 
+      <div id="resource_DocumentaryUnitResource_deleteChildren_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/classes/DocumentaryUnit/{id}/list <a href="../classes/DocumentaryUnit/{id}/list" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Delete all
+
+<p>
+Example:
+<pre>
+     <code>
+ curl -XDELETE -HX-User:admin <a target="_blank" href="http://localhost:7474/ehri/[RESOURCE]/[ID]/list">http://localhost:7474/ehri/[RESOURCE]/[ID]/list</a>
+     </code>
+ </pre></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">the parent resource ID</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">regex: [^/]+</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">all</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">descend into the hierarchy of any child items</span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">an ordered list of deleted item IDs</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/csv&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">text/csv</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /classes/DocumentaryUnit/{id}/list
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div id="resource_DocumentaryUnitResource_listChildren_GET">
         <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/classes/DocumentaryUnit/{id}/list <a href="../classes/DocumentaryUnit/{id}/list" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
@@ -578,14 +675,14 @@ Example:
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">the parent item</span></td>
             <td><span class="parameter-default-value">&nbsp;</span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">all</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">whether or not to fetch children-of-children (and so on)</span></td>
             <td><span class="parameter-default-value">false</span></td>
             <td><span class="parameter-constraints">boolean</span></td>
           </tr>
@@ -606,7 +703,7 @@ Example:
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">A list of serialized item representations</span></td>
+            <td><span class="response-description">a list of serialized item representations</span></td>
           </tr>
           </tbody>
         </table>
@@ -630,6 +727,111 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_DocumentaryUnitResource_rename_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/classes/DocumentaryUnit/{id}/rename <a href="../classes/DocumentaryUnit/{id}/rename" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">regex: [^/]+</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">check</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: text/plain&quot; HTTP header to specify this media type to the server."><span class="request-type">text/plain</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description"></span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/csv&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">text/csv</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /classes/DocumentaryUnit/{id}/rename
+Content-Type: text/plain
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
 Content-Type: application/json
 
                 <code class="prettyprint language-txt">

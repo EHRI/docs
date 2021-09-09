@@ -58,8 +58,6 @@
           <li><a href="#resource_GenericResource_exportDc_GET"><abbr title="GET /entities/{id}/dc"><span class="sideoverflow">GET /entities/{id}/dc</span></abbr></a></li>
           <li><a href="#resource_GenericResource_removeDemotion_DELETE"><abbr title="DELETE /entities/{id}/demote"><span class="sideoverflow">DELETE /entities/{id}/demote</span></abbr></a></li>
           <li><a href="#resource_GenericResource_addDemotion_POST"><abbr title="POST /entities/{id}/demote"><span class="sideoverflow">POST /entities/{id}/demote</span></abbr></a></li>
-          <li><a href="#resource_GenericResource_createDescription_POST"><abbr title="POST /entities/{id}/descriptions"><span class="sideoverflow">POST /entities/{id}/descriptions</span></abbr></a></li>
-          <li><a href="#resource_GenericResource_updateDescription_PUT"><abbr title="PUT /entities/{id}/descriptions"><span class="sideoverflow">PUT /entities/{id}/descriptions</span></abbr></a></li>
           <li><a href="#resource_GenericResource_events_GET"><abbr title="GET /entities/{id}/events"><span class="sideoverflow">GET /entities/{id}/events</span></abbr></a></li>
           <li><a href="#resource_GenericResource_links_GET"><abbr title="GET /entities/{id}/links"><span class="sideoverflow">GET /entities/{id}/links</span></abbr></a></li>
           <li><a href="#resource_GenericResource_permissionGrants_GET"><abbr title="GET /entities/{id}/permission-grants"><span class="sideoverflow">GET /entities/{id}/permission-grants</span></abbr></a></li>
@@ -67,8 +65,6 @@
           <li><a href="#resource_GenericResource_addPromotion_POST"><abbr title="POST /entities/{id}/promote"><span class="sideoverflow">POST /entities/{id}/promote</span></abbr></a></li>
           <li><a href="#resource_GenericResource_permissionGrantsAsScope_GET"><abbr title="GET /entities/{id}/scope-permission-grants"><span class="sideoverflow">GET /entities/{id}/scope-permission-grants</span></abbr></a></li>
           <li><a href="#resource_GenericResource_listVersions_GET"><abbr title="GET /entities/{id}/versions"><span class="sideoverflow">GET /entities/{id}/versions</span></abbr></a></li>
-          <li><a href="#resource_GenericResource_deleteDescription_DELETE"><abbr title="DELETE /entities/{id}/descriptions/{did}"><span class="sideoverflow">DELETE /entities/{id}/descriptions/{did}</span></abbr></a></li>
-          <li><a href="#resource_GenericResource_updateDescriptionWithId_PUT"><abbr title="PUT /entities/{id}/descriptions/{did}"><span class="sideoverflow">PUT /entities/{id}/descriptions/{did}</span></abbr></a></li>
           <li><a href="#resource_GenericResource_createAccessPoint_POST"><abbr title="POST /entities/{id}/descriptions/{did}/access-points"><span class="sideoverflow">POST /entities/{id}/descriptions/{did}/access-points</span></abbr></a></li>
           <li><a href="#resource_GenericResource_deleteAccessPoint_DELETE"><abbr title="DELETE /entities/{id}/descriptions/{did}/access-points/{apid}"><span class="sideoverflow">DELETE /entities/{id}/descriptions/{did}/access-points/{apid}</span></abbr></a></li>
           <li class="divider"></li>
@@ -92,7 +88,7 @@ regardless of their specific type.</p>
         <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/entities <a href="../entities" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Fetch a list of items by their ID.
-
+<p>
 Note: if <i>both</i> global IDs and graph IDs (GIDs) are given as query
 parameters, GIDs will be returned at the head of the response list.</p>
 
@@ -179,7 +175,7 @@ Content-Type: application/json
         <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/entities <a href="../entities" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Fetch a list of items by their ID.
-
+<p>
 Note: if <i>both</i> global IDs and graph IDs (GIDs) are given as query
 parameters, GIDs will be returned at the head of the response list.</p>
 
@@ -787,192 +783,6 @@ Content-Type: application/json
         </div>
       </div>
 
-      <div id="resource_GenericResource_createDescription_POST">
-        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/entities/{id}/descriptions <a href="../entities/{id}/descriptions" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Create a new description for this item.</p>
-
-        <table class="table resource-parameters">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><span class="parameter-name">id</span></td>
-            <td>path</td>
-            <td><span class="parameter-description">the item ID</span></td>
-            <td><span class="parameter-constraints">regex: [^/]+</span></td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table resource-request-body">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference">(custom)
-</span></td>
-            <td><span class="request-description">the description bundle</span></td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table resource-response-body">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference">(custom)
-</span></td>
-            <td><span class="response-description">the new description</span></td>
-          </tr>
-          </tbody>
-        </table>
-        <h4>Example</h4>
-
-        <div class="container-fluid example panel">
-          <div class="row panel-body">
-            <div class="col-md-6">
-              <h5>Request</h5>
-              <pre>
-POST /entities/{id}/descriptions
-Content-Type: application/json
-Accept: application/json
-
-                <code class="prettyprint language-txt">
-...
-                </code>
-              </pre>
-            </div>
-            <div class="col-md-6">
-              <h5>Response</h5>
-              <pre>
-HTTP/1.1 201 Created
-Content-Type: application/json
-
-                <code class="prettyprint language-txt">
-...
-                </code>
-              </pre>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="resource_GenericResource_updateDescription_PUT">
-        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/entities/{id}/descriptions <a href="../entities/{id}/descriptions" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Update a description belonging to the given item.</p>
-
-        <table class="table resource-parameters">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><span class="parameter-name">id</span></td>
-            <td>path</td>
-            <td><span class="parameter-description">the item ID</span></td>
-            <td><span class="parameter-constraints">regex: [^/]+</span></td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table resource-request-body">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference">(custom)
-</span></td>
-            <td><span class="request-description">the description bundle</span></td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table resource-response-body">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference">(custom)
-</span></td>
-            <td><span class="response-description">the new description</span></td>
-          </tr>
-          </tbody>
-        </table>
-        <h4>Example</h4>
-
-        <div class="container-fluid example panel">
-          <div class="row panel-body">
-            <div class="col-md-6">
-              <h5>Request</h5>
-              <pre>
-PUT /entities/{id}/descriptions
-Content-Type: application/json
-Accept: application/json
-
-                <code class="prettyprint language-txt">
-...
-                </code>
-              </pre>
-            </div>
-            <div class="col-md-6">
-              <h5>Response</h5>
-              <pre>
-HTTP/1.1 204 No Content
-Content-Type: application/json
-
-                <code class="prettyprint language-txt">
-...
-                </code>
-              </pre>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div id="resource_GenericResource_events_GET">
         <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/entities/{id}/events <a href="../entities/{id}/events" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
@@ -1149,7 +959,7 @@ Content-Type: application/json
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">the item ID</span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
           </tr>
           </tbody>
@@ -1371,7 +1181,7 @@ Content-Type: application/json
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">the item ID</span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
           </tr>
           </tbody>
@@ -1490,161 +1300,6 @@ Accept: */*
               <pre>
 HTTP/1.1 200 OK
 Content-Type: */*
-
-                <code class="prettyprint language-txt">
-...
-                </code>
-              </pre>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="resource_GenericResource_deleteDescription_DELETE">
-        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/entities/{id}/descriptions/{did} <a href="../entities/{id}/descriptions/{did}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Delete a description with the given ID, belonging to the given parent item.</p>
-
-        <table class="table resource-parameters">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><span class="parameter-name">did</span></td>
-            <td>path</td>
-            <td><span class="parameter-description">the description ID</span></td>
-            <td><span class="parameter-constraints">regex: [^/]+</span></td>
-          </tr>
-          <tr>
-            <td><span class="parameter-name">id</span></td>
-            <td>path</td>
-            <td><span class="parameter-description">the item ID</span></td>
-            <td><span class="parameter-constraints">regex: [^/]+</span></td>
-          </tr>
-          </tbody>
-        </table>
-        <h4>Example</h4>
-
-        <div class="container-fluid example panel">
-          <div class="row panel-body">
-            <div class="col-md-6">
-              <h5>Request</h5>
-              <pre>
-DELETE /entities/{id}/descriptions/{did}
-Content-Type: */*
-
-                <code class="prettyprint language-txt">
-...
-                </code>
-              </pre>
-            </div>
-            <div class="col-md-6">
-              <h5>Response</h5>
-              <pre>
-HTTP/1.1 204 No Content
-
-              </pre>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="resource_GenericResource_updateDescriptionWithId_PUT">
-        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/entities/{id}/descriptions/{did} <a href="../entities/{id}/descriptions/{did}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
-
-        <p>Update a description with the given ID, belonging to the given parent item.</p>
-
-        <table class="table resource-parameters">
-          <caption>Request Parameters</caption>
-          <thead>
-          <tr>
-            <th>name</th>
-            <th>type</th>
-            <th>description</th>
-            <th>constraints</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><span class="parameter-name">did</span></td>
-            <td>path</td>
-            <td><span class="parameter-description">the description ID</span></td>
-            <td><span class="parameter-constraints">regex: [^/]+</span></td>
-          </tr>
-          <tr>
-            <td><span class="parameter-name">id</span></td>
-            <td>path</td>
-            <td><span class="parameter-description">the item ID</span></td>
-            <td><span class="parameter-constraints">regex: [^/]+</span></td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table resource-request-body">
-          <caption>Request Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference">(custom)
-</span></td>
-            <td><span class="request-description">the description bundle</span></td>
-          </tr>
-          </tbody>
-        </table>
-
-        <table class="table resource-response-body">
-          <caption>Response Body</caption>
-          <thead>
-          <tr>
-            <th>media type</th>
-            <th>data type</th>
-            <th>description</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference">(custom)
-</span></td>
-            <td><span class="response-description">the new description</span></td>
-          </tr>
-          </tbody>
-        </table>
-        <h4>Example</h4>
-
-        <div class="container-fluid example panel">
-          <div class="row panel-body">
-            <div class="col-md-6">
-              <h5>Request</h5>
-              <pre>
-PUT /entities/{id}/descriptions/{did}
-Content-Type: application/json
-Accept: application/json
-
-                <code class="prettyprint language-txt">
-...
-                </code>
-              </pre>
-            </div>
-            <div class="col-md-6">
-              <h5>Response</h5>
-              <pre>
-HTTP/1.1 204 No Content
-Content-Type: application/json
 
                 <code class="prettyprint language-txt">
 ...

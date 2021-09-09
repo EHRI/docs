@@ -49,6 +49,7 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#resource_ImportResource_importCoreferences_POST"><abbr title="POST /import/coreferences"><span class="sideoverflow">POST /import/coreferences</span></abbr></a></li>
           <li><a href="#resource_ImportResource_importCsv_POST"><abbr title="POST /import/csv"><span class="sideoverflow">POST /import/csv</span></abbr></a></li>
           <li><a href="#resource_ImportResource_importEac_POST"><abbr title="POST /import/eac"><span class="sideoverflow">POST /import/eac</span></abbr></a></li>
           <li><a href="#resource_ImportResource_importEad_POST"><abbr title="POST /import/ead"><span class="sideoverflow">POST /import/ead</span></abbr></a></li>
@@ -72,14 +73,132 @@
 
       <p>Resource class for import endpoints.</p>
 
+      <div id="resource_ImportResource_importCoreferences_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/import/coreferences <a href="../import/coreferences" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Link items in a scope via an access point coreference table.
+<p>
+Each data row must consist of 2 columns:
+<ol>
+<li>the access point label (text string)
+<li>the target item ID
+</ol>
+<p>
+A single log item will be created for the entire CSV.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">commit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">actually change the graph</span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">scope</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">the id of the permission scope item</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">tolerant</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">don't abort on the first error</span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">the tabular data</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: text/csv&quot; HTTP header to specify this media type to the server."><span class="request-type">text/csv</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">an import log</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /import/coreferences
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div id="resource_ImportResource_importCsv_POST">
         <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/import/csv <a href="../import/csv" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Import a set of CSV files. See EAD handler for options and
-defaults but substitute text/csv for the input mimetype when
-a single file is POSTed.
-<p>
-Additional note: no handler class is required.</p>
+        <p></p>
 
         <table class="table resource-parameters">
           <caption>Request Parameters</caption>
@@ -136,6 +255,13 @@ Additional note: no handler class is required.</p>
             <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
+            <td><span class="parameter-name">tag</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">-</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
             <td><span class="parameter-name">tolerant</span></td>
             <td>query</td>
             <td><span class="parameter-description"></span></td>
@@ -154,6 +280,11 @@ Additional note: no handler class is required.</p>
           </tr>
           </thead>
           <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
           <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/octet-stream&quot; HTTP header to specify this media type to the server."><span class="request-type">application/octet-stream</span></abbr></td>
             <td><span class="datatype-reference">(custom)
@@ -198,7 +329,7 @@ Additional note: no handler class is required.</p>
               <h5>Request</h5>
               <pre>
 POST /import/csv
-Content-Type: application/octet-stream
+Content-Type: application/json
 Accept: application/json
 
                 <code class="prettyprint language-txt">
@@ -224,7 +355,7 @@ Content-Type: application/json
       <div id="resource_ImportResource_importEac_POST">
         <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/import/eac <a href="../import/eac" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Import EAC files. See EAD import for details.</p>
+        <p></p>
 
         <table class="table resource-parameters">
           <caption>Request Parameters</caption>
@@ -295,6 +426,13 @@ Content-Type: application/json
             <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
+            <td><span class="parameter-name">tag</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">-</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
             <td><span class="parameter-name">tolerant</span></td>
             <td>query</td>
             <td><span class="parameter-description"></span></td>
@@ -313,6 +451,11 @@ Content-Type: application/json
           </tr>
           </thead>
           <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
           <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/octet-stream&quot; HTTP header to specify this media type to the server."><span class="request-type">application/octet-stream</span></abbr></td>
             <td><span class="datatype-reference">(custom)
@@ -362,7 +505,7 @@ Content-Type: application/json
               <h5>Request</h5>
               <pre>
 POST /import/eac
-Content-Type: application/octet-stream
+Content-Type: application/json
 Accept: */*
 
                 <code class="prettyprint language-txt">
@@ -393,11 +536,11 @@ Content-Type: */*
 <li>a single EAD file</li>
 <li>multiple EAD files in an archive such as tar, tar.gz, or zip</li>
 <li>a plain test file containing local file paths</li>
+<li>a JSON object consisting of file-name/URL pairs</li>
 </ul>
 The Content-Type header is used to distinguish the contents.
 <p>
 The way you would run with would typically be:
-<p>
 <pre>
     <code>
      curl -X POST \
@@ -446,23 +589,21 @@ mode is to operate as a dry-run</span></td>
           <tr>
             <td><span class="parameter-name">handler</span></td>
             <td>query</td>
-            <td><span class="parameter-description">the fully-qualified handler class name
-(defaults to EadHandler)</span></td>
+            <td><span class="parameter-description">the fully-qualified handler class name (defaults to EadHandler)</span></td>
             <td><span class="parameter-default-value">&nbsp;</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">importer</span></td>
             <td>query</td>
-            <td><span class="parameter-description">the fully-qualified import class name
-(defaults to EadImporter)</span></td>
+            <td><span class="parameter-description">the fully-qualified import class name (defaults to EadImporter)</span></td>
             <td><span class="parameter-default-value">&nbsp;</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">lang</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">the default description language, if not inferrable from the data</span></td>
             <td><span class="parameter-default-value">eng</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
@@ -477,8 +618,7 @@ its contents will be used.</span></td>
           <tr>
             <td><span class="parameter-name">properties</span></td>
             <td>query</td>
-            <td><span class="parameter-description">a local file path pointing to an import properties
-configuration file.</span></td>
+            <td><span class="parameter-description">a local file path or URL pointing to an import properties configuration file.</span></td>
             <td><span class="parameter-default-value">&nbsp;</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
@@ -490,9 +630,30 @@ configuration file.</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
+            <td><span class="parameter-name">tag</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">if the data is a stream of XML a string &quot;tag&quot; can be
+provided to identify the source, e.g. the name of the file from
+which the stream derives. If a tag is not provided, or the
+input data is not an XML stream, the default value of
+&quot;-&quot; will be used</span></td>
+            <td><span class="parameter-default-value">-</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
             <td><span class="parameter-name">tolerant</span></td>
             <td>query</td>
             <td><span class="parameter-description">whether or not to die on the first validation error</span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">use-source-id</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">by default a description will update an existing description if it
+has the same language code. Setting this option to 'true' allows adding
+multiple descriptions in the same language by taking into account the
+value of the EAD ID.</span></td>
             <td><span class="parameter-default-value">false</span></td>
             <td><span class="parameter-constraints">boolean</span></td>
           </tr>
@@ -510,13 +671,18 @@ configuration file.</span></td>
           </thead>
           <tbody>
           <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="5" class="multi-row-description"><span class="request-description">file data containing one of: a single EAD file,
+multiple EAD files in an archive, a list of file URLs.
+The Content-Type header is used to distinguish
+the contents.</span></td>
+          </tr>
+          <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/octet-stream&quot; HTTP header to specify this media type to the server."><span class="request-type">application/octet-stream</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td rowspan="4" class="multi-row-description"><span class="request-description">file data containing one of: a single EAD file,
-multiple EAD files in an archive, a list of local file
-paths. The Content-Type header is used to distinguish
-the contents.</span></td>
           </tr>
           <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
@@ -550,8 +716,7 @@ the contents.</span></td>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: */*&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">*/*</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">a JSON object showing how many records were created,
-updated, or unchanged.</span></td>
+            <td><span class="response-description">a JSON object showing how many records were created, updated, or unchanged.</span></td>
           </tr>
           </tbody>
         </table>
@@ -563,7 +728,7 @@ updated, or unchanged.</span></td>
               <h5>Request</h5>
               <pre>
 POST /import/ead
-Content-Type: application/octet-stream
+Content-Type: application/json
 Accept: */*
 
                 <code class="prettyprint language-txt">
@@ -611,7 +776,9 @@ synchronising just within a specific item.</p>
           <tr>
             <td><span class="parameter-name">allow-update</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">allow the importer to update items that already exist. If it
+attempts to do so without this option enabled an error will
+be thrown</span></td>
             <td><span class="parameter-default-value">false</span></td>
             <td><span class="parameter-constraints">boolean</span></td>
             <td><span class="parameter-multivalued">no</span></td>
@@ -619,7 +786,8 @@ synchronising just within a specific item.</p>
           <tr>
             <td><span class="parameter-name">commit</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">commit the operation to the database. The default
+mode is to operate as a dry-run</span></td>
             <td><span class="parameter-default-value">false</span></td>
             <td><span class="parameter-constraints">boolean</span></td>
             <td><span class="parameter-multivalued">no</span></td>
@@ -645,7 +813,7 @@ used</span></td>
           <tr>
             <td><span class="parameter-name">handler</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">the fully-qualified handler class name (defaults to EadHandler)</span></td>
             <td><span class="parameter-default-value">&nbsp;</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
             <td><span class="parameter-multivalued">no</span></td>
@@ -653,7 +821,7 @@ used</span></td>
           <tr>
             <td><span class="parameter-name">importer</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">the fully-qualified import class name (defaults to EadImporter)</span></td>
             <td><span class="parameter-default-value">&nbsp;</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
             <td><span class="parameter-multivalued">no</span></td>
@@ -661,7 +829,7 @@ used</span></td>
           <tr>
             <td><span class="parameter-name">lang</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">the default description language, if not inferrable from the data</span></td>
             <td><span class="parameter-default-value">eng</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
             <td><span class="parameter-multivalued">no</span></td>
@@ -669,7 +837,8 @@ used</span></td>
           <tr>
             <td><span class="parameter-name">log</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">log message for import. If this refers to an accessible local file
+its contents will be used.</span></td>
             <td><span class="parameter-default-value">&nbsp;</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
             <td><span class="parameter-multivalued">no</span></td>
@@ -677,7 +846,7 @@ used</span></td>
           <tr>
             <td><span class="parameter-name">properties</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">a local file path or URL pointing to an import properties configuration file.</span></td>
             <td><span class="parameter-default-value">&nbsp;</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
             <td><span class="parameter-multivalued">no</span></td>
@@ -685,15 +854,38 @@ used</span></td>
           <tr>
             <td><span class="parameter-name">scope</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">the id of the import scope (i.e. repository)</span></td>
             <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">tag</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">if the data is a stream of XML a string &quot;tag&quot; can be
+provided to identify the source, e.g. the name of the file from
+which the stream derives. If a tag is not provided, or the
+input data is not an XML stream, the default value of
+&quot;-&quot; will be used</span></td>
+            <td><span class="parameter-default-value">-</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
             <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">tolerant</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">whether or not to die on the first validation error</span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">use-source-id</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">by default a description will update an existing description if it
+has the same language code. Setting this option to 'true' allows adding
+multiple descriptions in the same language by taking into account the
+value of the EAD ID.</span></td>
             <td><span class="parameter-default-value">false</span></td>
             <td><span class="parameter-constraints">boolean</span></td>
             <td><span class="parameter-multivalued">no</span></td>
@@ -707,9 +899,19 @@ used</span></td>
           <tr>
             <th>media type</th>
             <th>data type</th>
+            <th>description</th>
           </tr>
           </thead>
           <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="5" class="multi-row-description"><span class="request-description">file data containing one of: a single EAD file,
+multiple EAD files in an archive, a list of file URLs.
+The Content-Type header is used to distinguish
+the contents.</span></td>
+          </tr>
           <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/octet-stream&quot; HTTP header to specify this media type to the server."><span class="request-type">application/octet-stream</span></abbr></td>
             <td><span class="datatype-reference">(custom)
@@ -759,7 +961,7 @@ used</span></td>
               <h5>Request</h5>
               <pre>
 POST /import/ead-sync
-Content-Type: application/octet-stream
+Content-Type: application/json
 Accept: */*
 
                 <code class="prettyprint language-txt">
@@ -785,7 +987,7 @@ Content-Type: */*
       <div id="resource_ImportResource_importEag_POST">
         <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/import/eag <a href="../import/eag" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Import EAG files. See EAD import for details.</p>
+        <p></p>
 
         <table class="table resource-parameters">
           <caption>Request Parameters</caption>
@@ -856,6 +1058,13 @@ Content-Type: */*
             <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
+            <td><span class="parameter-name">tag</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">-</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
             <td><span class="parameter-name">tolerant</span></td>
             <td>query</td>
             <td><span class="parameter-description"></span></td>
@@ -874,6 +1083,11 @@ Content-Type: */*
           </tr>
           </thead>
           <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
           <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/octet-stream&quot; HTTP header to specify this media type to the server."><span class="request-type">application/octet-stream</span></abbr></td>
             <td><span class="datatype-reference">(custom)
@@ -923,7 +1137,7 @@ Content-Type: */*
               <h5>Request</h5>
               <pre>
 POST /import/eag
-Content-Type: application/octet-stream
+Content-Type: application/json
 Accept: */*
 
                 <code class="prettyprint language-txt">
@@ -952,6 +1166,7 @@ Content-Type: */*
         <p>Create multiple links via CSV or JSON tabular upload.
 <p>
 Each data row must consist of 6 columns:
+</p>
 <ol>
 <li>the source item ID
 <li>the target item ID
@@ -961,7 +1176,8 @@ Each data row must consist of 6 columns:
 <li>the link description (optional)
 </ol>
 <p>
-A separate log item will be created for each row.</p>
+A single log item will be created for the entire CSV.
+</p></p>
 
         <table class="table resource-parameters">
           <caption>Request Parameters</caption>
@@ -978,14 +1194,14 @@ A separate log item will be created for each row.</p>
           <tr>
             <td><span class="parameter-name">commit</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">actually change the graph</span></td>
             <td><span class="parameter-default-value">false</span></td>
             <td><span class="parameter-constraints">boolean</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">tolerant</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">don't abort on the first error</span></td>
             <td><span class="parameter-default-value">false</span></td>
             <td><span class="parameter-constraints">boolean</span></td>
           </tr>
@@ -1030,7 +1246,7 @@ A separate log item will be created for each row.</p>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">a single column table of link IDs</span></td>
+            <td><span class="response-description">an import log</span></td>
           </tr>
           </tbody>
         </table>
@@ -1072,7 +1288,6 @@ Content-Type: application/json
 column of the file extensions table <a href="https://jena.apache.org/documentation/io/">here</a>.
 <p>
 Example:
-<p>
 <pre>
     <code>
  curl -X POST \
@@ -1097,7 +1312,7 @@ Example:
           <tr>
             <td><span class="parameter-name">allow-update</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">allow the operation to update existing items</span></td>
             <td><span class="parameter-default-value">false</span></td>
             <td><span class="parameter-constraints">boolean</span></td>
           </tr>
@@ -1127,7 +1342,8 @@ mode is to operate as a dry-run</span></td>
           <tr>
             <td><span class="parameter-name">lang</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">the default language of description fields if not inferrable
+the data</span></td>
             <td><span class="parameter-default-value">eng</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>

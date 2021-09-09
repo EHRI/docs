@@ -108,15 +108,13 @@ and general graph-maintenance functionality.</span>
 </td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/AuthoritativeSet</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/AuthoritativeSet/{id}</span>
-</samp></li><li><samp>  <span class="resource-path">/classes/AuthoritativeSet/{id}/all</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/AuthoritativeSet/{id}/eac</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/AuthoritativeSet/{id}/list</span>
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
-</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
-</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
 </samp></li></ul></td>
       <td>  <span class="resource-description">Provides a web service interface for the AuthoritativeSet items. model.
 Authoritative Sets are containers for Historical Agents
@@ -160,7 +158,7 @@ here.</span>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
-</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
       <td>  <span class="resource-description">Provides a web service interface for managing countries
 and creating repositories within them.</span>
@@ -171,17 +169,21 @@ and creating repositories within them.</span>
 </td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/CvocConcept</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/CvocConcept/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/CvocConcept/{id}/all</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/CvocConcept/{id}/broader</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/CvocConcept/{id}/list</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/CvocConcept/{id}/narrower</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/CvocConcept/{id}/parent</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/CvocConcept/{id}/related</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/CvocConcept/{id}/relatedBy</span>
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
-</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
@@ -197,11 +199,13 @@ Vocabulary is not possible via this API.</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/DocumentaryUnit/{id}</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/DocumentaryUnit/{id}/ead</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/DocumentaryUnit/{id}/list</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/DocumentaryUnit/{id}/rename</span>
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
-</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li></ul></td>
       <td>  <span class="resource-description">Provides a web service interface for the DocumentaryUnit model.</span>
 </td>
@@ -215,14 +219,12 @@ Vocabulary is not possible via this API.</span>
 </samp></li><li><samp>  <span class="resource-path">/entities/{id}/annotations</span>
 </samp></li><li><samp>  <span class="resource-path">/entities/{id}/dc</span>
 </samp></li><li><samp>  <span class="resource-path">/entities/{id}/demote</span>
-</samp></li><li><samp>  <span class="resource-path">/entities/{id}/descriptions</span>
 </samp></li><li><samp>  <span class="resource-path">/entities/{id}/events</span>
 </samp></li><li><samp>  <span class="resource-path">/entities/{id}/links</span>
 </samp></li><li><samp>  <span class="resource-path">/entities/{id}/permission-grants</span>
 </samp></li><li><samp>  <span class="resource-path">/entities/{id}/promote</span>
 </samp></li><li><samp>  <span class="resource-path">/entities/{id}/scope-permission-grants</span>
 </samp></li><li><samp>  <span class="resource-path">/entities/{id}/versions</span>
-</samp></li><li><samp>  <span class="resource-path">/entities/{id}/descriptions/{did}</span>
 </samp></li><li><samp>  <span class="resource-path">/entities/{id}/descriptions/{did}/access-points</span>
 </samp></li><li><samp>  <span class="resource-path">/entities/{id}/descriptions/{did}/access-points/{apid}</span>
 </samp></li></ul></td>
@@ -232,14 +234,12 @@ Vocabulary is not possible via this API.</span>
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">POST</span> 
-</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
-</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
 </samp></li></ul></td>
@@ -282,7 +282,8 @@ regardless of their specific type.</span>
     <tr class="clickable-row" data-href="resource_ImportResource.html">
       <td>  <span class="resource-name">ImportResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/import/csv</span>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/import/coreferences</span>
+</samp></li><li><samp>  <span class="resource-path">/import/csv</span>
 </samp></li><li><samp>  <span class="resource-path">/import/eac</span>
 </samp></li><li><samp>  <span class="resource-path">/import/ead</span>
 </samp></li><li><samp>  <span class="resource-path">/import/ead-sync</span>
@@ -291,6 +292,7 @@ regardless of their specific type.</span>
 </samp></li><li><samp>  <span class="resource-path">/import/skos</span>
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
@@ -346,17 +348,15 @@ regardless of their specific type.</span>
 </td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/Repository</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/Repository/{id}</span>
-</samp></li><li><samp>  <span class="resource-path">/classes/Repository/{id}/all</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/Repository/{id}/ead</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/Repository/{id}/eag</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/Repository/{id}/list</span>
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
-</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
-</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
 </samp></li></ul></td>
       <td>  <span class="resource-description">Provides a web service interface for the Repository.</span>
 </td>
@@ -378,7 +378,6 @@ here.
 <p>
 The following query parameters apply to all actions in this
 resource to apply filtering to the event streams.
-<p>
 <dl>
 <dt>eventTypes</dt><dd>Filter events by type</dd>
 <dt>itemTypes</dt><dd>Filter events based on the item type of their subjects</dd>
@@ -428,6 +427,7 @@ Standard paging parameters apply to all end-points.</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/set-labels</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/upgrade-1to2</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/version</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/regenerate-description-id/{id}</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/regenerate-ids-for-scope/{scope}</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/regenerate-ids-for-type/{type}</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/generate-concepts/{repositoryId}/{vocabularyId}</span>
@@ -445,6 +445,7 @@ Standard paging parameters apply to all end-points.</span>
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
@@ -524,15 +525,13 @@ fit anywhere else.</span>
 </td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/CvocVocabulary</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/CvocVocabulary/{id}</span>
-</samp></li><li><samp>  <span class="resource-path">/classes/CvocVocabulary/{id}/all</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/CvocVocabulary/{id}/export</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/CvocVocabulary/{id}/list</span>
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
-</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
-</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
       <td>  <span class="resource-description">Provides a web service interface for the Vocabulary model. Vocabularies are
 containers for Concepts.</span>

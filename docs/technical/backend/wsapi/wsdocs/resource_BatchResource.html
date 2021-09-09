@@ -87,7 +87,7 @@
           <tr>
             <td><span class="parameter-name">commit</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">actually change the graph</span></td>
             <td><span class="parameter-default-value">false</span></td>
             <td><span class="parameter-constraints">boolean</span></td>
           </tr>
@@ -106,6 +106,13 @@
             <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
           <tr>
+            <td><span class="parameter-name">tolerant</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">don't abort on individual errors</span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
             <td><span class="parameter-name">version</span></td>
             <td>query</td>
             <td><span class="parameter-description">whether to create a version prior to delete</span></td>
@@ -121,6 +128,7 @@
           <tr>
             <th>media type</th>
             <th>data type</th>
+            <th>description</th>
           </tr>
           </thead>
           <tbody>
@@ -128,6 +136,7 @@
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">a table containing IDs to delete</span></td>
           </tr>
           <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: text/csv&quot; HTTP header to specify this media type to the server."><span class="request-type">text/csv</span></abbr></td>
@@ -212,7 +221,7 @@ data bundles.</p>
           <tr>
             <td><span class="parameter-name">commit</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">actually change the graph</span></td>
             <td><span class="parameter-default-value">false</span></td>
             <td><span class="parameter-constraints">boolean</span></td>
           </tr>

@@ -54,10 +54,13 @@
           <li><a href="#resource_CvocConceptResource_get_GET"><abbr title="GET /classes/CvocConcept/{id}"><span class="sideoverflow">GET /classes/CvocConcept/{id}</span></abbr></a></li>
           <li><a href="#resource_CvocConceptResource_createChild_POST"><abbr title="POST /classes/CvocConcept/{id}"><span class="sideoverflow">POST /classes/CvocConcept/{id}</span></abbr></a></li>
           <li><a href="#resource_CvocConceptResource_update_PUT"><abbr title="PUT /classes/CvocConcept/{id}"><span class="sideoverflow">PUT /classes/CvocConcept/{id}</span></abbr></a></li>
+          <li><a href="#resource_CvocConceptResource_deleteChildren_DELETE"><abbr title="DELETE /classes/CvocConcept/{id}/all"><span class="sideoverflow">DELETE /classes/CvocConcept/{id}/all</span></abbr></a></li>
           <li><a href="#resource_CvocConceptResource_getCvocBroaderConcepts_GET"><abbr title="GET /classes/CvocConcept/{id}/broader"><span class="sideoverflow">GET /classes/CvocConcept/{id}/broader</span></abbr></a></li>
+          <li><a href="#resource_CvocConceptResource_setBroaderCvocConcepts_POST"><abbr title="POST /classes/CvocConcept/{id}/broader"><span class="sideoverflow">POST /classes/CvocConcept/{id}/broader</span></abbr></a></li>
           <li><a href="#resource_CvocConceptResource_listChildren_GET"><abbr title="GET /classes/CvocConcept/{id}/list"><span class="sideoverflow">GET /classes/CvocConcept/{id}/list</span></abbr></a></li>
           <li><a href="#resource_CvocConceptResource_removeNarrowerCvocConcept_DELETE"><abbr title="DELETE /classes/CvocConcept/{id}/narrower"><span class="sideoverflow">DELETE /classes/CvocConcept/{id}/narrower</span></abbr></a></li>
           <li><a href="#resource_CvocConceptResource_addNarrowerCvocConcept_POST"><abbr title="POST /classes/CvocConcept/{id}/narrower"><span class="sideoverflow">POST /classes/CvocConcept/{id}/narrower</span></abbr></a></li>
+          <li><a href="#resource_CvocConceptResource_setParents_POST"><abbr title="POST /classes/CvocConcept/{id}/parent"><span class="sideoverflow">POST /classes/CvocConcept/{id}/parent</span></abbr></a></li>
           <li><a href="#resource_CvocConceptResource_removeRelatedCvocConcept_DELETE"><abbr title="DELETE /classes/CvocConcept/{id}/related"><span class="sideoverflow">DELETE /classes/CvocConcept/{id}/related</span></abbr></a></li>
           <li><a href="#resource_CvocConceptResource_getCvocRelatedConcepts_GET"><abbr title="GET /classes/CvocConcept/{id}/related"><span class="sideoverflow">GET /classes/CvocConcept/{id}/related</span></abbr></a></li>
           <li><a href="#resource_CvocConceptResource_addRelatedCvocConcept_POST"><abbr title="POST /classes/CvocConcept/{id}/related"><span class="sideoverflow">POST /classes/CvocConcept/{id}/related</span></abbr></a></li>
@@ -93,7 +96,6 @@ Item lists are paginated using the <code>page</code> parameter.
 <p>
 The page, limit, and total number of items is returned in the Content-Range response
 header in the form:
-<p>
 <pre><code>page=1; count=20; total=50</code></pre>
 
 If the header <code>X-Stream</code> is set to <code>true</code>
@@ -300,14 +302,14 @@ Content-Type: application/json
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td><span class="parameter-description">The parent resource ID.</span></td>
+            <td><span class="parameter-description">the parent resource ID.</span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
             <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">accessibleTo</span></td>
             <td>query</td>
-            <td><span class="parameter-description">The users/groups who can access this item.</span></td>
+            <td><span class="parameter-description">the users/groups who can access this item.</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
             <td><span class="parameter-multivalued">yes</span></td>
           </tr>
@@ -328,7 +330,7 @@ Content-Type: application/json
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="request-description">A resource bundle.</span></td>
+            <td><span class="request-description">a resource bundle.</span></td>
           </tr>
           </tbody>
         </table>
@@ -475,10 +477,18 @@ Content-Type: application/json
         </div>
       </div>
 
-      <div id="resource_CvocConceptResource_getCvocBroaderConcepts_GET">
-        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/classes/CvocConcept/{id}/broader <a href="../classes/CvocConcept/{id}/broader" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_CvocConceptResource_deleteChildren_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/classes/CvocConcept/{id}/all <a href="../classes/CvocConcept/{id}/all" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>List broader concepts.</p>
+        <p>Delete all
+
+<p>
+Example:
+<pre>
+     <code>
+ curl -XDELETE -HX-User:admin <a target="_blank" href="http://localhost:7474/ehri/[RESOURCE]/[ID]/list">http://localhost:7474/ehri/[RESOURCE]/[ID]/list</a>
+     </code>
+ </pre></p>
 
         <table class="table resource-parameters">
           <caption>Request Parameters</caption>
@@ -494,7 +504,100 @@ Content-Type: application/json
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td><span class="parameter-description">The item ID</span></td>
+            <td><span class="parameter-description">the parent resource ID</span></td>
+            <td><span class="parameter-constraints">regex: [^/]+</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: */*&quot; HTTP header to specify this media type to the server."><span class="request-type">*/*</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">descend into the hierarchy of any child items</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: */*&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">*/*</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">an ordered list of deleted item IDs</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /classes/CvocConcept/{id}/all
+Content-Type: */*
+Accept: */*
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: */*
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_CvocConceptResource_getCvocBroaderConcepts_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/classes/CvocConcept/{id}/broader <a href="../classes/CvocConcept/{id}/broader" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
           </tr>
           </tbody>
@@ -514,7 +617,7 @@ Content-Type: application/json
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">A list of broader resources</span></td>
+            <td><span class="response-description"></span></td>
           </tr>
           </tbody>
         </table>
@@ -538,6 +641,89 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_CvocConceptResource_setBroaderCvocConcepts_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/classes/CvocConcept/{id}/broader <a href="../classes/CvocConcept/{id}/broader" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+            <th>multivalued</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">regex: [^/]+</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">regex: [^/]+</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /classes/CvocConcept/{id}/broader
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
 Content-Type: application/json
 
                 <code class="prettyprint language-txt">
@@ -577,14 +763,14 @@ Example:
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">the parent item</span></td>
             <td><span class="parameter-default-value">&nbsp;</span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">all</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">whether or not to fetch children-of-children (and so on)</span></td>
             <td><span class="parameter-default-value">false</span></td>
             <td><span class="parameter-constraints">boolean</span></td>
           </tr>
@@ -605,7 +791,7 @@ Example:
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">A list of serialized item representations</span></td>
+            <td><span class="response-description">a list of serialized item representations</span></td>
           </tr>
           </tbody>
         </table>
@@ -643,7 +829,7 @@ Content-Type: application/json
       <div id="resource_CvocConceptResource_removeNarrowerCvocConcept_DELETE">
         <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/classes/CvocConcept/{id}/narrower <a href="../classes/CvocConcept/{id}/narrower" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Remove a narrower relationship between two concepts.</p>
+        <p></p>
 
         <table class="table resource-parameters">
           <caption>Request Parameters</caption>
@@ -660,14 +846,14 @@ Content-Type: application/json
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td><span class="parameter-description">the item ID</span></td>
+            <td><span class="parameter-description"></span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
             <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>query</td>
-            <td><span class="parameter-description">the narrower item IDs</span></td>
+            <td><span class="parameter-description"></span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
             <td><span class="parameter-multivalued">yes</span></td>
           </tr>
@@ -726,7 +912,7 @@ Content-Type: */*
       <div id="resource_CvocConceptResource_addNarrowerCvocConcept_POST">
         <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/classes/CvocConcept/{id}/narrower <a href="../classes/CvocConcept/{id}/narrower" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Add an existing concept to the list of 'narrower' relations.</p>
+        <p></p>
 
         <table class="table resource-parameters">
           <caption>Request Parameters</caption>
@@ -743,14 +929,14 @@ Content-Type: */*
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td><span class="parameter-description">the item ID</span></td>
+            <td><span class="parameter-description"></span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
             <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>query</td>
-            <td><span class="parameter-description">the narrower item IDs</span></td>
+            <td><span class="parameter-description"></span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
             <td><span class="parameter-multivalued">yes</span></td>
           </tr>
@@ -768,7 +954,7 @@ Content-Type: */*
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: */*&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">*/*</span></abbr></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
             <td><span class="response-description"></span></td>
@@ -784,7 +970,7 @@ Content-Type: */*
               <pre>
 POST /classes/CvocConcept/{id}/narrower
 Content-Type: */*
-Accept: */*
+Accept: application/json
 
                 <code class="prettyprint language-txt">
 ...
@@ -795,7 +981,7 @@ Accept: */*
               <h5>Response</h5>
               <pre>
 HTTP/1.1 201 Created
-Content-Type: */*
+Content-Type: application/json
 
                 <code class="prettyprint language-txt">
 ...
@@ -806,11 +992,18 @@ Content-Type: */*
         </div>
       </div>
 
-      <div id="resource_CvocConceptResource_removeRelatedCvocConcept_DELETE">
-        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/classes/CvocConcept/{id}/related <a href="../classes/CvocConcept/{id}/related" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_CvocConceptResource_setParents_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/classes/CvocConcept/{id}/parent <a href="../classes/CvocConcept/{id}/parent" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Remove a relation by deleting the edge, not the vertex of the related
-concept.</p>
+        <p>Set (or change) this item's parent. Depending on the item type only
+one parent or multiple can be set.
+<p>
+Example:
+<pre>
+     <code>
+ curl <a target="_blank" href="http://localhost:7474/ehri/[RESOURCE]/[ID]/parent?id=[PARENT-ID]">http://localhost:7474/ehri/[RESOURCE]/[ID]/parent?id=[PARENT-ID]</a>
+     </code>
+ </pre></p>
 
         <table class="table resource-parameters">
           <caption>Request Parameters</caption>
@@ -827,14 +1020,97 @@ concept.</p>
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td><span class="parameter-description">the item ID</span></td>
+            <td><span class="parameter-description"></span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
             <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>query</td>
-            <td><span class="parameter-description">the related item ID</span></td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">regex: [^/]+</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">the reparented item</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /classes/CvocConcept/{id}/parent
+Content-Type: */*
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_CvocConceptResource_removeRelatedCvocConcept_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/classes/CvocConcept/{id}/related <a href="../classes/CvocConcept/{id}/related" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+            <th>multivalued</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">regex: [^/]+</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
             <td><span class="parameter-multivalued">yes</span></td>
           </tr>
@@ -893,7 +1169,7 @@ Content-Type: */*
       <div id="resource_CvocConceptResource_getCvocRelatedConcepts_GET">
         <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/classes/CvocConcept/{id}/related <a href="../classes/CvocConcept/{id}/related" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>List concepts related to another concept.</p>
+        <p></p>
 
         <table class="table resource-parameters">
           <caption>Request Parameters</caption>
@@ -909,7 +1185,7 @@ Content-Type: */*
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td><span class="parameter-description">The item ID</span></td>
+            <td><span class="parameter-description"></span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
           </tr>
           </tbody>
@@ -929,7 +1205,7 @@ Content-Type: */*
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">A list of related resources</span></td>
+            <td><span class="response-description"></span></td>
           </tr>
           </tbody>
         </table>
@@ -967,8 +1243,7 @@ Content-Type: application/json
       <div id="resource_CvocConceptResource_addRelatedCvocConcept_POST">
         <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/classes/CvocConcept/{id}/related <a href="../classes/CvocConcept/{id}/related" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Add a relation by creating the 'related' edge between the two <em>existing</em>
-items.</p>
+        <p></p>
 
         <table class="table resource-parameters">
           <caption>Request Parameters</caption>
@@ -985,14 +1260,14 @@ items.</p>
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td><span class="parameter-description">the item ID</span></td>
+            <td><span class="parameter-description"></span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
             <td><span class="parameter-multivalued">no</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>query</td>
-            <td><span class="parameter-description">the related item IDs</span></td>
+            <td><span class="parameter-description"></span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
             <td><span class="parameter-multivalued">yes</span></td>
           </tr>
@@ -1051,9 +1326,7 @@ Content-Type: */*
       <div id="resource_CvocConceptResource_getCvocRelatedByConcepts_GET">
         <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/classes/CvocConcept/{id}/relatedBy <a href="../classes/CvocConcept/{id}/relatedBy" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>List concepts related to another concept. This is the
-&quot;reverse&quot; form of the &quot;/related&quot;
-method.</p>
+        <p></p>
 
         <table class="table resource-parameters">
           <caption>Request Parameters</caption>
@@ -1069,7 +1342,7 @@ method.</p>
           <tr>
             <td><span class="parameter-name">id</span></td>
             <td>path</td>
-            <td><span class="parameter-description">The item ID</span></td>
+            <td><span class="parameter-description"></span></td>
             <td><span class="parameter-constraints">regex: [^/]+</span></td>
           </tr>
           </tbody>
@@ -1089,7 +1362,7 @@ method.</p>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">A list of related resources</span></td>
+            <td><span class="response-description"></span></td>
           </tr>
           </tbody>
         </table>

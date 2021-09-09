@@ -62,6 +62,7 @@
           <li><a href="#resource_ToolsResource_setLabels_POST"><abbr title="POST /tools/set-labels"><span class="sideoverflow">POST /tools/set-labels</span></abbr></a></li>
           <li><a href="#resource_ToolsResource_upgradeDb1to2_POST"><abbr title="POST /tools/upgrade-1to2"><span class="sideoverflow">POST /tools/upgrade-1to2</span></abbr></a></li>
           <li><a href="#resource_ToolsResource_version_GET"><abbr title="GET /tools/version"><span class="sideoverflow">GET /tools/version</span></abbr></a></li>
+          <li><a href="#resource_ToolsResource_regenerateDescriptionId_POST"><abbr title="POST /tools/regenerate-description-id/{id}"><span class="sideoverflow">POST /tools/regenerate-description-id/{id}</span></abbr></a></li>
           <li><a href="#resource_ToolsResource_regenerateIdsForScope_POST"><abbr title="POST /tools/regenerate-ids-for-scope/{scope}"><span class="sideoverflow">POST /tools/regenerate-ids-for-scope/{scope}</span></abbr></a></li>
           <li><a href="#resource_ToolsResource_regenerateIdsForType_POST"><abbr title="POST /tools/regenerate-ids-for-type/{type}"><span class="sideoverflow">POST /tools/regenerate-ids-for-type/{type}</span></abbr></a></li>
           <li><a href="#resource_ToolsResource_autoLinkRepositoryDocs_POST"><abbr title="POST /tools/generate-concepts/{repositoryId}/{vocabularyId}"><span class="sideoverflow">POST /tools/generate-concepts/{repositoryId}/{vocabularyId}</span></abbr></a></li>
@@ -102,7 +103,7 @@ fit anywhere else.</p>
           <tr>
             <td><span class="parameter-name">yes-i-am-sure</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">confirm you want to do this thing</span></td>
             <td><span class="parameter-default-value">false</span></td>
             <td><span class="parameter-constraints">boolean</span></td>
           </tr>
@@ -330,14 +331,14 @@ HTTP/1.1 201 Created
           <tr>
             <td><span class="parameter-name">buffer</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">the transaction buffer size</span></td>
             <td><span class="parameter-default-value">-1</span></td>
             <td><span class="parameter-constraints">int</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">commit</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">actually commit the changes</span></td>
             <td><span class="parameter-default-value">false</span></td>
             <td><span class="parameter-constraints">boolean</span></td>
           </tr>
@@ -462,6 +463,7 @@ then throwing an error</span></td>
           <tr>
             <th>media type</th>
             <th>data type</th>
+            <th>description</th>
           </tr>
           </thead>
           <tbody>
@@ -469,6 +471,7 @@ then throwing an error</span></td>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">the data table</span></td>
           </tr>
           <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: text/csv&quot; HTTP header to specify this media type to the server."><span class="request-type">text/csv</span></abbr></td>
@@ -539,6 +542,35 @@ Content-Type: application/json
         <p>Takes a CSV file containing a mapping from one item to
 another and moves changes the link target of anything linked
 to <code>from</code> to <code>to</code>.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">commit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">actually commit changes</span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">tolerant</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">don't error if items have been deleted</span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          </tbody>
+        </table>
 
         <table class="table resource-request-body">
           <caption>Request Body</caption>
@@ -665,7 +697,7 @@ reflect this.</p>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td rowspan="2" class="multi-row-description"><span class="request-description">a comma-separated CSV file, exluding headers.</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">a comma-separated CSV file, excluding headers.</span></td>
           </tr>
           <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: text/csv&quot; HTTP header to specify this media type to the server."><span class="request-type">text/csv</span></abbr></td>
@@ -1106,6 +1138,89 @@ Accept: text/plain
               <h5>Response</h5>
               <pre>
 HTTP/1.1 200 OK
+Content-Type: text/plain
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_ToolsResource_regenerateDescriptionId_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/tools/regenerate-description-id/{id} <a href="../tools/regenerate-description-id/{id}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Regenerate description IDs.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">id</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">the target item ID</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">regex: [^/]+</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">commit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">actually commit the changes</span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/plain&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">text/plain</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /tools/regenerate-description-id/{id}
+Content-Type: */*
+Accept: text/plain
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
 Content-Type: text/plain
 
                 <code class="prettyprint language-txt">
