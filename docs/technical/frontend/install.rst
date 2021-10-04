@@ -2,7 +2,7 @@ Setting up the development environment
 ======================================
 
 .. warning::
-    This page is outdated. For the latest instructions on setting up the EHRI frontend development environment, please see the README.md file in the `EHRI/ehri-       frontend GitHub repository <https://github.com/EHRI/ehri-frontend>`_.
+    This page is outdated. For the latest instructions on setting up the EHRI frontend development environment, please see the README.md file in the `EHRI/ehri-frontend GitHub repository <https://github.com/EHRI/ehri-frontend>`_.
 
 Prerequisites
 -------------
