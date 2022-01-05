@@ -2,6 +2,8 @@
 Content Snapshots
 *****************
 
+.. role:: alert-danger
+
 Content snapshots assist with synchronising data with a remote source, typically another archival institution.
 While mechanisms for communicating removal of previously-existing material does exist in protocols such as OAI-PMH or ResourceSync,
 these are often unsupported in practice, and for non-harvested data these are obviously no help. Snapshots allow comparing the
@@ -44,8 +46,12 @@ the snapshot is prior to a particular set of imports about to be done.
 Selecting a snapshot
 ====================
 
-Selecting a snapshot from the list allows you to perform cleanup actions. **Note:** this is dangerous! There are two types of cleanup
-that can be done:
+Selecting a snapshot from the list allows you to perform cleanup actions.
+
+
+**Note:** :alert-danger:`this is dangerous!`
+
+Cleanup consists of:
 
 * Creation of redirects for moved items
 * Deletion of defunct items
@@ -54,9 +60,7 @@ Detection of moved items will *only* be accurate of an institution has **fully u
 once within the full span of an institutions holdings, and are not re-used for items that exist within different collections. If this is **not**
 the case then detection of moved items will likely give inaccurate or misleading results.
 
-Detection of deleted items
-==========================
+Defunct items are assumed to be those which have *not been imported since the creation of the snapshot*. If any items are manually managed, or
+created by datasets not yet imported, :alert-danger:`these will be wrongly suggested for deletion`.
 
-The cleanup helper will attempt to find items that have moved
-from one collection to a sub-collection by comparing local identifiers that exist
-
+**Summary**: don't use cleanup without manually sanity-checking the actions it suggests.
