@@ -15,8 +15,7 @@ Documentation for users of the EHRI Portal:
    users
    groups
    permissions
-   institution-data
-   xquery-mappings
+   institution-data/index
    concept-editor
    skos-ingest
    ingest

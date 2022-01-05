@@ -1,28 +1,6 @@
-*********************************
-Managing XML Datasets for Ingest
-*********************************
-
-Introduction
-============
-
-This documentation describes EHRI's tools for managing, transforming and ingesting XML collection descriptions. In a
-nutshell, it allows administrators to:
-
-* manually upload XML files
-* configure harvesting of files from OAI-PMH or ResourceSync endpoints
-* validate XML against EHRI's EAD schema
-* transform arbitrary XML to EAD using either XSLT or tabular XQuery mappings
-* ingest the resulting EAD into the EHRI portal
-
-Accessing the EAD Manager
-=========================
-
-The EAD Manager can be accessed via the "Ingest" section on the institutions admin page. 
-
-
-
-Overview of the EAD Manager
-===========================
+********
+Datasets
+********
 
 The first thing to do when visiting the EAD Manager is to create a new dataset. A dataset is a *set
 of XML files that come from the same place and are processed in the same way*. Although an institution could just have
@@ -75,6 +53,13 @@ Content-Type Override
   used instead, e.g. "text/xml; charset=iso-8859-1". UTF-8 is preferred since it handles a much wider range of
   characters. Encoding issues usually reveal themselves as non-ASCII characters with diacritics such as umlauts
   being garbled.
+
+Status
+  By default datasets are active, meaning they contain live data, but they can also be put on hold or inactive to
+  communicate that action is deferred or that the data exists for historical reference only.
+
+Notes
+  Notes can be used to add any other relevant information about the dataset contents.
 
 The dataset view
 ~~~~~~~~~~~~~~~~
@@ -177,6 +162,9 @@ clicking the "Convert Files..." button and selecting one or both stages as an in
 Note: if the source files do not require any transformation the convert button will simply copy them to the ingest
 workspace unchanged.
 
+
+.. _transformation:
+
 Editing transformations or creating new ones
 ============================================
 
@@ -195,6 +183,8 @@ Bottom right pane
   This shows the input file with the transformation applied
 
 Once a transformation has been edited to your satisfaction the Save button will update it.
+
+.. _xslt:
 
 XSLT
 ----
