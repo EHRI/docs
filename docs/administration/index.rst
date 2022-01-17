@@ -12,6 +12,7 @@ Documentation for users of the EHRI Portal:
    access
    create-institution
    create-description
+   create-connections
    users
    groups
    permissions
