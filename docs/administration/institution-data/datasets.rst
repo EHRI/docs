@@ -34,6 +34,9 @@ OAI-PMH
 ResourceSync
     The files will be downloaded via an `OAI ResourceSync <http://www.openarchives.org/rs/toc>`__ capability list URL
 
+URL Set
+    The files will be downloaded from a set of URLs mapped to predetermined file names
+
 There are some other parameters on the dataset form that can normally be left alone:
 
 Fonds ID
@@ -142,6 +145,21 @@ it's URL must match to be included in the sync.
 Clicking the "Test Endpoint" button with the parameters provided will check the endpoint exists and supports
 the right data formats etc. Then, clicking the "Sync Endpoint" button will attempt to fetch the files.
 
+URL Set
+-------
+
+.. image:: images/data-management-urlset.png
+    :alt: The data management input tab for an URL-harvested dataset
+
+While it is not particularly "automatic", it is necessary sometimes to download data from a set of predetermined
+online locations. In this case, it is possible to use a table in which individual URLs can be corresponded to a
+particular file name when downloaded.
+
+There are additional options for setting HTTP Basic Authentication and the headers to use when downloading files,
+e.g. for HTTP Content Negotiation.
+
+Like other methods, clicking the "Test Endpoint" button with the parameters provided will check the validity of 
+the provided URLs. Then, clicking the "Sync Downloads" button will attempt to fetch the files.
 
 
 Data Transformation or Enhancement
