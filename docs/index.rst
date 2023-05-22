@@ -30,6 +30,14 @@ For users of the Omeka-based TEI digital edition platform
 
    editions/index
 
+For users of the Geonetwork-based geospatial repository
+-------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   geospatial/index
+
 For developers and system administrators:
 -----------------------------------------
 
