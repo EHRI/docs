@@ -45,6 +45,7 @@ master_doc = 'index'
 # General information about the project.
 project = u'EHRI Documentation'
 copyright = u'2021, The EHRI Consortium'
+domain = "documentation.ehri-project.eu"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -262,6 +263,10 @@ texinfo_documents = [
 # Override certain RTD theme elements
 def setup(app):
    app.add_css_file("ehri-theme.css")
+   app.add_js_file(None, **{
+       "src": "https://plausible.io/js/script.js",
+       "data-domain": domain,
+       "defer": "defer"})
 
 # Disable smartquotes since this hinders copy-and-paste:
 smartquotes = False
