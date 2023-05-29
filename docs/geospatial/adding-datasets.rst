@@ -41,9 +41,16 @@ State the license which governs the usage of the provided data. We encourage the
     :class: with-shadow
     
 Lineage
-_________-
+_________
 Explain the provenance of the data and the steps taken to prepare it. Please be as detailed as possible in order that users can understand the strength and possible gaps or unknowns.
 
 ..  figure:: images/contribution6.png
+    :class: with-shadow
+    
+Supplemental information
+___________________________
+Use the field to describe the structure of your data and list the individual fields with an explanation (if needed).
+
+..  figure:: images/contribution4.png
     :class: with-shadow
 
