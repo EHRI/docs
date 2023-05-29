@@ -79,7 +79,8 @@ GeoPackage and layer naming convention:
 [project]-[description]-[lng]-[version/date]
 
 Examples:
-    - MGS-prague_residences-v1-cze.gpkg or MGS-prague_residences-20220808-cze.gpkg
+    - MGS-prague_residences-v1-cze.gpkg
+    - MGS-prague_residences-20220808-cze.gpkg
     - MGS_prague-residences_v1.0001.tif
     - MGS_prague-residences_v1.0002.tif
 
