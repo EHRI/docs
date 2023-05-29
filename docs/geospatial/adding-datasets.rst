@@ -53,4 +53,33 @@ Use the field to describe the structure of your data and list the individual fie
 
 ..  figure:: images/contribution4.png
     :class: with-shadow
+    
+The above is the minimal description of a dataset; EHRI staff can help you fill in further fields.
+
+
+Prepare the dataset
+--------------------
+EHRI internally stores the datasets in its Geoserver which exposes the data via different services such as Web Map Service (WMS) (in nutshell: returns map layers as images) or Web Feature Service (WFS) (returns structured geospatial data). For matters of coherence and performance, we store all data in the GeoPackage format.
+
+We can upload your original dataset to the GeoNetwork repository and attach it to the metadata in different formats (such as a shapefile, geojson, CSV, or even MS Excel).
+
+EHRI does not prescribe the field names in the datasets, but we recommend to use human readable naming, for instance “name” for place names.
+
+Once the dataset is available, the EHRI staff will check the data, convert it as needed and store it in the Geoserver. Once available, we will link the GeoNetwork metadata record to the WMS and WFS services.
+
+We strongly prefer all text data to be encoded in UTF-8.
+
+There are different options to convert data to GeoPackage, such as:
+EHRI conversion tool from CSV to GeoPackage: the tool allows to select the longitude and latitude fields, and other data types
+qgis: Open source GIS desktop editor: Save layer as GeoPackage
+ogr2ogr commandline tool which can convert between different types of geographic data
+
+GeoPackage and layer naming convention:
+
+[project]-[description]-[lng]-[version/date]
+
+Examples:
+MGS-prague_residences-v1-cze.gpkg or MGS-prague_residences-20220808-cze.gpkg
+MGS_prague-residences_v1.0001.tif
+MGS_prague-residences_v1.0002.tif
 
