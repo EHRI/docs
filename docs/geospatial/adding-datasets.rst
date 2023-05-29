@@ -70,9 +70,9 @@ Once the dataset is available, the EHRI staff will check the data, convert it as
 We strongly prefer all text data to be encoded in UTF-8.
 
 There are different options to convert data to GeoPackage, such as:
-EHRI conversion tool from CSV to GeoPackage: the tool allows to select the longitude and latitude fields, and other data types
-qgis: Open source GIS desktop editor: Save layer as GeoPackage
-ogr2ogr commandline tool which can convert between different types of geographic data
+    - `EHRI conversion tool from CSV to GeoPackage:  <https://mikesname-ehri-geotools-csv2gpkg-gmowz8.streamlitapp.com/>`_ the tool allows to select the longitude and latitude fields, and other data types
+    - `qgis <https://qgis.org/>`_: Open source GIS desktop editor: Save layer as GeoPackage
+    - `ogr2ogr <https://gdal.org/programs/ogr2ogr.html>`_ commandline tool which can convert between different types of geographic data
 
 GeoPackage and layer naming convention:
 
