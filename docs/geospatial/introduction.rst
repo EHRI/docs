@@ -8,3 +8,6 @@ The EHRI Geospatial Repository offers researchers, projects and organisations to
   - use, download and combine datasets for mapping, data enrichment or spatial analysis
 
 We also aim to avoid duplicating efforts when different institutions or projects gather similar types of spatial information, for instance, when cataloging archival collections or tracking the movements of Holocaust victims.
+
+
+
