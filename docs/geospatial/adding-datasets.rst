@@ -32,3 +32,18 @@ State the responsibility for the creation and maintenance of the data and provid
 
 ..  figure:: images/contribution3.png
     :class: with-shadow
+    
+License
+____________
+State the license which governs the usage of the provided data. We encourage the choice of the Creative Commons licenses.
+
+..  figure:: images/contribution1.png
+    :class: with-shadow
+    
+Lineage
+_________-
+Explain the provenance of the data and the steps taken to prepare it. Please be as detailed as possible in order that users can understand the strength and possible gaps or unknowns.
+
+..  figure:: images/contribution6.png
+    :class: with-shadow
+
