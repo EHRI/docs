@@ -8,6 +8,7 @@ By providing access to data about Holocaust-related places and spaces, the `EHRI
 ..  figure:: images/image2.png
     :class: with-shadow
 
+        
 Contents:
 
 .. toctree::
