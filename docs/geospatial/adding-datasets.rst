@@ -12,3 +12,14 @@ Users who wish to contribute, need to provide relevant metadata which can be pro
 We prefer metadata in English. Nevertheless, GeoNetwork partially supports multilingual descriptions.
 
 The following description uses the GeoNetwork entry form using the 19115 standard template to explain the structure. It is a minimal description documenting the most important metadata only. For details, please refer to the `GeoNetwork documentation <https://geonetwork-opensource.org/manuals/4.0.x/en/user-guide/describing-information/index.html>`_. (The screenshots below are taken from this `sample record <https://geodata.ehri-project-test.eu/geonetwork/srv/eng/catalog.search#/metadata/62c0ed01-9c16-4ad9-964c-860388767c09>`_.)
+
+Title
+_____
+Create a short descriptive title of the record which indicates the type of data (borders, camps, historical map…), the geographic area and - if relevant - the temporal extent.
+
+Abstract
+________
+Provide a longer description of the record explaining the content, the temporal and spatial coverage and, if appropriate, the context of its creation.
+
+..  figure:: images/contribution2.png
+    :class: with-shadow
