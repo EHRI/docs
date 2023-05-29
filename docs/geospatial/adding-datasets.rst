@@ -1,8 +1,15 @@
-How to contribute data
+How to contribute
 =======================
-Even though EHRI creates some `datasets of its own <https://geodata.ehri-project-test.eu/geonetwork/srv/eng/catalog.search#/search?isTemplate=n&resourceTemporalDateRange=%7B%22range%22:%7B%22resourceTemporalDateRange%22:%7B%22gte%22:null,%22lte%22:null,%22relation%22:%22intersects%22%7D%7D%7D&sortBy=relevance&from=1&to=30&languageStrategy=searchInAllLanguages&query_string=%7B%22OrgForResource%22:%7B%22European%20Holocaust%20Research%20Infrastructure%22:true%7D%7D>`_, it relies on the research community to contribute. The Geospatial Repository serves as a repository for data developed by projects, institutions and individual researchers. We are interested in collecting and storing all kinds of spatial data useful for Holocaust-related research.
+`datasets of its own <>`_
 
-We require contributors to submit a minimum of standardised metadata describing the dataset. This will facilitate discovery and provide users with a understanding of the (often complex) data.
+The EHRI Geospatial Repository is a service to the research community for sharing and reusing Holocaust-related geodata such as historical borders, locations of ghettos and camps, historical maps and more. We welcome your contributions, be it project results, archival sources or research data and will be happy to assist you in the process.This document provides a detailed guide on how to contribute geodata to the Geospatial Repository, with a particular emphasis on preparing the metadata describing your dataset in a step-by-step manner. 
 
-The datasets can be uploaded and saved in a variety of formats (such as shapefiles, CSV, GeoTIFF, etc.). EHRI’s staff will check the data, standardise it if needed and internally store it as a `GeoPackage <https://www.geopackage.org/>`_. In a next step, the dataset will be pushed into the EHRI Geoserver (providing standardised services such as `WMS <https://en.wikipedia.org/wiki/Web_Map_Service>`_, `WFS <https://en.wikipedia.org/wiki/Web_Feature_Service>`_, etc.) and linked to the Geospatial Repository which serves as a metadata store.
-Please refer to the documentation and provide information about the data via `this form <https://forms.office.com/e/gQwcmbswVe>`_. The EHRI staff will be happy to assist you in the process of uploading and describing datasets.
+Prepare metadata
+----------------
+EHRI stores the metadata describing your dataset in the open source metadata catalog `GeoNeonetwork <https://geonetwork-opensource.org/>`_ in a standardised way. Primarily, we prefer the usage of the ISO 19115/19139 standards which provide guidance for the description of geospatial data.
+
+Users who wish to contribute, need to provide relevant metadata which can be provided to EHRI through a `separate form <https://forms.office.com/e/gQwcmbswVe>`_. The EHRI staff will check the information and will be in touch with you regarding next steps. We will do our best to help you to create standardised metadata and data. 
+
+We prefer metadata in English. Nevertheless, GeoNetwork partially supports multilingual descriptions.
+
+The following description uses the GeoNetwork entry form using the 19115 standard template to explain the structure. It is a minimal description documenting the most important metadata only. For details, please refer to the `GeoNetwork documentation <https://geonetwork-opensource.org/manuals/4.0.x/en/user-guide/describing-information/index.html>`_. (The screenshots below are taken from this `sample record <https://geodata.ehri-project-test.eu/geonetwork/srv/eng/catalog.search#/metadata/62c0ed01-9c16-4ad9-964c-860388767c09>`_.)
