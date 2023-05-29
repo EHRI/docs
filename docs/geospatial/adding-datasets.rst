@@ -1,6 +1,5 @@
 How to contribute
 =======================
-`datasets of its own <>`_
 
 The EHRI Geospatial Repository is a service to the research community for sharing and reusing Holocaust-related geodata such as historical borders, locations of ghettos and camps, historical maps and more. We welcome your contributions, be it project results, archival sources or research data and will be happy to assist you in the process.This document provides a detailed guide on how to contribute geodata to the Geospatial Repository, with a particular emphasis on preparing the metadata describing your dataset in a step-by-step manner. 
 
