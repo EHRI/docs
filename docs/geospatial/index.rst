@@ -5,7 +5,7 @@ By providing access to data about Holocaust-related places and spaces, the `EHRI
 <https://holocaustgeographies.org/>`_  and others, advanced new perspectives and methods. Thinking through place and space helps to formulate new questions and research projects.
     
 
-..  figure:: images/geonetwork.png
+..  figure:: images/image2.png
     :class: with-shadow
 
 Contents:
