@@ -59,7 +59,7 @@ The above is the minimal description of a dataset; EHRI staff can help you fill 
 
 Prepare the dataset
 --------------------
-EHRI internally stores the datasets in its Geoserver which exposes the data via different services such as Web Map Service (WMS) (in nutshell: returns map layers as images) or Web Feature Service (WFS) (returns structured geospatial data). For matters of coherence and performance, we store all data in the GeoPackage format.
+EHRI internally stores the datasets in its Geoserver which exposes the data via different services such as `Web Map Service (WMS) <https://www.ogc.org/standard/wms/>`_ (in nutshell: returns map layers as images) or `Web Feature Service (WFS) <https://www.ogc.org/standard/wfs/>`_ (returns structured geospatial data). For matters of coherence and performance, we store all data in the GeoPackage format.
 
 We can upload your original dataset to the GeoNetwork repository and attach it to the metadata in different formats (such as a shapefile, geojson, CSV, or even MS Excel).
 
