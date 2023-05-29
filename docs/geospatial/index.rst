@@ -15,7 +15,7 @@ Contents:
    :maxdepth: 1
    :glob:
 
-   introduction
+   about EHRI Geospatial Repository
    adding-datasets
    
    *
