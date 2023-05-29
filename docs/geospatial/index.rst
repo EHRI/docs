@@ -16,10 +16,8 @@ Contents:
    :glob:
 
    introduction
-   data
    adding-datasets
-   document_blog_contribution
-
+   
    *
    
  
