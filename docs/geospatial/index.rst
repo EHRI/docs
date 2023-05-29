@@ -8,8 +8,6 @@ By providing access to data about Holocaust-related places and spaces, the `EHRI
 ..  figure:: images/geonetwork.png
     :class: with-shadow
 
-TODO
-
 Contents:
 
 .. toctree::
