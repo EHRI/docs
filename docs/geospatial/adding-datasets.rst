@@ -23,3 +23,12 @@ Provide a longer description of the record explaining the content, the temporal 
 
 ..  figure:: images/contribution2.png
     :class: with-shadow
+    
+    
+Authorship and ownership
+___________________________
+State the responsibility for the creation and maintenance of the data and provide contact(s).
+
+
+..  figure:: images/contribution3.png
+    :class: with-shadow
