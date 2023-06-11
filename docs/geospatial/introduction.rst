@@ -24,7 +24,7 @@ Even though EHRI creates some `datasets of its own <https://geodata.ehri-project
 We require contributors to submit a minimum of standardised metadata describing the dataset. This will facilitate discovery and provide users with a understanding of the (often complex) data.
 
 The datasets can be uploaded and saved in a variety of formats (such as shapefiles, CSV, GeoTIFF, etc.). EHRI’s staff will check the data, standardise it if needed and internally store it as a `GeoPackage <https://www.geopackage.org/>`_. In a next step, the dataset will be pushed into the EHRI Geoserver (providing standardised services such as `WMS <https://en.wikipedia.org/wiki/Web_Map_Service>`_, `WFS <https://en.wikipedia.org/wiki/Web_Feature_Service>`_, etc.) and linked to the Geospatial Repository which serves as a metadata store.
-Please refer to the `documentation <https://documentation.ehri-project.eu/en/latest/geospatial/adding-datasets.html>`_ and provide information about the data via `this form <https://forms.office.com/e/gQwcmbswVe>`_. The EHRI staff will be happy to assist you in the process of uploading and describing datasets.
+Please refer to the `documentation <https://documentation.ehri-project.eu/en/latest/geospatial/adding-datasets.html>`_ and provide information about the data via `this form <https://forms.office.com/e/gQwcmbswVe>`_. You can also contact us via email at geodata@ehri-project.eu. The EHRI staff will be happy to assist you in the process of uploading and describing datasets.
 
 Contribute to the EHRI Document Blog
 -------------------------------------
