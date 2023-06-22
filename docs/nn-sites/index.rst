@@ -114,6 +114,11 @@ Some sections of the template site are data-driven, that is, the content is dete
 For example, the "Latest" section of the front page is generated from the files in ``data/latest_[lang].yaml``.
 This data structures need to be duplicated for each language, with the textual content translated.
 
+Customise the theme
+~~~~~~~~~~~~~~~~~~~
+
+TODO
+
 Step 6: Add content
 -------------------
 
