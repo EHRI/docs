@@ -37,11 +37,15 @@ command in a terminal:
 
 .. code-block:: bash
 
-    git clone https://github.com/EHRI/ehri-nn-hugo-template.git my-nn-site
+    git clone --recursive https://github.com/EHRI/ehri-nn-hugo-template.git my-nn-site
 
 This will create a new directory called `my-nn-site` containing the template site. Change into this directory.
 
 **NB**: Alternately you can fork the template site on Github and clone your fork to your local machine.
+
+**NB2**: The ``--recursive`` flag is used above in the ``git clone`` command to ensure that the theme submodule
+is also cloned. If you forget to use this flag, you can run ``git submodule update --init --recursive`` to
+clone the theme in the ``themes`` directory.
 
 Step 2: Install Hugo
 --------------------
@@ -132,6 +136,24 @@ the same name in the theme.
     Replace the cover images in the theme by placing new images names ``theme-image-1.jpg``, ``theme-image-2.jpg``,
     and ``theme-image-3.jpg`` in the ``static/images`` directory.
 
+Fetching theme updates
+~~~~~~~~~~~~~~~~~~~~~~
+
+Sometimes the theme will be updated with new features or bug fixes. To fetch these updates, run the following command
+in the ``themes/ehri-nn`` directory:
+
+.. code-block:: bash
+
+    git pull
+
+After this you will need to commit the changes to the theme submodule in the ``my-nn-site`` repository:
+
+.. code-block:: bash
+
+    git add themes/ehri-nn
+    git commit -m "Update theme"
+
+Be sure to check how your site looks after updating the theme, as the update may have broken something.
 
 Step 6: Add content
 -------------------
