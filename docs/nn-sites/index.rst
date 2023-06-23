@@ -101,23 +101,6 @@ languages
   the order in which the languages are displayed in the language switcher), and can also override default settings such
   as the menu items.
 
-Step 5: Translate the site
---------------------------
-
-The template site is currently available in English and Welsh (sorry Welsh speakers, we did this with Google Translate.)
-If you want to translate the site into another language, you will need to create a new file in the ``i18n`` directory
-called ``<languageCode>.yaml``. For example, if you want to translate the site into French, you should create a file
-called ``fr.yaml``. You can copy the contents of ``en.yaml`` and edit the strings to translate them into French. You
-should also add the language to the ``languages`` section of ``config.yaml``, remove references to the Welsh language
-data (the ``cs`` section), and add the appropriate menu items to the ``menu`` section.
-
-Translating data-driven content
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Some sections of the template site are data-driven, that is, the content is determined by data in the ``data`` directory.
-For example, the "Latest" section of the front page is generated from the files in ``data/latest_[lang].yaml``.
-This data structures need to be duplicated for each language, with the textual content translated.
-
 Customise the site appearance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -135,6 +118,18 @@ the same name in the theme.
 
     Replace the cover images in the theme by placing new images names ``theme-image-1.jpg``, ``theme-image-2.jpg``,
     and ``theme-image-3.jpg`` in the ``static/images`` directory.
+
+Customising the home page
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The "main content" of the home page is generated from the file ``content/_index.md``. However, because the content
+of home pages are quite variable it uses a specific layout that is included in this skeleton site. If you want to
+change the layout of the home page, you should edit the file ``layouts/index.html``. Note that this file uses Hugo's
+template syntax, which is documented at https://gohugo.io/templates/introduction/. Between the ``{{ define "main" }}`` and
+``{{ end }}`` tags, the Markdown in ``content/_index.md`` is rendered in the ``{{ .Content }}`` tag,  but the template also
+includes the hero video and various other data-driven sections which can be customised by editing the files in the ``data``
+directory, specifically ``data/services_en.yaml`` and ``data/latest_en.yaml``. These sections can be completely removed
+or new ones added as required.
 
 Fetching theme updates
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -154,6 +149,24 @@ After this you will need to commit the changes to the theme submodule in the ``m
     git commit -m "Update theme"
 
 Be sure to check how your site looks after updating the theme, as the update may have broken something.
+
+
+Step 5: Translate the site
+--------------------------
+
+The template site is currently available in English and Welsh (sorry Welsh speakers, we did this with Google Translate.)
+If you want to translate the site into another language, you will need to create a new file in the ``i18n`` directory
+called ``<languageCode>.yaml``. For example, if you want to translate the site into French, you should create a file
+called ``fr.yaml``. You can copy the contents of ``en.yaml`` and edit the strings to translate them into French. You
+should also add the language to the ``languages`` section of ``config.yaml``, remove references to the Welsh language
+data (the ``cs`` section), and add the appropriate menu items to the ``menu`` section.
+
+Translating data-driven content
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Some sections of the template site are data-driven, that is, the content is determined by data in the ``data`` directory.
+For example, the "Latest" section of the front page is generated from the files in ``data/latest_[lang].yaml``.
+This data structures need to be duplicated for each language, with the textual content translated.
 
 Step 6: Add content
 -------------------
