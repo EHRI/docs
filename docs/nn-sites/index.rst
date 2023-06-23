@@ -1,6 +1,8 @@
 Adapting the National Node template site
 ========================================
 
+The following instructions are designed for the EHRI National Coordinators and National Consortia which build and administer the EHRI national websites which inform about the services and activities in the respective countries as well as transnationally. These websites will provide content in national language(s) and - where relevant - in English.
+
 Developing web sites, especially multi-lingual ones, can be a complicated business and there are many ways to go about it.
 For example, you could use a WYSIWYG site builder like Squarespace or Wix, a CMS like Wordpress or Drupal, or even write
 a site by hand using HTML and CSS. In order to make it easier to get started, we have created a template site that can
