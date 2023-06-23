@@ -185,6 +185,16 @@ matter for the ``about.md`` page looks like this:
 
 The ``title`` setting controls the title of the page, which is displayed in the browser tab.
 
+Content formats
+~~~~~~~~~~~~~~~
+
+While Markdown is a very convenient way of writing content, you can also use HTML if you need to achieve something
+more specific. In this case you should use the ``html`` file extension, e.g. ``about.html``, but include YAML
+front matter at the top of the file. If you do not include front matter, the file will be treated as a static file
+and will be copied to the output directory without any processing.
+
+See the `Hugo documentation <https://gohugo.io/content-management/formats/>`_ for more information about content formats.
+
 Content types
 ~~~~~~~~~~~~~
 
