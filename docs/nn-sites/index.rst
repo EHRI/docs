@@ -30,7 +30,7 @@ Step 1: Checkout or fork the template site
 
 The template site is available on Github at https://github.com/EHRI/ehri-nn-hugo-template/
 
-The _deployed_ site is available at https://ehri.github.io/ehri-nn-hugo-template/
+The *deployed* site is available at https://ehri.github.io/ehri-nn-hugo-template/
 
 To get started, you should clone the template site to your local machine. You can do this by running the following
 command in a terminal:
@@ -114,10 +114,24 @@ Some sections of the template site are data-driven, that is, the content is dete
 For example, the "Latest" section of the front page is generated from the files in ``data/latest_[lang].yaml``.
 This data structures need to be duplicated for each language, with the textual content translated.
 
-Customise the theme
-~~~~~~~~~~~~~~~~~~~
+Customise the site appearance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TODO
+Assuming you don't want to drastically diverge from the supplied EHRI theme, you can make small changes to site CSS
+and add custom Javascript by adding ``<style>`` or ``<script>`` tags to the ``layouts/partials/head-additions.html``
+file. If you want to make more substantial changes to the theme, you should fork the theme repository at
+https://github.com/EHRI/ehri-nn-hugo-theme, make your changes, add the forked repository as a new Git submodule,
+and update the ``theme`` setting in ``config.yaml`` to point to your forked repository.
+
+You can also change the theme "cover images" (on the front page) simply by putting JPEG images name ``theme-image-1.jpg``,
+``theme-image-2.jpg``, and ``theme-image-3.jpg`` in the ``static/images`` directory. These will override the files of
+the same name in the theme.
+
+.. figure:: images/cover-images.png
+
+    Replace the cover images in the theme by placing new images names ``theme-image-1.jpg``, ``theme-image-2.jpg``,
+    and ``theme-image-3.jpg`` in the ``static/images`` directory.
+
 
 Step 6: Add content
 -------------------
@@ -188,7 +202,24 @@ For more information on shortcodes see the `Hugo documentation <https://gohugo.i
 Step 7: Add images
 ------------------
 
-TODO
+Images are stored in the ``static/images`` directory. You can create subdirectories to organise your images, but
+you will need to include the subdirectory name in the image URL when you reference it in your page content. For example,
+if you have an image called ``myimage.jpg`` in a subdirectory called ``myimages``, you would reference it in your page
+content like this:
+
+.. code-block:: markdown
+
+    ![My image](../images/myimages/myimage.jpg)
+
+**NB**: The image URL about is relative to the page content, not the root of the site. If your site is at the root of a
+domain you can use absolute URLs, e.g. ``![My image](/images/myimages/myimage.jpg)``, but this approach is slightly
+less portable.
+
+If you want a figure, i.e. an image with a caption, you can use the ``figure`` shortcode:
+
+.. code-block:: markdown
+
+    {{< figure src="../images/myimages/myimage.jpg" caption="This is my image" >}}
 
 Step 8: Publish the site on Github Pages
 ----------------------------------------
