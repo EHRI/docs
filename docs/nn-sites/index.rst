@@ -244,8 +244,8 @@ create a file called ``layouts/shortcodes/myshortcode.html``. You can then use t
 
 For more information on shortcodes see the `Hugo documentation <https://gohugo.io/content-management/shortcodes/>`_.
 
-Step 7: Add images
-------------------
+Images & Figures
+~~~~~~~~~~~~~~~~
 
 Images are stored in the ``static/images`` directory. You can create subdirectories to organise your images, but
 you will need to include the subdirectory name in the image URL when you reference it in your page content. For example,
@@ -266,7 +266,7 @@ If you want a figure, i.e. an image with a caption, you can use the ``figure`` s
 
     {{< figure src="../images/myimages/myimage.jpg" caption="This is my image" >}}
 
-Step 8: Publish the site on Github Pages
+Step 7: Publish the site on Github Pages
 ----------------------------------------
 
 If you forked the template repository, you can publish the site by pushing the changes to your forked repository. If you
