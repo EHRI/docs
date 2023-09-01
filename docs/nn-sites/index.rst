@@ -55,6 +55,8 @@ Step 2: Install Hugo
 In order to build the site, you will need to install Hugo. The easiest way to do this is to download the latest release
 from https://gohugo.io/installation/ and follow the instructions for your operating system.
 
+The current minumum version is `0.111.3` so make sure you get a newer version than that.
+
 Step 3: Run the site locally
 ----------------------------
 
