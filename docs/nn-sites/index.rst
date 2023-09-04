@@ -161,7 +161,7 @@ Step 5: Translate the site
 The template site is currently available in English and Welsh (sorry Welsh speakers, we did this with Google Translate.)
 If you want to translate the site into another language, you will need to create a new file in the ``i18n`` directory
 called ``<languageCode>.yaml``. For example, if you want to translate the site into French, you should create a file
-called ``fr.yaml``. You can copy the contents of ``en.yaml`` from the theme's i18n directory (`theme/ehri-nn/i18n/en.yaml`) 
+called ``fr.yaml``. You can copy the contents of ``en.yaml`` from the theme's i18n directory (``theme/ehri-nn/i18n/en.yaml``) 
 and edit the strings to translate them into French. You should also add the language to the ``languages`` section of 
 ``config.yaml``, remove references to the Welsh language data (the ``cs`` section), and add the appropriate menu items
 to the ``menu`` section.
