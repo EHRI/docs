@@ -163,8 +163,15 @@ If you want to translate the site into another language, you will need to create
 called ``<languageCode>.yaml``. For example, if you want to translate the site into French, you should create a file
 called ``fr.yaml``. You can copy the contents of ``en.yaml`` from the theme's i18n directory (``theme/ehri-nn/i18n/en.yaml``) 
 and edit the strings to translate them into French. You should also add the language to the ``languages`` section of 
-``config.yaml``, remove references to the Welsh language data (the ``cs`` section), and add the appropriate menu items
+``config.yaml``, remove references to the Welsh language data (the ``cy`` section), and add the appropriate menu items
 to the ``menu`` section.
+
+Translating existing markdown/HTML content
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Under the ``content`` directory, and its subdirectories, various files are named with a ``.cy.md`` suffix. These are
+Welsh translations for pages with the same base name. You should rename these files to match your new language,
+for example, ``.fr.md`` and translate the contents appropriately.
 
 Translating data-driven content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -172,6 +179,7 @@ Translating data-driven content
 Some sections of the template site are data-driven, that is, the content is determined by data in the ``data`` directory.
 For example, the "Latest" section of the front page is generated from the files in ``data/latest_[lang].yaml``.
 This data structures need to be duplicated for each language, with the textual content translated.
+
 
 Step 6: Add content
 -------------------
@@ -188,7 +196,7 @@ appended, e.g. ``about.en.md`` for English or ``about.fr.md`` for French. The co
 appropriate language.
 
 Front matter
-~~~~~~~~~~~
+~~~~~~~~~~~~
 
 Each page starts with a section called "front matter" which contains metadata about the page. This is written in YAML
 format, which is a simple way of representing structured data. The front matter is enclosed in ``---`` at the top of the
