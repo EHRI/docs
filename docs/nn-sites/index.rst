@@ -114,14 +114,26 @@ file. If you want to make more substantial changes to the theme, you should fork
 https://github.com/EHRI/ehri-nn-hugo-theme, make your changes, add the forked repository as a new Git submodule,
 and update the ``theme`` setting in ``config.yaml`` to point to your forked repository.
 
-You can also change the theme "cover images" (on the front page) simply by putting JPEG images name ``theme-image-1.jpg``,
-``theme-image-2.jpg``, and ``theme-image-3.jpg`` in the ``static/images`` directory. These will override the files of
-the same name in the theme.
+**Note**: it is best to avoid directly changing the files in the ``themes/ehri-nn`` directory, as this will make it
+difficult to update the theme in future. You should instead override the files by creating a file with the same name
+and path in the site root. For example, you can change the theme "cover images" (on the front page) simply by putting
+JPEG images name ``theme-image-1.jpg``, ``theme-image-2.jpg``, and ``theme-image-3.jpg`` in the ``static/images``
+directory. These will override the files of the same name in the theme.
 
 .. figure:: images/cover-images.png
 
     Replace the cover images in the theme by placing new images names ``theme-image-1.jpg``, ``theme-image-2.jpg``,
     and ``theme-image-3.jpg`` in the ``static/images`` directory.
+
+If you want to make changes to a partial template in the theme (for example, the footer), you can override it by
+creating a file with the same name in the ``layouts/partials`` directory. For example, to change the footer, you
+should create a file called ``layouts/partials/footer.html`` and add the following content:
+
+.. code-block:: html
+
+    <footer>
+        <p>This is my custom footer</p>
+    </footer>
 
 Customising the home page
 ~~~~~~~~~~~~~~~~~~~~~~~~~
