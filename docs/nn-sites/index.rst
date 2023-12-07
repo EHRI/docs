@@ -66,8 +66,9 @@ It's an open source package manager for Windows (more here: https://chocolatey.o
 
 Work in Windows PowesShell for this one. Enter following command: 
 
-.. code-block::
+.. code-block::code
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
 
 **2) Install Hugo**
 
