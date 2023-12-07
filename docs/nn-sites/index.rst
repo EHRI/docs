@@ -98,7 +98,9 @@ Enter following command:
 
 
 **6) Start Hugo server**
+
 Enter following command: 
+
 .. code-block:: bash
 
     hugo server
