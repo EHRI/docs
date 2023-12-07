@@ -34,6 +34,12 @@ like this from within the ``docs`` directory:
         make html
     done
 
+On MacOS, install the ``fswatch`` command and use something like this:
+
+.. code-block:: bash
+
+    fswatch -r --exclude _build . | (while read; do make html; done)
+
 On push to the master branch a webhook is set up at readthedocs.org to make the site available at
 http://documentation.ehri-project.eu.
 
