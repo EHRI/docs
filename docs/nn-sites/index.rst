@@ -84,6 +84,7 @@ Enter following command:
 
 **3) Create a new folder for the project on you PC.**
 
+
 **4) Download the template from Github.**
 
 To ensure you have all the files downloaded, it is actually easier to download the .zip archive from here: https://github.com/EHRI/ehri-nn-hugo-template and unzip the content into your newly created folder.
@@ -105,9 +106,11 @@ Enter following command:
 
     hugo server
 
+
 **7) Your project is now accessible locally**
 
 Check at http://localhost:1313/.
+
 
 Step 3: Run the site locally
 ----------------------------
