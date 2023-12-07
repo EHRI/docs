@@ -68,20 +68,19 @@ Work in Windows PowesShell for this one. Enter following command:
 
 .. code-block:: bash
 
-    hugo server
-
-.. code-block:: markdown
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-
+  
 **2) Install Hugo**
 
 Keep work in the PowerShell for this one.
 
 Enter following command: 
 
-.. code-block:: markdown
-        choco install hugo-extended
+.. code-block:: bash
+
+    choco install hugo-extended
+   
 
 **3) Create a new folder for the project on you PC.**
 
