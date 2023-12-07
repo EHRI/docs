@@ -57,6 +57,9 @@ from https://gohugo.io/installation/ and follow the instructions for your operat
 
 The current minumum version is `0.111.3` so make sure you get a newer version than that.
 
+2.1. Install Hugo on Windows 
+____________________________
+
 Step 3: Run the site locally
 ----------------------------
 
