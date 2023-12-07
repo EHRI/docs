@@ -106,6 +106,7 @@ Enter following command:
     hugo server
 
 **7) Your project is now accessible locally**
+
 Check at http://localhost:1313/.
 
 Step 3: Run the site locally
