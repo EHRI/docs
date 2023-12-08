@@ -142,7 +142,7 @@ change the layout of the home page, you should edit the file ``layouts/index.htm
 template syntax, which is documented at https://gohugo.io/templates/introduction/. Between the ``{{ define "main" }}`` and
 ``{{ end }}`` tags, the Markdown in ``content/_index.md`` is rendered in the ``{{ .Content }}`` tag,  but the template also
 includes the hero video and various other data-driven sections which can be customised by editing the files in the ``data``
-directory, specifically ``data/services_en.yaml`` and ``data/latest_en.yaml``. These sections can be completely removed
+directory, specifically ``data/services.en.yaml`` and ``data/latest.en.yaml``. These sections can be completely removed
 or new ones added as required.
 
 Fetching theme updates
@@ -187,7 +187,7 @@ Translating data-driven content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Some sections of the template site are data-driven, that is, the content is determined by data in the ``data`` directory.
-For example, the "Latest" section of the front page is generated from the files in ``data/latest_[lang].yaml``.
+For example, the "Latest" section of the front page is generated from the files in ``data/latest.[lang].yaml``.
 This data structures need to be duplicated for each language, with the textual content translated.
 
 
