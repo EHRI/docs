@@ -1,6 +1,11 @@
 Setting up a new NN page on Github
 ==================================
 
+While it is strongly recommended to use Git to manage the content of your NN page, it is
+possible to edit the content directly on Github. This tutorial will explain how
+to set up a new NN page without leaving Github, and a brief overview of how to
+manage content.
+
 #. **Create a Github account if you don't have one already:**
 
     https://github.com/join
@@ -25,14 +30,14 @@ Setting up a new NN page on Github
 
 #. **Go to "Settings":**
 
-   .. figure:: images/github_tutorial/new-repo-go-to-settings.png
+   .. figure:: images/new-repo-go-to-settings.png
       :alt: Go to Settings
 
    |br|
 
 #. **On the left hand side, select "Pages":**
 
-   .. figure:: images/github_tutorial/in-settings-select-pages.png
+   .. figure:: images/in-settings-select-pages.png
       :alt: Select Pages
       :align: center
 
@@ -40,7 +45,7 @@ Setting up a new NN page on Github
 
 #. **Under "Build and Deployment" select "Github Actions":**
 
-   .. figure:: images/github_tutorial/under-build-and-deployment-select-github-actions.png
+   .. figure:: images/under-build-and-deployment-select-github-actions.png
       :alt: Select Github Actions
 
    |br|
@@ -55,7 +60,7 @@ Setting up a new NN page on Github
 
 #. **On the action, select "Run workflow"**
 
-   .. figure:: images/github_tutorial/under-actions-select-workflow-and-run.png
+   .. figure:: images/under-actions-select-workflow-and-run.png
        :alt: Select Workflow and Run
        :align: center
 
@@ -65,7 +70,7 @@ Setting up a new NN page on Github
    a few minutes, it should say "Success" and you should be able to visit your new
    at https://<YOUR_USERNAME>.github.io/<YOUR_REPOSITORY_NAME>
 
-   .. figure:: images/github_tutorial/workflow-will-say-queued-whilst-running.png
+   .. figure:: images/workflow-will-say-queued-whilst-running.png
        :alt: Select Workflow and Run
        :align: center
 
@@ -74,7 +79,7 @@ Setting up a new NN page on Github
    |br|
 
 Customising your new NN page
-============================
+----------------------------
 
 Visit the repository where you forked the NN template on Github, at
 https://github.com/<YOUR_USERNAME>/<YOUR_REPOSITORY_NAME>
@@ -111,7 +116,7 @@ Let's just explain a few files and what they do:
   outside of the content, for example, the menus, header, and footer.
 
 Adding a new News Item
-======================
+~~~~~~~~~~~~~~~~~~~~~~
 
 #. **Navigate to the "content/news/" folder and click "Add File", then "Create new file"**
 
@@ -137,7 +142,7 @@ Adding a new News Item
         date: 2023-12-11
         ---
 
-        This is my news item.
+        This is my news item, about a thing that has happened, or will happen.
 
    Some things to watch out for here:
 
@@ -146,9 +151,12 @@ Adding a new News Item
       date is used to sort the news items, so the most recent news items will appear first.
       **If the date is in the future, the page will not be created.**
 
-      You can find info about other available fields in the Hugo documentation:
+    |br|
 
-        https://gohugo.io/content-management/front-matter/#front-matter-variables
+    .. note::
+       You can find info about other available fields in the Hugo documentation:
+
+         https://gohugo.io/content-management/front-matter/#front-matter-variables
 
     |br|
 
@@ -167,9 +175,28 @@ Adding a new News Item
 
     |br|
 
-#. **Visit your NN site at https://<YOUR_USERNAME>.github.io/<YOUR_REPOSITORY_NAME>**
+#. **Visit your NN site and go to /news/**
 
     |br|
+
+#. **Add a featured image to your news item**
+
+   You can add a featured image to your news item by adding an image file
+   in the same ``content/news/my-news-item`` directory as the ``index.md`` file, called, for example,
+   ``featured-image.jpg``. Then, in the ``index.md`` file, add the following
+   line to the front matter:
+
+    .. code-block:: markdown
+
+        ---
+        title: My News Item
+        date: 2023-12-11
+        image: featured-image.jpg
+        ---
+
+        This is my news item, about a thing that has happened, or will happen.
+
+   |br|
 
 
 

@@ -67,12 +67,12 @@ The Neo4j extension provides 3 endpoints under the `/ehri` path (e.g. when insta
 server address and port, plus `/ehri`. These are:
 
 1. The "ReSTful" interface
-  A web service interface in the ReST style that can be used for general CRUD operations, along with a more RCP-like
-  functions for operating on data and performing administrative functions.
+   A web service interface in the ReST style that can be used for general CRUD operations, along with a more RCP-like
+   functions for operating on data and performing administrative functions.
 2. OAI-PMH
-  An `OAI-PMH 2.0 <https://www.openarchives.org/pmh/>`_ server implementation at ``/ehri/oaipmh``.
+   An `OAI-PMH 2.0 <https://www.openarchives.org/pmh/>`_ server implementation at ``/ehri/oaipmh``.
 3. GraphQL
-  A `GraphQL <http://graphql.org>`_ interface at ``/ehri/graphql`` for ad-hoc data exploration.
+   A `GraphQL <http://graphql.org>`_ interface at ``/ehri/graphql`` for ad-hoc data exploration.
 
 **None of these are exposed directly to the outside world**: the ReSTful interface is access via the EHRI portal HTML
 interface, whereas the OAI-PMH and GraphQL endpoints are proxied by the portal more or less directly, the latter with

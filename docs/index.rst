@@ -47,7 +47,6 @@ For developers and system administrators:
    :maxdepth: 2
 
    technical/backend/index
-   technical/harvesting/index
 
 **Frontend Portal Site**
 
