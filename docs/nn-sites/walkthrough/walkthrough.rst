@@ -145,26 +145,6 @@ includes the hero video and various other data-driven sections which can be cust
 directory, specifically ``data/services.en.yaml`` and ``data/latest.en.yaml``. These sections can be completely removed
 or new ones added as required.
 
-Fetching theme updates
-~~~~~~~~~~~~~~~~~~~~~~
-
-Sometimes the theme will be updated with new features or bug fixes. To fetch these updates, run the following command
-in the ``themes/ehri-nn`` directory:
-
-.. code-block:: bash
-
-    git pull
-
-After this you will need to commit the changes to the theme submodule in the ``my-nn-site`` repository:
-
-.. code-block:: bash
-
-    git add themes/ehri-nn
-    git commit -m "Update theme"
-
-Be sure to check how your site looks after updating the theme, as the update may have broken something.
-
-
 Step 5: Translate the site
 --------------------------
 
@@ -328,14 +308,17 @@ command in the ``themes/ehri-nn`` directory:
     cd themes/ehri-nn
     git pull origin main
 
-After this you will need to commit the changes to the theme submodule in the ``my-nn-site`` repository:
+**Now**, run the Hugo build on your site to ensure there are no errors and then run the server to ensure
+the theme changes have not caused any problems with the site HTML/CSS etc.
+
+If all is good, you will need to commit the changes to the theme submodule in the ``my-nn-site`` repository:
 
 .. code-block:: bash
 
     git add themes/ehri-nn
     git commit -m "Update theme"
 
-Be sure to check how your site looks after updating the theme, as the update may have broken something.
+Remember, be sure to check how your site looks after updating the theme, as the update may have broken something.
 
 Troubleshooting
 ---------------
