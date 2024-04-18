@@ -49,6 +49,11 @@ Synchronise fonds with dataset
   fonds has undergone a large reorganisation necessitating the removal of many units. Synchronisation only
   works when an institution has unique identifiers that are consistent before and after import.
 
+Nest under fonds
+  This tells the importer to nest the dataset under the fonds ID. This is useful when the dataset is a
+  collection of EAD files that are part of a larger fonds, and the EADs do not themselves contain a description of
+  the specified fonds ID.
+
 Content-Type Override
   By default it is assumed that datasets are XML data with a UTF-8 character set, or "text/xml; charset=utf-8"
   in internet media-type parlance.
