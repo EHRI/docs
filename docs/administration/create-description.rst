@@ -25,39 +25,11 @@ country:
 
 Once you have identified the relevant archival institution, you can
 create a top-level archival description by clicking on ‘Create Archival
-Description’. After which, you will be directed to an editing page.
+Description’:
 
 |image32|
 
-It is **mandatory** to provide:
-
--  Identifier (call number provided by the archive);
--  Language of description;
--  Title;
--  Date(s);
--  Level of description;
--  Extent and medium;
--  Language(s) of Materials;
--  Script(s) of Materials;
--  Archivist's notes.
-
-**Please note that adding the creator to the archival description
-is also mandatory. This, however, can only be done after the archival
-description has been created: see below how to add a creator**
-
-It is desirable to provide:
-
--  Biographical history;
--  Archival history;
--  Scope and content;
--  Finding aids;
--  Existence and location of originals;
--  Existence and location of copies;
--  Publication note.
-
-All the other fields are optional.
-
-If available however, all information can be provided.
+After which, you will be directed to an editing page:
 
 |image33|
 
@@ -71,6 +43,20 @@ You can create as many fields with the plus button as you need.
 
 To save your description, click on ‘Create Archival Description’ at the
 bottom of the page.
+
+**NB**: Since this guide was written the forms have been augmented to include
+hints showing which ones are mandatory or desirable (other fields are optional.)
+The hints look like this:
+
+|image_field_hints|
+
+You can find more information about mandatory and desirable fields on the
+`EHRI Portal data model page <https://portal.ehri-project.eu/help/datamodel>`_.
+
+**Please note that adding the creator to the archival description
+is also mandatory. This, however, can only be done after the archival
+description has been created: see below how to add a creator**
+
 
 *Tips & tricks: If you receive an error message when trying to save your
 description, this may be caused by an open field created by having
@@ -286,3 +272,4 @@ Archival description page.
 .. |image53| image:: images/create_description_image53.png
 .. |image54| image:: images/create_description_image54.png
 .. |image55| image:: images/create_description_image55.png
+.. |image_field_hints| image:: images/field_hints.png
