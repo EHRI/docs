@@ -1,13 +1,14 @@
 Contact Form 7 Tutorial
 =======================
 
-This is a tutorial for using Contact Form 7 to create an event registration form in Wordpress,
-with some of the functionality previously available in Drupal. While there are many fancier and
+This is a tutorial for using `Contact Form 7 <https://contactform7.com/docs/>`_ to create an event registration
+form in Wordpress, with some of the functionality previously available in Drupal. While there are many fancier and
 more advanced form plugins available for Wordpress, Contact Form 7 (CF7) has the following advantages:
 
 * It is free, and does not nag you to upgrade to a paid version.
-* It is lightweight and does not slow down the site.
-* It is Open Source, so the code can be audited for security issues, and is relatively popular
+* It is lightweight, and does not slow down the site to any significant degree.
+* It is `Open Source <https://github.com/rocklobster-in/contact-form-7>`_,
+  so the code can be audited for security issues, and is relatively popular
   so any security issues are likely to be found and fixed quickly.
 * It is quite stable and unlikely to change significantly in the near future, or break the site
   with a new update.
@@ -16,9 +17,10 @@ On the downside, it is not as user-friendly as some other form plugins, and does
 features. However, it is quite powerful and flexible, and can be used to create a wide variety of
 forms.
 
-By default, CF7 creates forms that send an email to the site administrator. However, it integrates
-with another plugin by the same author, **Flamingo**, to save form submissions to the database. This
-tutorial will show you how to create a form, embed it in a post, and view and export submissions.
+By default, CF7 creates forms that send an email (to the site administrator, or elsewhere.) However,
+it integrates with another plugin by the same author, `Flamingo <https://en-gb.wordpress.org/plugins/flamingo/>`_,
+to save form submissions to the database. This tutorial will show you how to create a form, embed it in a post,
+and view and export submissions.
 
 The Task
 --------
@@ -26,15 +28,17 @@ The Task
 We're going to create a registration form for an EHRI event where we request the following
 information:
 
-* First Name (required)
-* Last Name (required)
-* Email (required)
-* Institutional Affiliation (optional)
-* Checkboxes to indicate which events the participant will attend:
-   * Plenary Session: Yes/No
-   * WP2 Meeting: Yes/No
-   * Conference dinner: Yes/No
-* Textarea for dietary requirements (optional)
+- First Name (required)
+- Last Name (required)
+- Email (required)
+- Institutional Affiliation (optional)
+- Checkboxes to indicate which events the participant will attend:
+
+  - Plenary Session: Yes/No
+  - WP2 Meeting: Yes/No
+  - Conference dinner: Yes/No
+
+- Textarea for dietary requirements (optional)
 
 There are three stages to this:
 
@@ -51,16 +55,19 @@ On the Contact Form page, click on "Add New" to create a new form.
 
 |cf7_image03|
 
-This will take you to a new form configuration page. At the top you can see the title of the form,
-and below that a text box containing the default form configuration code. Let's look at this in
-more detail.
+This will take you to a new form configuration page.
 
 Form Configuration
 ------------------
 
+At the top you can see the title of the form, and below that a text box containing the default
+form configuration markup. Let's look at this in more detail.
+
+|cf7_image06|
+
 The **default** form configuration code looks like this:
 
-.. code-block:: html
+.. code-block::
 
     <label> Your name
         [text* your-name autocomplete:name] </label>
@@ -80,10 +87,10 @@ This example form consists of four fields: *name*, *email*, *subject*, and *mess
 button. The fields are defined by the tags in square brackets, with an asterisk indicating that the
 field is required. The text before the tag is the label that will be displayed next to the field.
 
-We will replace this default form with our own fields. Clear the text box and copy the following
+We will replace this default form with our own fields. **Clear the text box** and type the following
 into it:
 
-.. code-block:: html
+.. code-block::
 
     <label> First Name (required)
         [text* first-name] </label>
@@ -101,7 +108,7 @@ Let's examine what this says:
 
 Let's continue adding some other fields in the same vein:
 
-.. code-block:: html
+.. code-block::
 
     <label> Last Name (required)
         [text* last-name] </label>
@@ -123,7 +130,7 @@ Next, we will add the checkboxes for the events. These are a bit different becau
 two options for each event, "Yes" and "No", in order to make it clear that the user must choose one
 (and to make processing the data easier.)
 
-.. code-block:: html
+.. code-block::
 
     <label> Plenary Session </label>
         [checkbox* plenary-session add_label_element exclusive "Yes" "No"]
@@ -145,7 +152,7 @@ There are a few things to note here:
 
 Next, we will add a textarea for the dietary requirements:
 
-.. code-block:: html
+.. code-block::
 
     <label> Dietary Requirements (optional)
         [textarea dietary-requirements] </label>
@@ -154,15 +161,19 @@ Note that this uses the ``textarea`` tag, rather than ``text``, because it is a 
 
 Finally we will add the submit button:
 
-.. code-block:: html
+.. code-block::
 
     [submit "Submit"]
 
-**Note**: the submit button can contain whatever text you want, e.g. "Register", "Send", etc.
+
+.. note::
+
+    **Note**: the submit button can contain whatever text you want, e.g. "Register", "Send", etc.
+
 
 Putting this all together gives us the final form configuration:
 
-.. code-block:: html
+.. code-block::
 
     <label> First Name (required)
         [text* first-name] </label>
@@ -207,21 +218,23 @@ looks like, who it goes to, and so on. At the top of the config screen it shows 
 are available to include in the mail. You can also include additional pre-defined information such as
 ``[_site_admin_email]`` and ``[_site_title]``.
 
+|cf7_image08_2|
+
 Since we've just created a registration form with different fields than the default, we need to change
-the standard mail configuration template. For now, we can leave the ``to`` and ``from`` fields as the
+the standard mail configuration template. For now, we can leave the **To** and **From** fields as the
 default, which will send the email to the site administrator and use a default email address as the
-sender, but you could for example put your own email address as the ``to`` recipient.
+sender, but you could for example put your own email address as the **To** recipient.
 
-We'll start by changing the subject to ``[_site_title]: "EHRI 2025 Event New Registration"``. Note that
+We'll start by changing the **Subject** field to ``[_site_title]: "EHRI 2025 Event New Registration"``. Note that
 we get rid of the default ``"[your-subject]"`` and replace it with a more descriptive subject line, because
-``your-subject`` is not a field in our form.
+``your-subject`` is not a valid field in our form.
 
-Next, we'll change the message body of the email to include all the form fields. You can use the form field names
+Next, we'll change the **Message Body** of the email to include all the form fields. You can use the form field names
 in square brackets to include the values of the fields in the email. For example, to include the first name
 field, you would use ``[first-name]``. You can also include text in the email, such as "First Name: [first-name]".
 Here is an example of what the email body might look like:
 
-.. code-block:: html
+.. code-block:: text
 
     New EHRI Event 2025 Registration Form Submission:
 
@@ -334,10 +347,14 @@ was submitted, e.g.:
                         :target: ../../_images/add-new-form.png
 .. |cf7_image04| image:: images/new-form-default.png
                         :target: ../../_images/new-form-default.png
+.. |cf7_image06| image:: images/new-contact-form.png
+                        :target: ../../_images/new-contact-form.png
 .. |cf7_image07| image:: images/final-form-config.png
                         :target: ../../_images/final-form-config.png
 .. |cf7_image08| image:: images/mail-tab.png
                         :target: ../../_images/mail-tab.png
+.. |cf7_image08_2| image:: images/mail-form.png
+                        :target: ../../_images/mail-form.png
 .. |cf7_image09| image:: images/additional-settings.png
                         :target: ../../_images/additional-settings.png
 .. |cf7_image10| image:: images/save-additional-settings.png
