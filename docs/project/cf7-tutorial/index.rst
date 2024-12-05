@@ -353,8 +353,8 @@ was submitted, e.g.:
                         :target: ../../_images/final-form-config.png
 .. |cf7_image08| image:: images/mail-tab.png
                         :target: ../../_images/mail-tab.png
-.. |cf7_image08_2| image:: images/mail-form.png
-                        :target: ../../_images/mail-form.png
+.. |cf7_image08_2| image:: images/mail-config.png
+                        :target: ../../_images/mail-config.png
 .. |cf7_image09| image:: images/additional-settings.png
                         :target: ../../_images/additional-settings.png
 .. |cf7_image10| image:: images/save-additional-settings.png
