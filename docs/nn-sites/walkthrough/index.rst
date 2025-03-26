@@ -175,6 +175,15 @@ Some sections of the template site are data-driven, that is, the content is dete
 For example, the "Latest" section of the front page is generated from the files in ``data/latest.[lang].yaml``.
 This data structures need to be duplicated for each language, with the textual content translated.
 
+.. note::
+
+   Hugo has a useful feature which allows you to check for missing translations on your site, which can cause bits of
+   text being mysteriously absent. To use this you just need to run Hugo with the `--printI18nWarnings` flag
+   which will print out something like `WARN  i18n|MISSING_TRANSLATION|de|read_more` if a particular key is not translated,
+   in this case the key `read_more` in German.
+
+   Note that due to an implementation detail in the EHRI template, two warnings currently get printed for each configured
+   language (e.g. `WARN  i18n|MISSING_TRANSLATION|en|`). These can safely be disregarded.
 
 Step 6: Add content
 -------------------
