@@ -45,7 +45,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'EHRI Documentation'
-copyright = u'%s, The EHRI Consortium' % date.today().year
+copyright = u'%s, EHRI-ERIC ' % date.today().year
 domain = "documentation.ehri-project.eu"
 
 # The version info for the project you're documenting, acts as replacement for
