@@ -29,22 +29,23 @@ Ask a member of the EHRI team for access to AWS or DO resources.
 Service Monitoring
 ------------------
 
-EHRI has a [StatusCake](https://www.statuscake.com) account to monitor the availability of the EHRI portal and other services. If you need access to this account, please ask a member of the EHRI team.
+EHRI has a `StatusCake <https://www.statuscake.com>`_ account to monitor the availability of the EHRI portal and other services. If you need access to this account, please ask a member of the EHRI team.
 
-There is a public status page at `status.ehri-project.eu <https://status.ehri-project.eu>`_ which shows the current status of various public services, including the EHRI portal, Online Edition sites, and the Document Blog.
+There is a (WIP) public status page at `statuscake.ehri-project.eu <https://status.ehri-project.eu>`_ which shows the current status of various public services, including the EHRI portal, Online Edition sites, and the Document Blog.
 
 Backend Service Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Some individual backend services such as Neo4j, Solr, Elasticsearch, and the Portal are monitored using [Monit](https://mmonit.com/monit/). Typically, this tests an HTTP endpoint
+Some individual backend services such as Neo4j, Solr, Elasticsearch, and the Portal are monitored using `Monit <https://mmonit.com/monit>`_. Typically, this tests an HTTP endpoint
 and attempts to restart the service a set number of times if it doesn't respond. Usually, a service crashing indicates something amiss that needs to be fixed, such as memory
 exhaustion or a misconfiguration, so Monit is only the first line of defence and should not be relied upon to fix problems automatically.
 
 To use Monit to show service status you can run the following command on the server:
 
-```bash
-sudo monit status
-```
+.. code-block:: bash
+
+    sudo monit status
+
 
 Alternately, the log file in `/var/log/monit.log` can be checked for service status and errors. When restart events occur a notification email is sent to the tech-alerts@ forwarding address.
 
@@ -55,8 +56,8 @@ The first way to check if we're being DDOSed is to check the server load average
 about 4.0 then the server is under some unusual load. The next thing to check is requests per second on Apache, which can be determined by running the following
 command on the server:
 
-```bash
-sudo apachectl status
-```
+.. code-block:: bash
+
+    sudo apachectl status
 
 
