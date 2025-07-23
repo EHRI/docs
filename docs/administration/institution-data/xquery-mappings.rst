@@ -9,6 +9,7 @@ may vary though.) This documentation describes how tabular XQuery transformation
 
 .. image:: images/data-management-edit-transformation.png
     :alt: The data management transformation editor with an XQuery mapping
+    :target: ../../_images/data-management-edit-transformation.png
 
 
 Each mapping consists of four fields:

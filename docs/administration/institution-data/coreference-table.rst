@@ -47,4 +47,5 @@ Import Coreference Table
 
 .. image:: images/data-management-coreference-table.png
     :alt: The coreference table
+    :target: ../../_images/data-management-coreference-table.png
 

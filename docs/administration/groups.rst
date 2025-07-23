@@ -22,7 +22,7 @@ The form to create a new group contains the following options:
 .. image:: images/create-new-group.png
     :scale: 40%
     :alt: The new group form
-    :target: _images/create-new-group.png
+    :target: ../_images/create-new-group.png
 
 Identifier
   A short lowercase one-word identifier to distinguish the

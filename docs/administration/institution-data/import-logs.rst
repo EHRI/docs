@@ -7,3 +7,4 @@ which did not result in any new or updated items, are not shown.
 
 .. image:: images/data-management-import-logs.png
     :alt: The import logs tab
+    :target: ../../_images/data-management-import-logs.png

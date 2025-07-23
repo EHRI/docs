@@ -42,6 +42,7 @@ the snapshot is prior to a particular set of imports about to be done.
 
 .. image:: images/data-management-new-snapshot.png
     :alt: The data management new snapshot form
+    :target: ../../_images/data-management-new-snapshot.png
 
 Selecting a snapshot
 ====================

@@ -16,6 +16,7 @@ one dataset representing its files, there are several reasons why multiple datas
 
 .. image:: images/data-management-new-dataset.png
     :alt: The data management default screen with new dataset form
+    :target: ../../_images/data-management-new-dataset.png
 
 A new dataset requires an identifier that can only consist of lower-case characters, numbers and underscores. Except for
 these restrictions it is arbitrary, but **cannot be changed later.**
@@ -76,6 +77,7 @@ Once a new dataset has been created the dataset UI is shown.
 
 .. image:: images/data-management-overview.png
     :alt: The dataset UI
+    :target: ../../_images/data-management-overview.png
 
 The dataset UI has three tabs:
 
@@ -97,6 +99,7 @@ The input tab shows a list of "raw", untransformed input files.
 
 .. image:: images/data-management-preview.png
     :alt: Previewing a source file
+    :target: ../../_images/data-management-preview.png
 
 When clicking on an item in the file list the contents will be shown in the preview pane. Note: large files will be
 truncated. The preview will automatically validate the file's contents against EHRI's EAD schema and errors will be
@@ -109,6 +112,7 @@ Uploading Files
 
 .. image:: images/data-management-upload.png
     :alt: The data management upload tab
+    :target: ../../_images/data-management-upload.png
 
 For upload datasets the source tab shows an "Upload Files..." button. You can also drag-and-drop files onto the list
 pane to upload them to the system.
@@ -118,6 +122,7 @@ OAI-PMH Harvesting
 
 .. image:: images/data-management-harvesting.png
     :alt: The data management input tab for an OAI-PMH dataset
+    :target: ../../_images/data-management-harvesting.png
 
 To harvest files via OAI-PMH click on the "Harvest Files..." button and fill in the three fields required to describe the endpoint. These are:
 
@@ -140,6 +145,7 @@ ResourceSync
 
 .. image:: images/data-management-resourcesync.png
     :alt: The data management input tab for a ResourceSync dataset
+    :target: ../../_images/data-management-resourcesync.png
 
 At present, fetching files via ResourceSync requires knowing the URL of the *capabilitylist.xml* document that, in turn, contains links to the actual file URLs. It is not sufficient to put the URL of the general ResourceSync directory containing the root sitemap (this might be changed in future.) 
 
@@ -155,6 +161,7 @@ URL Set
 
 .. image:: images/data-management-urlset.png
     :alt: The data management input tab for an URL-harvested dataset
+    :target: ../../_images/data-management-urlset.png
 
 While it is not particularly "automatic", it is necessary sometimes to download data from a set of predetermined
 online locations. In this case, it is possible to use a table in which individual URLs can be corresponded to a
@@ -172,6 +179,7 @@ Data Transformation or Enhancement
 
 .. image:: images/data-management-transformations.png
     :alt: The data management transformation tab
+    :target: ../../_images/data-management-transformations.png
 
 The transformations tab lists the set of available transformations. A "conversion pipeline" can be configured
 by dragging zero or more transformations from the available set, which will then be applied serially, with the
@@ -193,6 +201,7 @@ Editing transformations or creating new ones
 
 .. image:: images/data-management-edit-transformation.png
     :alt: The data management transformation editor
+    :target: ../../_images/data-management-edit-transformation.png
 
 Clicking the edit button on a transformation opens the transformation editor. This consists of three panes:
 
@@ -281,6 +290,7 @@ Ingest
 
 .. image:: images/data-management-ingest.png
     :alt: The data management ingest tab
+    :target: ../../_images/data-management-ingest.png
 
 The ingest tab shows the files resulting from applying zero or more transformations to the harvest or upload
 file stages. Here, once again, files can be previewed, validated, deleted or downloaded.

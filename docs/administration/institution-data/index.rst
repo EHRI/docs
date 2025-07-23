@@ -24,6 +24,7 @@ The EAD Manager home page has four tabs:
    :maxdepth: 1
 
    datasets
+   xquery-mappings
    content-snapshots
    coreference-table
    import-logs
@@ -33,3 +34,4 @@ transformation datasets via `XSLT <datasets.html#xslt>`_ or `XQuery <xquery-mapp
 
 .. image:: images/data-management-home.png
     :alt: Data Manager home
+    :target: ../../_images/data-management-home.png
