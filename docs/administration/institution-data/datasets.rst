@@ -55,6 +55,11 @@ Nest under fonds
   collection of EAD files that are part of a larger fonds, and the EADs do not themselves contain a description of
   the specified fonds ID.
 
+Set Hierarchy
+  For some institutions it is possible to harvest hierarchical data, but only with one unit per file (not nested,
+  like a typical EAD XML finding aid). This option means that the hierarchy in the dataset will be provided (by a
+  TSV file) at ingest time. The hierarchy configuration is uploaded in the ingest settings, described below.
+
 Content-Type Override
   By default it is assumed that datasets are XML data with a UTF-8 character set, or "text/xml; charset=utf-8"
   in internet media-type parlance.
@@ -312,9 +317,16 @@ Use source file ID
 Properties File
   this allows uploading a properties file which can control how EAD fields map to portal internal
   database fields. **This should only be used for compatibility with legacy data.**
+Hierarchy File
+  if the dataset is configured with the *Set Hierarchy* option this field requires a TSV file (without headers) to
+  be provided to map the item local IDs to their respective parents (or nothing, for top-level items).
 Log message
   a log message to be associated with the ingest operation.
 Commit
   actually commits the changes to the database. If left unchecked (the default) the ingest is effectively a
   dry-run.
+Batch size
+  for very large datasets (thousands of files, or fewer very large files) this allows for breaking the ingest
+  operation up into batches of a specific size that are run in individual transactions. By default the ingest will
+  take place in a single transaction.
 
