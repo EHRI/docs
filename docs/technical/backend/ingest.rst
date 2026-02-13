@@ -1,6 +1,10 @@
 Example Ingest
 ==============
 
+.. role:: alert-danger
+
+:alert-danger:`Note: this method of importing EAD is deprecated in favour of using the` `EAD Manager <../../administration/institution-data/index.html>`__.
+
 The current ingest procedure is somewhat long-winded and technical. This
 is an example given a single EAD XML file containing a large number
 (48,000) of individual documentary unit items in a single fonds. The
@@ -21,20 +25,21 @@ the first few times we try:
 
 ::
 
-    tail -f /opt/webapps/neo4j-version/logs/log/neo4j.log
+    tail -f /var/log/neo4j/neo4j.log
 
 Back up the database
 ~~~~~~~~~~~~~~~~~~~~
 
-The Neo4j DB lives in /opt/webapps/data/neo4j/databases/graph.db. You
-can back it up without shutting down the server by running:
+The Neo4j DB lives in /opt/neo4j/data/databases/graph.db. You
+can back it up without shutting down the server by running the
+``online-clone-db`` Fabric script, or running:
 
 ::
 
-    /opt/webapps/neo4j-backup.sh graph.db.BAK
+    /opt/neo4j/current/bin/neo4j-admin backup --from localhost:6362 --name=my-backup --backup-dir /tmp/my-backup
 
 To restore the DB the procedure is: - shut down Neo4j - replace
-/opt/webapps/data/neo4j/databases/graph.db with backup directory you
+/opt/neo4j/data/databases/graph.db with backup directory you
 specified previously - ensure all files in the graph.db directory are
 owned and writable by the ``webadm`` group: - chgrp -R webadm graph.db -
 chmod -R g+rw graph.db - restart Neo4j
@@ -45,8 +50,13 @@ Procedure
 Onwards with the ingest...
 
 Next, in another shell, copy the file(s) to be ingested to the server
-and place them in ``/opt/webapps/data/import-data/de/de-002409``, the
+and place them in ``/opt/neo4/data/import-data/de/de-002409``, the
 working directory for ITS data.
+
+.. note::
+
+   Import data is now stored on an S3-compatible object store. This documentation
+   is for example purposes only.
 
 Import properties handle certain mappings between tags (with particular
 attributes) and EHRI fields. The ITS data has a particular mapping
@@ -56,7 +66,7 @@ file is, in this case:
 
 ::
 
-    /opt/webapps/data/import-data/de/de-002409/its-pertinence.properties
+    /opt/neo4/data/import-data/de/de-002409/its-pertinence.properties
 
 The actual import is done via the /ehri/import/ead endpoint on the Neo4j
 extension. It is documented here:
@@ -78,7 +88,7 @@ properties file as an environment variable:
 
 ::
 
-    export PROPERTIES=/opt/webapps/data/import-data/de/de-002409/its-pertinence.properties
+    export PROPERTIES=/opt/neo4/data/import-data/de/de-002409/its-pertinence.properties
 
 Also, lets write a log file and export it's path as an environment
 variable:
@@ -117,7 +127,7 @@ These parameters are:
 single transaction the staging server might run out of memory. If it
 does the only option is to increase the Neo4j heap size by uncommenting
 and setting the ``dbms.memory.heap.max_size=MORE_MB`` (say, 3500) in
-``$NEO4J_HOME/conf/neo4j-wrapper.conf`` and restarting Neo4j by running:
+``/etc/neo4j/neo4j.conf`` and restarting Neo4j by running:
 
 ::
 
@@ -145,22 +155,7 @@ Indexing
 --------
 
 The final step is the re-index the ITS repository, making the items
-searchable. This can be done from the Portal Admin UI, or via the
-following command:
-
-::
-
-    java -jar /opt/webapps/docview/bin/indexer.jar \
-         --clear-key-value holderId=de-002409 \
-         --index -H "X-User=admin" \
-         --stats \
-         --solr http://localhost:8080/ehri/portal \
-         --rest http://localhost:7474/ehri \
-         "Repository|de-002409"
-
-(This tool is a library/CLI utility the is used by the portal UI and
-available on the server: see the
-https://github.com/EHRI/ehri-search-tools project for more details.)
+searchable. This can be done from the Portal Admin UI.
 
 Updating existing collections
 -----------------------------

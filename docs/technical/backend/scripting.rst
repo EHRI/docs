@@ -1,9 +1,10 @@
 Scripting the EHRI environment
 ==============================
 
-**Note: scripting hasn't been used in a while but came in handy when doing
-some complicated ingests of material that was one-off, complicated, or 
-unusually structured. These docs will remain here just in case...**
+.. note::
+    **Scripting hasn't been used in a while but came in handy when doing
+    some complicated ingests of material that was one-off, complicated, or
+    unusually structured. These docs will remain here just in case...**
 
 Introduction
 ------------
