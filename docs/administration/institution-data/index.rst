@@ -1,30 +1,40 @@
-Managing XML Datasets for Ingest
+Managing Datasets for Ingest
 ================================
 
-This documentation describes EHRI's tools for managing, transforming and ingesting XML collection descriptions. In a
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   datasets/index
+   datasets/csv-import
+   datasets/xquery-mappings
+   content-snapshots
+   coreference-table
+   import-logs
+
+This documentation describes EHRI's tools for managing, transforming and ingesting *structured data* collection descriptions. In a
 nutshell, it allows administrators to:
 
-* manually upload or harvest XML files
+* manually upload or harvest data in XML or `CSV format <datasets/csv-import.html>`_
 * validate XML against EHRI's EAD schema
 * transform arbitrary XML to EAD using either XSLT or tabular XQuery mappings
-* ingest the resulting EAD into the EHRI portal
+* ingest the resulting EAD XML (or CSV) into the EHRI portal
 * perform cleanup actions to keep the EHRI portal in sync with third-party datasets
 
-Accessing the EAD Manager
-=========================
+Accessing the Import Manager
+----------------------------
 
-The EAD Manager can be accessed via the "Ingest" section on the institutions admin page.
+The Import Manager can be accessed via the "Ingest" section on the institutions admin page.
 
-Overview of the EAD Manager
-===========================
+Overview of the Import Manager
+------------------------------
 
-The EAD Manager home page has four tabs:
+The Import Manager home page has four tabs:
 
 .. toctree::
    :maxdepth: 1
 
-   datasets
-   xquery-mappings
+   datasets/index
    content-snapshots
    coreference-table
    import-logs
