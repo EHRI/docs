@@ -2,8 +2,8 @@ Managing Datasets for Ingest
 ================================
 
 .. toctree::
-   :maxdepth: 1
    :hidden:
+   :maxdepth: 1
 
    datasets/index
    datasets/csv-import
@@ -31,13 +31,10 @@ Overview of the Import Manager
 
 The Import Manager home page has four tabs:
 
-.. toctree::
-   :maxdepth: 1
-
-   datasets/index
-   content-snapshots
-   coreference-table
-   import-logs
+* :doc:`Datasets <datasets/index>`
+* :doc:`Content Snapshots <content-snapshots>`
+* :doc:`Coreference Table <coreference-table>`
+* :doc:`Import Logs <import-logs>`
 
 For common cases you'll only have to use the `Datasets <datasets.html>`_ tab. See `here <datasets.html#transformation>`_ for info about
 transformation datasets via `XSLT <datasets.html#xslt>`_ or `XQuery <xquery-mappings.html>`_.

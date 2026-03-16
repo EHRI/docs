@@ -108,7 +108,7 @@ Tab 3: Ingest
 
 
 The Inputs
-==========
+^^^^^^^^^^
 
 The input tab shows a list of "raw", untransformed input files.
 
@@ -190,7 +190,7 @@ the provided URLs. Then, clicking the "Sync Downloads" button will attempt to fe
 
 
 Data Transformation or Enhancement
-==================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/data-management-transformations.png
     :alt: The data management transformation tab
@@ -301,7 +301,7 @@ Transformation parameters work differently for XQuery mappings where they instea
 interpreter know about additional XML namespace prefixes that are in use in the source document.
 
 Ingest
-======
+^^^^^^
 
 .. image:: images/data-management-ingest.png
     :alt: The data management ingest tab
