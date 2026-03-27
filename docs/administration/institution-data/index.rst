@@ -11,6 +11,7 @@ Managing Datasets for Ingest
    content-snapshots
    coreference-table
    import-logs
+   for-publishers
 
 This documentation describes EHRI's tools for managing, transforming and ingesting *structured data* collection descriptions. In a
 nutshell, it allows administrators to:
