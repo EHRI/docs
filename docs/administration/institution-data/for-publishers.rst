@@ -101,6 +101,9 @@ We have limited support for importing the following formats at present:
 Formats like JSON and Excel are not directly supported at present, due to their complexity and/or lack of
 standardised structure.
 
+------
+
+Now let's looks at how metadata can be published:
 
 Publication
 -----------
@@ -137,9 +140,9 @@ EHRI only supports a subset of ResourceSync; it does not support retrieving data
 
 The simplest way to implement ResourceSync is to:
 
- * Export archival metadata as a set of XML documents
- * Put them on a webserver in a publicly accessible folder
- * Create a sitemap manifest linking to each file (or other manifests)
+* Export archival metadata as a set of XML documents
+* Put them on a webserver in a publicly accessible folder
+* Create a sitemap manifest linking to each file (or other manifests)
 
 URL Sets / APIs
 ~~~~~~~~~~~~~~~
