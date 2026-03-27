@@ -98,28 +98,6 @@ The URL will be something like ``https://www.ehri-project.eu/newsletter-edition/
 the slug of the newsletter edition.
 
 
-Ordering the Front Page
-~~~~~~~~~~~~~~~~~~~~~~~
-
-In general, for a page or post to appear on the front page it must be:
-
-#. Published
-#. Have a featured image
-#. Have the "Promote to front page" checkbox checked
-
-Assuming only the above the front page is ordered by most-recent first. However, you can override this by
-putting a number in the "Homepage priority" field, available in the settings of a page or post. The lower the number,
-the higher the priority, so a page with a priority of 1 will appear before a page with a priority of 2.
-
-|project_site_homepage_order|
-
-If you want to remove a page from the front page, simply uncheck the "Promote to front page" checkbox. Alternately,
-if it's an older post/page, **clear** the "Homepage priority" field and save it.
-
-.. note::
-   **Note**: homepage ordering needs a rethink so let the administrator know if you have a better idea of how to do it!
-
-
 Creating a form with Contact Form 7 & Flamingo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
