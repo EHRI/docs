@@ -1,7 +1,12 @@
 @import url("css/theme.css");
 
 .wy-side-nav-search, .wy-nav-top {
-    background-color: #36104f !important;
+    background-color: #472c56 !important;
+}
+
+.wy-side-nav-search a img.logo {
+    width: 50%;
+    height: auto;
 }
 
 a {
