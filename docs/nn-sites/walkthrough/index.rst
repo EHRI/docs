@@ -138,6 +138,28 @@ should create a file called ``layouts/partials/footer.html`` and add the followi
         <p>This is my custom footer</p>
     </footer>
 
+Changing/replacing the header and footer logos
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are two ways to change the logos on the header and footer of the site. The first is to
+put your new logos in the ``static/images`` directory and reference them in the ``config.yaml`` file
+under ``params/headerLogo`` as e.g.
+
+.. code-block:: yaml
+
+    params:
+
+      ... # stuff here
+
+      headerLogo: images/example.svg
+
+Do the same with the ``params/footerLogo`` config value.
+
+The second option is to override the two template partials ``header-banner.html`` and ``footer-banner.html``
+by copying those files from the theme into your site's ``layouts/partials`` directory, and then changing
+the images they point to. The advantage of this approach is that you can also change (or remove) the site
+titles.
+
 Customising the home page
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
