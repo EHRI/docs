@@ -1,6 +1,5 @@
-*****************
 Content Snapshots
-*****************
+=================
 
 .. role:: alert-danger
 
@@ -35,17 +34,17 @@ then compare the *before* and *after* states to determine what needs to be delet
 have moved.
 
 Creating a snapshot
-===================
+-------------------
 
 To create a new snapshot simply click the `Create Snapshot` button and provide a brief description. The description might state that
 the snapshot is prior to a particular set of imports about to be done.
 
 .. image:: images/data-management-new-snapshot.png
-    :alt: The data management new snapshot form
+    :alt: The Import Manager new snapshot form
     :target: ../../_images/data-management-new-snapshot.png
 
 Selecting a snapshot
-====================
+--------------------
 
 Selecting a snapshot from the list allows you to perform cleanup actions.
 

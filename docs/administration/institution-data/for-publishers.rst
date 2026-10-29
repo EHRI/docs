@@ -62,7 +62,7 @@ unique identifiers. For example, if a collection has the following structure:
       * series3
          * file5
 
-The hierarchy table would look like (noting the missing ID for the top-level collection):
+The hierarchy table would look like this (noting that the top-level collection has no parent ID):
 
 .. list-table:: Hierarchy table
    :widths: 50 50
@@ -84,6 +84,9 @@ The hierarchy table would look like (noting the missing ID for the top-level col
      - series2
    * - file5
      - series3
+
+The table should be provided as a tab-separated (TSV) file **without** a header row, with the unit ID in the first
+column and the parent ID (or nothing, for top-level units) in the second.
 
 
 Other metadata formats
@@ -142,7 +145,11 @@ The simplest way to implement ResourceSync is to:
 
 * Export archival metadata as a set of XML documents
 * Put them on a webserver in a publicly accessible folder
-* Create a sitemap manifest linking to each file (or other manifests)
+* Create a ResourceSync resource list (a sitemap-format manifest) linking to each file
+* Create a capability list (``capabilitylist.xml``) that links to the resource list
+
+When setting up harvesting EHRI needs the URL of the capability list itself; the URL of the root
+directory or a general sitemap is not currently sufficient.
 
 URL Sets / APIs
 ~~~~~~~~~~~~~~~

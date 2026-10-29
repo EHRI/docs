@@ -3,7 +3,7 @@ Example Ingest
 
 .. role:: alert-danger
 
-:alert-danger:`Note: this method of importing EAD is deprecated in favour of using the` `EAD Manager <../../administration/institution-data/index.html>`__.
+:alert-danger:`Note: this method of importing EAD is deprecated in favour of using the` `Import Manager <../../administration/institution-data/index.html>`__.
 
 The current ingest procedure is somewhat long-winded and technical. This
 is an example given a single EAD XML file containing a large number

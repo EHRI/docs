@@ -1,6 +1,5 @@
-*****************
 Coreference Table
-*****************
+=================
 
 When we import material from third-party institutions it is not normally the case that their index terms
 (or "access points": people, places, subjects, etc) are the same as — or align with — EHRI's controlled vocabularies.

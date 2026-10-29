@@ -1,22 +1,20 @@
-Managing Datasets for Ingest
-================================
+Importing Institution Data
+==========================
 
 .. toctree::
    :hidden:
    :maxdepth: 1
 
    datasets/index
-   datasets/csv-import
-   datasets/xquery-mappings
    content-snapshots
    coreference-table
    import-logs
    for-publishers
 
-This documentation describes EHRI's tools for managing, transforming and ingesting *structured data* collection descriptions. In a
-nutshell, it allows administrators to:
+This documentation describes the Import Manager, EHRI's tool for managing, transforming and ingesting *structured data*
+collection descriptions. In a nutshell, it allows administrators to:
 
-* manually upload or harvest data in XML or `CSV format <datasets/csv-import.html>`_
+* manually upload or harvest data in XML or :doc:`CSV format <datasets/csv-import>`
 * validate XML against EHRI's EAD schema
 * transform arbitrary XML to EAD using either XSLT or tabular XQuery mappings
 * ingest the resulting EAD XML (or CSV) into the EHRI portal
@@ -37,9 +35,12 @@ The Import Manager home page has four tabs:
 * :doc:`Coreference Table <coreference-table>`
 * :doc:`Import Logs <import-logs>`
 
-For common cases you'll only have to use the `Datasets <datasets.html>`_ tab. See `here <datasets.html#transformation>`_ for info about
-transformation datasets via `XSLT <datasets.html#xslt>`_ or `XQuery <xquery-mappings.html>`_.
+For common cases you'll only have to use the :doc:`Datasets <datasets/index>` tab. See :ref:`here <transformation>` for info about
+transformation datasets via :ref:`XSLT <xslt>` or :doc:`XQuery <datasets/xquery-mappings>`.
+
+For guidance on how institutions can prepare and publish their metadata so that it can be imported, see
+:doc:`for-publishers`.
 
 .. image:: images/data-management-home.png
-    :alt: Data Manager home
+    :alt: Import Manager home
     :target: ../../_images/data-management-home.png

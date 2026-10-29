@@ -45,11 +45,11 @@ The following fields are self explanatory and correspond to ISAD(G):
 * biographicalHistory
 * extentAndMedium
 * findingAids
+* relatedUnitsOfDescription
 * rulesAndConventions
 * scopeAndContent
-* systemOfArrangement
-* relatedUnitsOfDescription
 * separatedUnitsOfDescription
 * sources
+* systemOfArrangement
 
 

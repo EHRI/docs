@@ -1,15 +1,14 @@
-*****************************************
 Tabular EAD generation and transformation
-*****************************************
+=========================================
 
-In the `EHRI EAD dataset management interface <institution-data.html>`__ XML can be transformed using two types of transformation: XSLT documents
+In the :doc:`Import Manager <../index>` XML can be transformed using two types of transformation: XSLT documents
 and tabular XQuery mappings. XSLT is more suitable for making small changes to documents, whereas XQuery transformations
 can use the more expressive programmatic syntax to perform more complex tasks in a slightly easier way (your mileage
 may vary though.) This documentation describes how tabular XQuery transformations are specified.
 
 .. image:: images/data-management-edit-transformation.png
     :alt: The data management transformation editor with an XQuery mapping
-    :target: ../../_images/data-management-edit-transformation.png
+    :target: ../../../_images/data-management-edit-transformation.png
 
 
 Each mapping consists of four fields:
@@ -22,15 +21,15 @@ target-node
 
 source-node
   an XPath expression pointing to a node within the source document, or ``.`` if the output node does 
-  contain a value referencing the source.
+  not contain a value referencing the source.
 
 value
   an XPath expression giving the value of the target node, given the source node as context. For example,
   the expression ``text()`` would return the text value of the source node, whereas a quoted string such
   as ``"Some text"`` would give a literal value. 
 
-Documents should be built by adding mappings in hierarchical order, i.e. the ``/ead`` node should go before the
-``/eadheader`` node.        
+Documents should be built by adding mappings in hierarchical order, i.e. the mapping creating ``ead`` (target path ``/``) should go before the one
+creating ``eadheader`` (target path ``/ead/``).        
 
 
 The follow provides an example that creates a minimal EAD document with fixed dummy values, and doesn't reference any
@@ -88,10 +87,10 @@ column (in this case just ``text()``) to say what we want to do with the node.
 Although this example is simple, these columns accept any XQuery expressions so can be as complicated as you need.
 
 XQuery transformation parameters
-================================
+--------------------------------
 
 Unlike XSLT transformations, the JSON-format parameter map can be given for specific dataset transformations doesn't
-provide values that are readable by XQuery expressions. It _can_ however be used to provide additional namespace
+provide values that are readable by XQuery expressions. It *can* however be used to provide additional namespace
 prefixes that can be referenced in the ``source-node`` expressions. For example, the given JSON parameter map:
 
 .. code-block:: json
@@ -103,7 +102,7 @@ prefixes that can be referenced in the ``source-node`` expressions. For example,
 would enable yuo to use expressions like ``//xlink:href`` in the ``source-node`` field.
 
 Tips and tricks
-===============
+---------------
 
 Split a string containing multiple values into a set of separate nodes:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -138,14 +137,14 @@ For these two nodes we could use the following mappings:
 
 That is:
 
- - create a node for the `controlaccess` (no value is needed here since it's a parent node)
- - create a node for the `geogname` values
- - for the geogname path, split the text value using `fn:tokenize(/path/to/node, delimiter)`, where the path points to the source path
-   and the delimiter is a ";"
- - use "." for the value since we're already dealing with strings and not nodes
+ - create a node for the ``controlaccess`` (no value is needed here since it's a parent node)
+ - create a node for the ``geogname`` values
+ - for the geogname path, split the text value using ``fn:tokenize(/path/to/node, delimiter)``, where the path points to the source path
+   and the delimiter is a ``";"``
+ - use ``.`` for the value since we're already dealing with strings and not nodes
 
 Gotchas
-=======
+-------
 
 Unfortunately there are quite a lot of ways to get difficult-to-understand errors from the mapping process due to the
 way the table is evaluated against the source document. Some example and possible fixes follow:
@@ -158,9 +157,9 @@ Error: mapping-error at /ead: mapping-error at /ead/eadheader: err:XPST0003 at /
 
   **FIX**: be careful that quotes are ascii quotes and no other typos exist in the 4th column
 
-Cannot get the value of an attribute with a path like `/oai/description/@type`.
-  Use a "`.`" instead of "`text()`" as the value expression since we want the verbatim value, which is already
+Cannot get the value of an attribute with a path like ``/oai/description/@type``.
+  Use ``.`` instead of ``text()`` as the value expression since we want the verbatim value, which is already
   a string and not a node.
 
 Target paths are missing from output.
-  Make sure that the target path (first column) value ends with a forward-slash: "/".
+  Make sure that the target path (first column) value ends with a forward-slash: ``/``.
