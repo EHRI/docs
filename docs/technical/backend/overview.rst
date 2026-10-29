@@ -78,7 +78,7 @@ server address and port, plus `/ehri`. These are:
 interface, whereas the OAI-PMH and GraphQL endpoints are proxied by the portal more or less directly, the latter with
 the addition of user authentication.
 
-For more info about the CRUD and RCP interface, see the `API docs <http://ehri.github.io/docs/api/ehri-rest/ehri-ws/wsdocs/index.html>`_ and the `walk-through <web-service.html>`_. For more info about OAI-PMH, see the `official spec <http://www.openarchives.org/OAI/openarchivesprotocol.html>`_. For more info about GraphQL, see the `official spec <http://graphql.org>`_ and the `portal API documentation <https://portal.ehri-project.eu/api/graphql>`_. 
+For more info about the CRUD and RCP interface, see the `API docs <http://ehri.github.io/docs/api/ehri-rest/ehri-ws/wsdocs/index.html>`_ and the `walk-through <web-service.html>`_. For more info about OAI-PMH, see the `official spec <http://www.openarchives.org/OAI/openarchivesprotocol.html>`__. For more info about GraphQL, see the `official spec <http://graphql.org>`__ and the `portal API documentation <https://portal.ehri-project.eu/api/graphql>`_. 
 
 Project Structure
 -----------------

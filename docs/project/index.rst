@@ -1,3 +1,5 @@
+:orphan:
+
 EHRI Project Site Documentation
 ===============================
 
@@ -102,6 +104,11 @@ Creating a form with Contact Form 7 & Flamingo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The form tutorial is available `here <cf7-tutorial/index.html>`_.
+
+.. toctree::
+   :hidden:
+
+   cf7-tutorial/index
 
 .. |project_site_new_newsletter_edition| image:: images/project_site_new_newsletter_edition.png
                         :target: ../_images/project_site_new_newsletter_edition.png

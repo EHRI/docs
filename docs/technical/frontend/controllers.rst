@@ -31,7 +31,7 @@ left to the concrete controller implementation.
 
 In both cases we also need to validate that the user performing the action has permission to do it. This happens a
 lot, so most of the generic controllers themselves compose an ActionBuilder called
-:scala:`WithContentPermissionAction(permissionType, contentType)` that either allows to action to proceed or renders a
+``WithContentPermissionAction(permissionType, contentType)`` that either allows to action to proceed or renders a
 403 Forbidden response.
 
 Simplified Example

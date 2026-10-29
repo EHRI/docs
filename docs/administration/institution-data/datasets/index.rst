@@ -212,7 +212,7 @@ workspace unchanged
 .. _transformation:
 
 Editing transformations or creating new ones
-============================================
+--------------------------------------------
 
 .. image:: images/data-management-edit-transformation.png
     :alt: The data management transformation editor
@@ -234,7 +234,7 @@ Once a transformation has been edited to your satisfaction the Save button will 
 .. _xslt:
 
 XSLT
-----
+""""
 
 XSLT transformations must be complete XSLT 2.0 stylesheets, and are best suited to making small changes to
 documents. A minimal example that adds the EAD namespace attribute value ``urn:isbn:1=931666`` would be:
@@ -260,7 +260,7 @@ documents. A minimal example that adds the EAD namespace attribute value ``urn:i
     </xsl:stylesheet>
 
 XQuery Mappings
----------------
+"""""""""""""""
 
 XQuery transformations consist of a list of mappings from the source document to the transformed output. They are best
 suited to building completely new EAD documents from arbitrary input XML. 
@@ -274,7 +274,7 @@ the TSV (including headers) and then switch back to XQuery mode. If the TSV was 
 as expected.
 
 Transformation Parameters
--------------------------
+"""""""""""""""""""""""""
 
 If a transformation has the ``parameters`` field checked it means that a set of values will be provided to the
 transformer at conversion time. For example, if an XSLT script includes the following parameter:

@@ -19,12 +19,9 @@ Contents:
 
 .. toctree::
    :maxdepth: 1
-   :glob:
 
    editorial-process
    tei
    tools
    installation
-
-   *
 
